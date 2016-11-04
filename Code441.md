@@ -4,7 +4,7 @@
 * 用scnt记录目标字符串在给定区域的字符串次数
 * 用curLength表示当前字符子串包含模式字符串字符的个数
 ## 问题
-'''Java
+```Java
 public List<Integer> findAnagrams(String s, String p) {
         List<Integer> res=new ArrayList<Integer>();
         int[] pcnt=new int[26];
@@ -31,8 +31,44 @@ public List<Integer> findAnagrams(String s, String p) {
             }
         }
     }
-'''
+```
 * 发现无法在给定长度的子串中确定是否匹配
+* 换句话说，当子串中某字符出现次数超过模式子串中该字符出现次数时，你无法简单地进行处理
 
 ## 另一种思路，借鉴之前有一道题，找出所有包含模式字符串的起始位置(其包含的字符串可以多余模式字符串含有的字符数)
-
+```Java
+public List<Integer> findAnagrams(String s, String p) {
+        List<Integer> res=new ArrayList<Integer>();
+        
+        int[] pcnt=new int[26];
+        for(char c:p.toCharArray())
+            pcnt[c-'a']++;
+        
+        int left=0,right=0;
+        int curLength=0;
+        int activeLength=0;
+        int[] scnt=new int[26];
+        
+        while(right<s.length()){
+            if(curLength==p.length()){
+                curLength--;
+                activeLength--;
+                scnt[s.charAt(left)-'a']--;
+                left++;
+            }
+            char c=s.charAt(right++);
+            scnt[c-'a']++;
+            curLength++;
+            while(scnt[c-'a']>pcnt[c-'a']){
+                curLength--;
+                activeLength--;
+                scnt[s.charAt(left)-'a']--;
+                left++;
+            }
+            if(++activeLength==p.length()){
+                res.add(left);
+            }
+        }
+        return res;
+    }
+```
