@@ -19,3 +19,28 @@
         return String.valueOf(ary);
     }
 ```
+
+```Java
+    public String reverseVowels(String s) {
+        String vowels="aeiouAEIOU";
+        int start=0,end=s.length()-1;
+        
+        char[] ary=s.toCharArray();
+        while(start<=end){
+            while(start<=end&&vowels.indexOf(s.charAt(start))==-1){
+                start++;
+            }
+            while(start<=end&&vowels.indexOf(s.charAt(end))==-1){
+                end--;
+            }
+            if(start>end) break;
+            
+            char temp=ary[start];
+            ary[start]=ary[end];
+            ary[end]=temp;
+            start++;
+            end--;
+        }
+        return String.valueOf(ary);
+    }
+```
