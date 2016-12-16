@@ -47,3 +47,40 @@
         System.out.println();
     }
 ```
+
+* 更漂亮的写法
+```Java
+	public ListNode partition(ListNode head, int x) {
+        ListNode pseudoHead=new ListNode(0);
+        pseudoHead.next=head;
+        
+        ListNode i=pseudoHead;//对应于数组情况的索引i
+        ListNode pre=pseudoHead;//当取出某节点时，需要将其前后节点连接起来，因此要用到前驱节点
+        
+        ListNode iter=head;
+        while(iter!=null){
+            if(iter.val<x){
+                if(i!=pre){
+                    pre.next=iter.next;
+                    ListNode tempIterNext=iter.next;
+                    ListNode temp_i_Next=i.next;
+                    i.next=iter;
+                    iter.next=temp_i_Next;
+                    i=i.next;
+                    iter=tempIterNext;
+                }
+                else{ //到目前为止，包括当前的iter节点，所有节点都移到了左边的区域，也就是i与pre是重合的，因此不需要交换操作
+                    pre=iter;
+                    i=i.next;
+                    iter=iter.next;
+                }
+            }
+            else{
+                pre=iter;
+                iter=iter.next;
+            }
+        }
+        
+        return pseudoHead.next;
+    }
+```
