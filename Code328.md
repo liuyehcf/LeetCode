@@ -1,27 +1,33 @@
 # Odd Even Linked List
 
 ```Java
+	//beats 3.89%
 	public ListNode oddEvenList(ListNode head) {
         ListNode oddPseudoHead=new ListNode(0);
-        ListNode evenPseudoHead=new ListNode(0);
-        ListNode iterOdd=oddPseudoHead;
-        ListNode iterEven=evenPseudoHead;
-        
+        ListNode evenPesudoHead=new ListNode(0);
+        boolean flag=true;
         ListNode iter=head;
-        boolean isOdd=true;
+        ListNode oddIter=oddPseudoHead;
+        ListNode evenIter=evenPesudoHead;
+        
         while(iter!=null){
-            if(isOdd){
-                iterOdd.next=iter;
-                iterOdd=iterOdd.next;
-            }else{
-                iterEven.next=iter;
-                iterEven=iterEven.next;
+            if(flag){
+                ListNode tempIterNext=iter.next;
+                oddIter.next=iter;
+                oddIter=oddIter.next;
+                iter=tempIterNext;
             }
-            isOdd=!isOdd;
-            iter=iter.next;
+            else{
+                ListNode tempIterNext=iter.next;
+                evenIter.next=iter;
+                evenIter=evenIter.next;
+                iter=tempIterNext;
+            }
+            flag=!flag;
         }
-        iterOdd.next=evenPseudoHead.next;
-        iterEven.next=null;
+        
+        oddIter.next=evenPesudoHead.next;
+        evenIter.next=null;
         return oddPseudoHead.next;
     }
 ```
