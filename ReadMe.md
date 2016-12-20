@@ -51,3 +51,12 @@
 * Code39:2,Important
 * Code40:1,Same(39)
 * Code41:2,Important
+
+
+
+# 2016.12.20
+* Code42:Confused
+* Code45:Confused,Important
+* Code48:N,Chaos
+* Code53:1
+* Code54:N,Chaos
