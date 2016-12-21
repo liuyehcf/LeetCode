@@ -60,3 +60,16 @@
 * Code48:N,Chaos
 * Code53:1
 * Code54:N,Chaos
+
+
+# 2016.12.21
+* Code55:1,Same(45)
+* Code56:1,Important
+* Code57:2,Same(56)
+* Code59:1
+* Code62:1,Same(63)
+* Code63:1,Important,DP
+* Code64:1,Important,DP
+* Code66:1
+* Code73:1
+* Code74:N,Chaos,Important
