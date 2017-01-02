@@ -73,3 +73,22 @@
 * Code66:1
 * Code73:1
 * Code74:N,Chaos,Important
+
+
+# 2016.12.22
+* Code75:1,Important
+* Code78:Confused,Chaos,Important,Same(39)
+* Code79:2,Important,Backtracking
+* Code80:3,Important
+* Code81:1
+* Code84:Confused,Important
+* Code85:Same(84)
+* Code88:1
+* Code90:Same(78)
+* Code105:2,Important
+
+# 2016.12.30
+* 继续完成2016.12.22未完成的
+
+# 2017.1.2
+* 继续完成2016.12.30未完成的
