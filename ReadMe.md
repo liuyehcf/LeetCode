@@ -92,3 +92,15 @@
 
 # 2017.1.2
 * 继续完成2016.12.30未完成的
+
+# 2017.1.3
+* Code106:1
+* Code118:1
+* Code119:1
+* Code120:Confused
+* Code121:1,Important
+* Code122:1
+* Code123:1,Important
+* Code126:Confused,Unfinished
+* Code128:2,Important
+* Code152:N,Important
