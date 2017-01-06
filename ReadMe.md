@@ -27,8 +27,8 @@
 * Code234:Confused,Important,猪腰子,不会转个弯
 * Code237:2,
 * Code328:1,
-* Code369:Lock
-* Code379:Lock
+* Code369:Locked
+* Code379:Locked
 * Code445:2,Important
 
 # 2016.12.18
@@ -104,3 +104,30 @@
 * Code126:Confused,Unfinished
 * Code128:2,Important
 * Code152:N,Important
+
+# 2017.1.5
+* Code153:1
+* Code154:1
+* Code162:2
+* Code163:Locked
+* Code167:1
+* Code169:2
+* Code189:3,Important
+* Code209:1,Important
+* Code216:1,Important
+* Code217:1,Important
+
+# 2017.1.6
+* Code219:2
+* Code228:N,Important
+* Code229:Confused,Important
+* Code238:1,Important
+* Code243:Locked
+* Code245:Locked
+* Code259:Locked
+* Code268:2,Important
+* Code277:Locked
+* Code280:Locked
+* Code283:1
+* Code287:1,Important
+* Code289:2,Important
