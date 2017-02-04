@@ -1,41 +1,45 @@
 # Third Maximum Number
 
-## 常规思路
+* 常规思路
 ```Java
+	//beats 27.18%
 	public int thirdMax(int[] nums) {
-        Set<Integer> set=new HashSet<Integer>();
-        for(int num:nums)
-            set.add(num);
-        int[] newNums=new int[set.size()];
-        int iter=0;
-        for(int num:set){
-            newNums[iter++]=num;
+        Set<Integer> uniqueSet=new HashSet<Integer>();
+        for(int num:nums){
+            uniqueSet.add(num);
         }
-        if(newNums.length<3) return helper(newNums,0,newNums.length-1,newNums.length);
-        return helper(newNums,0,newNums.length-1,newNums.length-2);
+        
+        int[] uniqueNums=new int[uniqueSet.size()];
+        int iter=0;
+        for(int num:uniqueSet){
+            uniqueNums[iter++]=num;
+        }
+        
+        if(uniqueNums.length<3) return select(uniqueNums,0,uniqueNums.length-1,uniqueNums.length);
+        else return select(uniqueNums,0,uniqueNums.length-1,uniqueNums.length-2);
     }
     
-    private int helper(int[] nums,int p,int r,int i){
-        if(p==r){
-        	if(i!=1) throw new RuntimeException();
-            return nums[p];
-        }
+    private int select(int[] nums,int p,int r,int n){
+        if(p==r&&n==1) return nums[p];
+        
         int q=partition(nums,p,r);
         int k=q-p+1;
-        if(k==i)
+        if(k==n) {
             return nums[q];
-        else if(k<i)
-            return helper(nums,q+1,r,i-k);
-        else
-            return helper(nums,p,q-1,i);
-        
+        }
+        else if(k<n){
+            return select(nums,q+1,r,n-k);
+        }
+        else{
+            return select(nums,p,q-1,n);
+        }
     }
     
     private int partition(int[] nums,int p,int r){
         int x=nums[r];
         int i=p-1;
         for(int j=p;j<r;j++){
-            if(nums[j]<=x){
+            if(nums[j]<x){
                 exchange(nums,++i,j);
             }
         }
@@ -44,13 +48,13 @@
     }
     
     private void exchange(int[] nums,int i,int j){
-        int tmp=nums[i];
+        int temp=nums[i];
         nums[i]=nums[j];
-        nums[j]=tmp;
+        nums[j]=temp;
     }
 ```
 
-## 应该有更好的方法
+* 应该有更好的方法
 
 ```Java
 	public int thirdMax(int[] nums) {
