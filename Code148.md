@@ -108,4 +108,46 @@
         first.next=tempiNext;
         return first;
     }
+	
+	private ListNode partition(ListNode pseudoHead,ListNode tail){
+        ListNode x=pseudoHead.next;
+        ListNode i=pseudoHead;
+        ListNode j=pseudoHead.next.next;
+        ListNode iter=pseudoHead;
+        
+        while(j!=tail){
+            if(j.val<x.val){
+                if(i==iter){
+                    iter.next=j;
+                    j=j.next;
+                    iter=iter.next;
+                    i=i.next;
+                }
+                else{
+                    ListNode iNext=i.next;
+                    ListNode jNext=j.next;
+                    i.next=j;
+                    j.next=iNext;
+                    j=jNext;
+                    i=i.next;
+                }
+            }
+            else{
+                iter.next=j;
+                iter=iter.next;
+                j=j.next;
+            }
+        }
+        
+        ListNode iNext=i.next;
+        i.next=x;
+        x.next=iNext;
+        if(iter==i){
+            x.next=tail;
+        }
+        else{
+            iter.next=tail;
+        }
+        return x;
+    }
 ```
