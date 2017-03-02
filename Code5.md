@@ -21,6 +21,29 @@
         }
         return res;
     }
+	
+	
+	public String longestPalindrome(String s) {
+        if(s==null||s.length()==0) return "";
+        boolean[][] dp=new boolean[s.length()][s.length()];
+        for(int i=0;i<s.length();i++){
+            dp[i][i]=true;
+        }
+        String res=s.substring(0,1);
+        for(int len=2;len<=s.length();len++){
+            for(int start=0;start<=s.length()-len;start++){
+                int end=start+len-1;
+                if(s.charAt(start)==s.charAt(end)){
+                    if(start+1>end-1||dp[start+1][end-1]){
+                        dp[start][end]=true;
+                        if(res.length()<end-start+1)
+                            res=s.substring(start,end+1);
+                    }
+                }
+            }
+        }
+        return res;
+    }
 ```
 
 * else

@@ -160,12 +160,26 @@
 * Code111:1
 * Code112:1
 * Code113:2,Important
-* Code114:
-* Code116:
-* Code117:
-* Code124:
+* Code114:Confused,3
+* Code116:1,Important
+* Code117:1
+* Code124:1
+
+# 2017.2.19
 * Code129:
 * Code144:
 * Code145:
 * Code156:
+
+# 2017.3.2
+* Code201:Confused(给定范围的逻辑与),Important
+* Code202:2,注意循环退出的条件
+* Code203:1
+* Code204:2
+* Code205:2,Important
+* Code1:1
+* Code2:1
+* Code3:1
+* Code4:1
+* Code5:1
 

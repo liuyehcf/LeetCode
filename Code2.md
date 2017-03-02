@@ -36,3 +36,31 @@
         return pseudoHead.next;
     }
 ```
+
+
+```
+//beats 50.60%
+public class Solution {
+    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+        ListNode pseudoHead=new ListNode(0);
+        int carry=0;
+        ListNode iter1=l1,iter2=l2,iter=pseudoHead;
+        while(iter1!=null||iter2!=null||carry!=0){
+            int sum=0;
+            if(iter1!=null){
+                sum+=iter1.val;
+                iter1=iter1.next;
+            }
+            if(iter2!=null){
+                sum+=iter2.val;
+                iter2=iter2.next;
+            }
+            sum+=carry;
+            iter.next=new ListNode(sum%10);
+            iter=iter.next;
+            carry=sum/10;
+        }
+        return pseudoHead.next;
+    }
+}
+```
