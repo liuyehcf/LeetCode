@@ -171,6 +171,9 @@
 * Code145:
 * Code156:
 
+
+//Restart
+
 # 2017.3.2
 * Code201:Confused(给定范围的逻辑与),Important
 * Code202:2,注意循环退出的条件
@@ -182,4 +185,49 @@
 * Code3:1
 * Code4:1
 * Code5:1
+
+# 2017.3.3
+* Code206:1
+* Code207:1,Important
+* Code208:3,Important
+* Code209:1
+* Code210:2
+* Code6:Fuck
+* Code7:1
+* Code8:Fuck
+* Code9:1
+* Code10:3,Important
+
+# 2017.3.5
+* Code211:2,Important
+* Code212:Confused
+* Code213:N,Important
+* Code214:N,Important
+* Code215:2,Important
+
+# 2017.3.6
+* Code216:2,Important
+* Code217:1
+* Code218:2,Important
+* Code219:1
+* Code220:N,Important
+
+# 2017.3.7
+* Code221:2,Important
+* Code222:Confused,Important
+* Code223:1
+* Code224:2,Important
+* Code225:
+* Code11:1,Important
+* Code12:1
+* Code13:1
+* Code14:1
+* Code15:1
+* Code16:1
+* Code17:2
+* Code18:2
+* Code19:1,Important
+* Code20:1,Important
+
+
 

@@ -4,30 +4,60 @@
 
 ```Java
 	//beats 79.77%
-	public ListNode removeNthFromEnd(ListNode head, int n) {
-        int len=0;
-        ListNode iter=head;
-        while(iter!=null){
-            iter=iter.next;
-            len++;
-        }
-        int m=len+1-n;
-        
+public class Solution {
+    public ListNode removeNthFromEnd(ListNode head, int n) {
         ListNode pseudoHead=new ListNode(0);
         pseudoHead.next=head;
+        
+        ListNode iter=head;
         int cnt=0;
-        iter=pseudoHead;
-        ListNode preNode=null,nextNode=null;
         while(iter!=null){
-            if(cnt==m-1){
-                preNode=iter;
-                nextNode=iter.next.next;
-                break;
-            }
             cnt++;
             iter=iter.next;
         }
-        preNode.next=nextNode;
+        
+        int m=cnt+1-n;
+        
+        iter=head;
+        ListNode pre=pseudoHead;
+        cnt=0;
+        while(iter!=null){
+            if(++cnt==m){
+                pre.next=iter.next;
+                break;
+            }
+            else{
+                pre=iter;
+                iter=iter.next;
+            }
+        }
         return pseudoHead.next;
     }
+}
+```
+
+* 只遍历一遍的做法
+```Java
+public class Solution {
+    public ListNode removeNthFromEnd(ListNode head, int n) {
+        ListNode pseudoHead=new ListNode(0);
+        pseudoHead.next=head;
+        
+        ListNode fast=head;
+
+        for(int i=0;i<n;i++){
+            fast=fast.next;
+        }
+        
+        ListNode slow=pseudoHead;
+        
+        while(fast!=null){
+            fast=fast.next;
+            slow=slow.next;
+        }
+        
+        slow.next=slow.next.next;
+        return pseudoHead.next;
+    }
+}
 ```
