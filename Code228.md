@@ -32,3 +32,36 @@
         return sb.toString();
     }
 ```
+
+
+```Java
+//beats 67.80%
+public class Solution {
+    public List<String> summaryRanges(int[] nums) {
+        List<String> res=new ArrayList<String>();
+        if(nums==null||nums.length==0) return res;
+        
+        int left=nums[0];
+
+        for(int i=1;i<nums.length;i++){
+            if(nums[i]!=nums[i-1]+1){
+                if(left==nums[i-1]){
+                    res.add(""+left);
+                }
+                else{
+                    res.add(left+"->"+nums[i-1]);
+                }
+                left=nums[i];
+            }
+        }
+        
+        if(nums[nums.length-1]==left){
+            res.add(""+left);
+        }
+        else{
+            res.add(left+"->"+nums[nums.length-1]);
+        }
+        return res;
+    }
+}
+```

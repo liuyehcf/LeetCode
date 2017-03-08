@@ -18,13 +18,13 @@
 * Code142:1
 * Code143:1
 * Code147:2,Chaos
-* Code148:N,Chaos,Important,Ó¦¸ÃÓÐ¸ü¿ìµÄ½â·¨
-* Code160:Confused,Important,ÖíÄÔ×Ó,²»»á×ª¸öÍä
+* Code148:N,Chaos,Important,Ó¦ï¿½ï¿½ï¿½Ð¸ï¿½ï¿½ï¿½ï¿½Ä½â·¨
+* Code160:Confused,Important,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½×ªï¿½ï¿½ï¿½ï¿½
 * Code203:1
 
 # 2016.12.17
 * Code206:1
-* Code234:Confused,Important,ÖíÑü×Ó,²»»á×ª¸öÍä
+* Code234:Confused,Important,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½×ªï¿½ï¿½ï¿½ï¿½
 * Code237:2,
 * Code328:1,
 * Code369:Locked
@@ -45,7 +45,7 @@
 
 
 # 2016.12.19
-* 2016.12.18Î´Íê³ÉµÄCode4¡¢Code11
+* 2016.12.18Î´ï¿½ï¿½ï¿½Éµï¿½Code4ï¿½ï¿½Code11
 * Code34:2,Important
 * Code35:2,Same(34)
 * Code39:2,Important
@@ -88,10 +88,10 @@
 * Code105:2,Important
 
 # 2016.12.30
-* ¼ÌÐøÍê³É2016.12.22Î´Íê³ÉµÄ
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½2016.12.22Î´ï¿½ï¿½ï¿½Éµï¿½
 
 # 2017.1.2
-* ¼ÌÐøÍê³É2016.12.30Î´Íê³ÉµÄ
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½2016.12.30Î´ï¿½ï¿½ï¿½Éµï¿½
 
 # 2017.1.3
 * Code106:1
@@ -175,8 +175,8 @@
 //Restart
 
 # 2017.3.2
-* Code201:Confused(¸ø¶¨·¶Î§µÄÂß¼­Óë),Important
-* Code202:2,×¢ÒâÑ­»·ÍË³öµÄÌõ¼þ
+* Code201:Confused(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î§ï¿½ï¿½ï¿½ß¼ï¿½ï¿½ï¿½),Important
+* Code202:2,×¢ï¿½ï¿½Ñ­ï¿½ï¿½ï¿½Ë³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 * Code203:1
 * Code204:2
 * Code205:2,Important
@@ -230,10 +230,20 @@
 * Code20:1,Important
 
 # 2017.3.8
-* Code226:
-* Code227:
-* Code228:
-* Code229:
-* Code230:
+* Code226:1
+* Code227:1
+* Code228:1,Important
+* Code229:Confused
+* Code230:1
+* Code21:1
+* Code22:1
+* Code23:1,Important
+* Code24:1,Important
+* Code25:1,Important
+* Code26:1
+* Code27:1
+* Code28:2,Important,KMP
+* Code29:Confused
+* Code30:Confused
 
 

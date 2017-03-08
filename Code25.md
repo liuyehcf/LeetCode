@@ -15,7 +15,7 @@
                 reverse(pre,tail);
                 cnt=0;
                 pre=tempPre;
-                iter=tail;//<Warn1>£º±¾À´Ã»ÓÐÕâ¾ä£¬ÏÂÃæµÄelseÒ²Ã»ÓÐ
+                iter=tail;//<Warn1>ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ä£¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½elseÒ²Ã»ï¿½ï¿½
             }
             else{
                 iter=iter.next;
@@ -34,4 +34,49 @@
             iter=tempNext;
         }
     }
+```
+
+* brilliant solution
+```Java
+//beats 57.16%
+public class Solution {
+    public ListNode reverseKGroup(ListNode head, int k) {
+        ListNode pseudoHead=new ListNode(0);
+        pseudoHead.next=head;
+        
+        ListNode left=pseudoHead;
+        ListNode right=head;
+        
+        int cnt=0;
+        while(right!=null&&cnt<k){
+            right=right.next;
+            cnt++;
+        }
+        if(cnt!=k) return head;
+        
+        while(true){
+            reverse(left,right);
+            cnt=0;
+            while(right!=null&&cnt<k){
+                left=left.next;
+                right=right.next;
+                cnt++;
+            }
+            if(cnt!=k) break;
+        }
+        return pseudoHead.next;
+    }
+    
+    private void reverse(ListNode pseudoHead,ListNode tail){
+        ListNode iter=pseudoHead.next;
+        pseudoHead.next=tail;
+        while(iter!=tail){
+            ListNode iterNext=iter.next;
+            ListNode pseudoHeadNext=pseudoHead.next;
+            pseudoHead.next=iter;
+            iter.next=pseudoHeadNext;
+            iter=iterNext;
+        }
+    }
+}
 ```
