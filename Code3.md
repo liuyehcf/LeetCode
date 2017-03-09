@@ -1,5 +1,5 @@
 # Longest Substring Without Repeating Characters
-* ÒÆ¶¯´°¿Ú·¨
+* ç§»åŠ¨çª—å£æ³•
 
 ```Java
 	//beats 89.60%

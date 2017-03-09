@@ -1,6 +1,6 @@
-# Merge Two Sorted Lists(类似于归并排序中的merge)
+# Merge Two Sorted Lists(绫讳技浜庡綊骞舵帓搴忎腑鐨刴erge)
 
-* 相对于设置一个哨兵，我倾向于分成两步：当两个序列都为到末端，当其中一个序列到末端
+* 鐩稿浜庤缃竴涓摠鍏碉紝鎴戝�惧悜浜庡垎鎴愪袱姝ワ細褰撲袱涓簭鍒楅兘涓哄埌鏈锛屽綋鍏朵腑涓�涓簭鍒楀埌鏈
 
 ```Java
 	//beats 25.68%

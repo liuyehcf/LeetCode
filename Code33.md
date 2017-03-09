@@ -9,7 +9,7 @@
         return -1;
     }
 ```
-* 或者利用已排序的性质，反正不能用二分法的
+* 鎴栬�呭埄鐢ㄥ凡鎺掑簭鐨勬�ц川锛屽弽姝ｄ笉鑳界敤浜屽垎娉曠殑
 ```Java
 	//beats 88.82
 	public int search(int[] nums, int target) {

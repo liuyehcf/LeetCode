@@ -9,7 +9,7 @@
         
         while(left<=right){
             int mid=left+(right-left>>1);
-            if(nums[mid]<target){  //<Warn>:大小于弄错了
+            if(nums[mid]<target){  //<Warn>:澶у皬浜庡紕閿欎簡
                 left=mid+1;
             }
             else{

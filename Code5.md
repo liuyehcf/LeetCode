@@ -1,6 +1,6 @@
 # Longest Palindromic Substring 
  
-* ¶¯Ì¬¹æ»®
+* åŠ¨æ€è§„åˆ’
 ```Java
 	//beats 13.47%
 	public String longestPalindrome(String s) {
@@ -73,7 +73,7 @@
 ```
 
 
-* ¸Ä½ø¹ıµÄ
+* æ”¹è¿›è¿‡çš„
 ```Java
 	//beats 87.61%
 	int[] range;

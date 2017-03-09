@@ -1,8 +1,8 @@
 # Container With Most Water
 
-* ´íÎóµÄ×ö·¨
-* ¼ÙÉèleftHighµÍÓÚÓÒ±ß£¬ÄÇÃ´ĞèÒªÒÆ¶¯×ó±ß£¬¶ø¸üĞÂ×ó±ßµÄÌõ¼şÓëÃæ»ıÊÇ·ñĞèÒª¸üĞÂ×÷ÎªÅĞ¶Ï£¬ÕâÊÇ²»¶ÔµÄ
-* ¸üĞÂleftHighÓëÃæ»ıÊÇ·ñĞèÒª¸üĞÂÎŞ¹Ø!!!
+* é”™è¯¯çš„åšæ³•
+* å‡è®¾leftHighä½äºå³è¾¹ï¼Œé‚£ä¹ˆéœ€è¦ç§»åŠ¨å·¦è¾¹ï¼Œè€Œæ›´æ–°å·¦è¾¹çš„æ¡ä»¶ä¸é¢ç§¯æ˜¯å¦éœ€è¦æ›´æ–°ä½œä¸ºåˆ¤æ–­ï¼Œè¿™æ˜¯ä¸å¯¹çš„
+* æ›´æ–°leftHighä¸é¢ç§¯æ˜¯å¦éœ€è¦æ›´æ–°æ— å…³!!!
 ```Java
 	public int maxArea(int[] height) {
         int left=0,right=height.length-1;
@@ -41,7 +41,7 @@
         int res=area(left,right,leftHigh,rightHigh);
         while(left<right){
             if(leftHigh<rightHigh){
-                left++;   //<Warn>:Õâ¾ä×î¿ªÊ¼·Åµ½ÁËifÓï¾äµÄºóÃæ£¬µ¼ÖÂÁË£¬ÕÒµ½Ò»¸ö¸üĞÂµÄ±ã½İºó·´¶ø+ÁË1
+                left++;   //<Warn>:è¿™å¥æœ€å¼€å§‹æ”¾åˆ°äº†ifè¯­å¥çš„åé¢ï¼Œå¯¼è‡´äº†ï¼Œæ‰¾åˆ°ä¸€ä¸ªæ›´æ–°çš„ä¾¿æ·ååè€Œ+äº†1
                 if(height[left]>leftHigh){
                     leftHigh=height[left];
                     res=Math.max(res,area(left,right,leftHigh,rightHigh));

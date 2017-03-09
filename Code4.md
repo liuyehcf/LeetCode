@@ -15,7 +15,7 @@
         int step=n/2;
         long mid1=Long.MAX_VALUE;
         long mid2=Long.MAX_VALUE;
-        if(b1+step-1<nums1.length) mid1=nums1[b1+step-1];   //<Warn>:ÕâÀï±¾À´ÅĞ¶ÏµÄÊÇb1+step-1,Èç¹ûn=2£¬ÄÇÃ´step=1,Ò²¾ÍÊÇËµµ±Ç°½ÚµãÒ²ÊÇĞèÒªÅĞ¶ÏµÄ!!!£¬Òò´ËĞèÒªb1+stepºó-1
+        if(b1+step-1<nums1.length) mid1=nums1[b1+step-1];   //<Warn>:è¿™é‡Œæœ¬æ¥åˆ¤æ–­çš„æ˜¯b1+step-1,å¦‚æœn=2ï¼Œé‚£ä¹ˆstep=1,ä¹Ÿå°±æ˜¯è¯´å½“å‰èŠ‚ç‚¹ä¹Ÿæ˜¯éœ€è¦åˆ¤æ–­çš„!!!ï¼Œå› æ­¤éœ€è¦b1+stepå-1
         if(b2+step-1<nums2.length) mid2=nums2[b2+step-1];
         if(mid1<mid2) return find_N(nums1,b1+step-1+1,nums2,b2,n-step);
         else return find_N(nums1,b1,nums2,b2+step-1+1,n-step);

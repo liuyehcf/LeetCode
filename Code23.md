@@ -1,7 +1,7 @@
 # Merge k Sorted Lists
 
 ```Java
-	//³¬Ê±
+	//è¶…æ—¶
 	public ListNode mergeKLists(ListNode[] lists) {
         ListNode pseudoHead=new ListNode(0);
         ListNode iter=pseudoHead;

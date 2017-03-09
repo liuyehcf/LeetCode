@@ -4,7 +4,7 @@
 	//beats 22.11%
 	public ListNode swapPairs(ListNode head) {
         ListNode pseudoHead=new ListNode(0);
-        pseudoHead.next=head;//<Warn3>���Ǻǣ�����©��
+        pseudoHead.next=head;//<Warn3>锟斤拷锟角呵ｏ拷锟斤拷锟斤拷漏锟斤拷
         ListNode iter=pseudoHead.next;
         ListNode pre=pseudoHead;
         while(iter!=null&&iter.next!=null){
@@ -16,11 +16,11 @@
             pre=left;
         }
         
-        //<Warn1>��������һ��Ԫ���䵥��������û����
+        //<Warn1>锟斤拷锟斤拷锟斤拷锟斤拷一锟斤拷元锟斤拷锟戒单锟斤拷锟斤拷锟斤拷锟斤拷没锟斤拷锟斤拷
         if(iter!=null){
             pre.next=iter;
         }else{
-            pre.next=null;  //<Warn2>��û�䵥ʱ��Ҫ������һ��Ԫ��ָ����ȷ��null
+            pre.next=null;  //<Warn2>锟斤拷没锟戒单时锟斤拷要锟斤拷锟斤拷锟斤拷一锟斤拷元锟斤拷指锟斤拷锟斤拷确锟斤拷null
         }
         
         return pseudoHead.next;

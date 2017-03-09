@@ -6,7 +6,7 @@
         Set<Integer> set=new HashSet<Integer>();
         int j=0;
         for(int i=0;i<nums.length;i++){
-            if(i>k)set.remove(nums[j++]); //<Warn>:之前写的是i-k，这并不对，改成i-k-1才行
+            if(i>k)set.remove(nums[j++]); //<Warn>:涔嬪墠鍐欑殑鏄痠-k锛岃繖骞朵笉瀵癸紝鏀规垚i-k-1鎵嶈
             if(!set.add(nums[i])) return true;
         }
         return false;

@@ -15,7 +15,7 @@
                 reverse(pre,tail);
                 cnt=0;
                 pre=tempPre;
-                iter=tail;//<Warn1>������û�����䣬������elseҲû��
+                iter=tail;
             }
             else{
                 iter=iter.next;

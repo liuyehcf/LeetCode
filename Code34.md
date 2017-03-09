@@ -18,7 +18,7 @@
             }
         }
         
-        if(nums[left]!=target) return new int[]{-1,-1};  //Â©ÁËÕâ¾ä
+        if(nums[left]!=target) return new int[]{-1,-1};  //æ¼äº†è¿™å¥
         int boundaryLeft=left;
 
         left=0;

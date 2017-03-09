@@ -1,6 +1,6 @@
-# Remove Nth Node From End of List(³ıÈ¥µ¥ÏòÁ´±íÖĞµ¹ÊıµÚn¸öÊı(´Ón´Ó1¿ªÊ¼¼Æ))
+# Remove Nth Node From End of List(é™¤å»å•å‘é“¾è¡¨ä¸­å€’æ•°ç¬¬nä¸ªæ•°(ä»nä»1å¼€å§‹è®¡))
 
-* Á´±í³¤ÎªL£¬³ıÈ¥µ¹ÊıµÚn¸öÊı£¬¾ÍÊÇ³ıÈ¥ÕıÊıµÚL+1-n¸öÊı
+* é“¾è¡¨é•¿ä¸ºLï¼Œé™¤å»å€’æ•°ç¬¬nä¸ªæ•°ï¼Œå°±æ˜¯é™¤å»æ­£æ•°ç¬¬L+1-nä¸ªæ•°
 
 ```Java
 	//beats 79.77%
@@ -36,7 +36,7 @@ public class Solution {
 }
 ```
 
-* Ö»±éÀúÒ»±éµÄ×ö·¨
+* åªéå†ä¸€éçš„åšæ³•
 ```Java
 public class Solution {
     public ListNode removeNthFromEnd(ListNode head, int n) {

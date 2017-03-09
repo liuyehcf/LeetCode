@@ -1,5 +1,5 @@
 # Majority Element II
-* ע���㣬ĳһʱ�̣�ֻ��num1��num2����֮һ���滻Ϊnum����ʹcnt1��cnt2��Ϊ0
+* 注锟斤拷锟姐，某一时锟教ｏ拷只锟斤拷num1锟斤拷num2锟斤拷锟斤拷之一锟斤拷锟芥换为num锟斤拷锟斤拷使cnt1锟斤拷cnt2锟斤拷为0
 
 ```Java
 	//beats 62.63%
@@ -53,7 +53,7 @@ public class Solution {
             else if(value2==num){
                 cnt2++;
             }
-            else if(cnt1==0){//这个条件和下面这个条件，还不能放到最前面，否则例如[2,2]，返回结果会是2，2
+            else if(cnt1==0){//杩欎釜鏉′欢鍜屼笅闈㈣繖涓潯浠讹紝杩樹笉鑳芥斁鍒版渶鍓嶉潰锛屽惁鍒欎緥濡俒2,2]锛岃繑鍥炵粨鏋滀細鏄�2锛�2
                 value1=num;
                 cnt1++;
             }

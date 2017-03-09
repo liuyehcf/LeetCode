@@ -39,7 +39,7 @@
                 }
                 else{
                     res.add(Arrays.<Integer>asList(nums[i],nums[left],nums[right]));
-                    left++;//<Warn>ÕâÁ½ÌõÊÇ±ØĞëÏÈĞ´µÄ£¬ÒòÎªÖ´ĞĞÏÂÃæµÄÑ­»·Íê±Ïºó£¬Äã²»ÖªµÀÊÇ·ñ»¹ĞèÒªµİÔö/¼õ
+                    left++;//<Warn>è¿™ä¸¤æ¡æ˜¯å¿…é¡»å…ˆå†™çš„ï¼Œå› ä¸ºæ‰§è¡Œä¸‹é¢çš„å¾ªç¯å®Œæ¯•åï¼Œä½ ä¸çŸ¥é“æ˜¯å¦è¿˜éœ€è¦é€’å¢/å‡
                     right--;
                     while(left<right&&nums[left]==nums[left-1]) left++;
                     while(left<right&&nums[right]==nums[right+1]) right--;
