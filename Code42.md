@@ -2,32 +2,35 @@
 
 ```Java
 	//beats 92.67%
-	public int trap(int[] height) {
-        if(height.length==0) return 0;
+public class Solution {
+    public int trap(int[] height) {
+        if(height==null||height.length==0) return 0;
+        int res=0;
         int left=0,right=height.length-1;
-        int trapped=0;
         int leftHigh=height[left];
         int rightHigh=height[right];
+        
         while(left<right){
-            if(leftHigh<=rightHigh){
-                left++;;
-                if(height[left]>leftHigh){
-                    leftHigh=height[left];
+            if(leftHigh<rightHigh){
+                int curHigh=height[++left];
+                if(curHigh<=leftHigh){
+                    res+=leftHigh-curHigh;
                 }
                 else{
-                    trapped+=leftHigh-height[left];
+                    leftHigh=curHigh;
                 }
             }
             else{
-                right--;
-                if(height[right]>rightHigh){
-                    rightHigh=height[right];
+               int curHigh=height[--right]; 
+               if(curHigh<=rightHigh){
+                    res+=rightHigh-curHigh;
                 }
                 else{
-                    trapped+=rightHigh-height[right];
+                    rightHigh=curHigh;
                 }
             }
         }
-        return trapped;
+        return res;
     }
+}
 ```

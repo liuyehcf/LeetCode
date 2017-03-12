@@ -18,7 +18,7 @@
         for(int i=begin;i<candidates.length;i++){
             if(candidates[i]<=target){
                 cur.add(candidates[i]);
-                helper(candidates,i,target-candidates[i],res,cur);//<Warn>:由于元素可以重复利用，之前错写为i+1
+                helper(candidates,i,target-candidates[i],res,cur);//<Warn>:鐢变簬鍏冪礌鍙互閲嶅鍒╃敤锛屼箣鍓嶉敊鍐欎负i+1
                 cur.remove(cur.size()-1);
             }
             else break;
@@ -41,7 +41,7 @@
             res.add(new ArrayList<Integer>(cur));
             return;
         }
-        if(begin==candidates.length) return; //<Warn>:漏了这句
+        if(begin==candidates.length) return; //<Warn>:婕忎簡杩欏彞
         
         helper(candidates,begin+1,target,res,cur);
         
