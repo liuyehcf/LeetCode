@@ -1,22 +1,31 @@
 # Rotate Image
 
 ```Java
-	//beats 61.12%
-	public void rotate(int[][] matrix) {
+//beats 61.12%
+public class Solution {
+    public void rotate(int[][] matrix) {
+        if(matrix==null||matrix.length==0||matrix[0].length==0) return;
+        if(matrix.length!=matrix[0].length) return;
+        
         int n=matrix.length;
-        for(int level=0;level<n/2;level++){
-            for(int i=0;i<n-level*2-1;i++){
-                helper(matrix,level,i);
-            }
+        for(int i=0;i<n/2;i++){
+            helper(matrix,i);
         }
     }
     
-    private void helper(int[][] matrix,int level,int i){
-        int top=level,bottom=matrix.length-1-level,left=level,right=matrix.length-1-level;
-        int temp=matrix[top][left+i];
-        matrix[top][left+i]=matrix[bottom-i][left];
-        matrix[bottom-i][left]=matrix[bottom][right-i];
-        matrix[bottom][right-i]=matrix[top+i][right];
-        matrix[top+i][right]=temp;
+    private void helper(int[][] matrix,int i){
+        int n=matrix.length;
+        
+        int left=i,right=n-1-i;
+        int top=i,bottom=n-1-i;
+        
+        for(int j=0;j<right-left;j++){
+            int temp=matrix[top][left+j];
+            matrix[top][left+j]=matrix[bottom-j][left];
+            matrix[bottom-j][left]=matrix[bottom][right-j];
+            matrix[bottom][right-j]=matrix[top+j][right];
+            matrix[top+j][right]=temp;
+        }
     }
+}
 ```
