@@ -1,5 +1,12 @@
 # Ugly Number II
-* ����˼·���Code313.md
+* 具体思路详见Code313.md
+
+* 常规思路:按次序选出第i个ugly number，设第i个值为val，那么此时需要将val*2,val*3,val*5放入待选的序列中
+* 但是这样会造成大量的重复
+* 1 2*ugly(1) 2*ugly(2) 2*ugly(3) 2*ugly(4) 2*ugly(5)...
+* 1 3*ugly(1) 3*ugly(2) 3*ugly(3) 3*ugly(4) 3*ugly(5)...
+* 1 5*ugly(1) 5*ugly(2) 5*ugly(3) 5*ugly(4) 5*ugly(5)...
+
 
 ```Java
 	//beats 55.72%
@@ -28,4 +35,25 @@
         }
         return minimum;
     }
+```
+
+
+```Java
+//beats 7%
+public class Solution {
+    public int nthUglyNumber(int n) {
+        if(n<=0) throw new RuntimeException();
+        Queue<Long> queue=new PriorityQueue<Long>();
+        Set<Long> set=new HashSet<Long>();
+        queue.offer(1L);
+        int cnt=0;
+        while(++cnt<n){
+            long peek= queue.poll();
+            if(set.add(peek*2)) queue.offer(peek*2);
+            if(set.add(peek*3)) queue.offer(peek*3);
+            if(set.add(peek*5)) queue.offer(peek*5);
+        }
+        return Integer.parseInt(((Long)queue.peek()).toString());
+    }
+}
 ```

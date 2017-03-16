@@ -72,3 +72,51 @@
         return first;
     }
 ```
+
+
+```Java
+//beats 78.60%
+public class Solution {
+    public ListNode rotateRight(ListNode head, int k) {
+        if(head==null) return null;
+        
+        ListNode pseudoHead=new ListNode(0);
+        pseudoHead.next=head;
+        
+        ListNode iter=head;
+        
+        int length=0;
+        while(iter!=null){
+            iter=iter.next;
+            length++;
+        }
+        k%=length;
+        if(k==0) return head;
+        k=length-k;
+        int cnt=0;
+        iter=pseudoHead;
+        while(cnt<k){
+            iter=iter.next;
+            cnt++;
+        }
+        ListNode left=pseudoHead.next;//非常关键
+        reverse(pseudoHead,iter.next);
+        reverse(left,null);
+        reverse(pseudoHead,null);
+        
+        return pseudoHead.next;
+    }
+    
+    private void reverse(ListNode pseudoHead,ListNode tail){
+        ListNode iter=pseudoHead.next;
+        pseudoHead.next=tail;
+        while(iter!=tail){
+            ListNode iterNext=iter.next;
+            ListNode pseudoHeadNext=pseudoHead.next;
+            pseudoHead.next=iter;
+            iter.next=pseudoHeadNext;
+            iter=iterNext;
+        }
+    }
+}
+```

@@ -16,7 +16,7 @@
         int n=matrix.length;
         int left=level,right=n-1-level;
         int top=level,bottom=n-1-level;
-        if(left==right){  //ÕâÀïºÜÖØÒª
+        if(left==right){  //è¿™é‡Œå¾ˆé‡è¦
             matrix[top][left]=iter++;
             return;
         }
@@ -34,4 +34,40 @@
             matrix[i][left]=iter++;
         }
     }
+```
+
+```Java
+public class Solution {
+    private int cnt;
+    public int[][] generateMatrix(int n) {
+        int[][] matrix=new int[n][n];
+        cnt=1;
+        for(int i=0;i<(n+1)/2;i++){
+            helper(matrix,i);
+        }
+        return matrix;
+    }
+    
+    private void helper(int[][] matrix,int pos){
+        int n=matrix.length;
+        int left=pos,right=n-1-pos;
+        int top=pos,bottom=n-1-pos;
+        
+        for(int i=left;i<=right;i++){
+            matrix[top][i]=cnt++;
+        }
+        
+        for(int i=top+1;i<=bottom;i++){
+            matrix[i][right]=cnt++;
+        }
+        
+        for(int i=right-1;i>=left;i--){
+            matrix[bottom][i]=cnt++;
+        }
+        
+        for(int i=bottom-1;i>top;i--){
+            matrix[i][left]=cnt++;
+        }
+    }
+}
 ```

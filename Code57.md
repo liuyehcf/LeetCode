@@ -26,3 +26,39 @@
         return res;
     }
 ```
+
+```Java
+public class Solution {
+    public List<Interval> insert(List<Interval> intervals, Interval newInterval) {
+        List<Interval> res=new ArrayList<Interval>();
+        
+        int i=0;
+        for(;i<intervals.size();i++){
+            Interval cur=intervals.get(i);
+            if(newInterval.end<cur.start){
+                res.add(newInterval);
+                newInterval=null;
+                break;
+            }
+            else if(newInterval.start>cur.end){
+                res.add(cur);
+            }
+            else{
+                newInterval.start=Math.min(newInterval.start,cur.start);
+                newInterval.end=Math.max(newInterval.end,cur.end);
+            }
+        }
+        
+        if(newInterval!=null){
+            res.add(newInterval);
+        }
+        else{
+            while(i<intervals.size()){
+                res.add(intervals.get(i++));
+            }
+        }
+        
+        return res;
+    }
+}
+```

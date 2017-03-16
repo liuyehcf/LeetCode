@@ -1,29 +1,29 @@
 # Minimum Path Sum
 
 ```Java
-	//beats 12.17%
-	public int minPathSum(int[][] grid) {
-        if(grid==null||grid.length==0||grid[0].length==0) throw new RuntimeException();
+//beats 3.96%
+public class Solution {
+    public int minPathSum(int[][] grid) {
+        if(grid==null||grid.length==0||grid[0].length==0) return 0;
         int m=grid.length;
         int n=grid[0].length;
-        int[][] dp=new int[m][n]; 
         
-        for(int i=0;i<m;i++){
-            for(int j=0;j<n;j++){
-                if(i==0&&j==0) {
-                    dp[i][j]=grid[i][j];  
-                } 
-                else if(i==0) {
-                    dp[i][j]=dp[i][j-1]+grid[i][j];
-                }
-                else if(j==0) {
-                    dp[i][j]=dp[i-1][j]+grid[i][j];
-                }
-                else{
-                    dp[i][j]=Math.min(dp[i-1][j],dp[i][j-1])+grid[i][j];
-                }
+        int[][] dp=new int[m][n];
+        dp[0][0]=grid[0][0];
+        
+        for(int row=0;row<m;row++){
+            for(int col=0;col<n;col++){
+                if(row==0&&col==0) continue;
+                dp[row][col]=grid[row][col]+Math.min(get(dp,row,col-1),get(dp,row-1,col));
             }
         }
+        
         return dp[m-1][n-1];
     }
+    
+    private int get(int[][] dp,int row,int col){
+        if(row<0||col<0) return Integer.MAX_VALUE;
+        return dp[row][col];
+    }
+}
 ```
