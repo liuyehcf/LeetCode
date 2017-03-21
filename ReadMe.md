@@ -334,6 +334,18 @@
 * Code64:1
 * Code65:Confused,Fucked
 
+# 2017.3.20
+* Code266:Locked
+* Code267:Locked
+* Code268:1
+* Code269:Locked
+* Code270:Locked
+* Code66:1
+* Code67:1
+* Code68:N,Important
+* Code69:Confused
+* Code70:1
+
 
 
 
