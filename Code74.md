@@ -1,72 +1,77 @@
 # Search a 2D Matrix
 
+* äºŒåˆ†æ³•
 ```Java
-	//beats 7.07%
-	public boolean searchMatrix(int[][] matrix, int target) {
+//beats 8.35%
+public class Solution {
+    public boolean searchMatrix(int[][] matrix, int target) {
         if(matrix==null||matrix.length==0||matrix[0].length==0) return false;
-        int m=matrix.length,n=matrix[0].length;
-        int row=0,col=0;
-        while(row<m&&col<n){
-            if(matrix[row][col]==target) return true;
-            if(row<m-1&&matrix[row+1][0]<=target){
-                row++;
-                col=0;
-            }
-            else if(matrix[row][col]<target){
-                col++;
+        int m=matrix.length;
+        int n=matrix[0].length;
+        
+        int top=0,bottom=m-1;
+        
+        if(matrix[bottom][n-1]<target) return false;
+        
+        while(top<=bottom){
+            int mid=top+(bottom-top>>1);
+            if(matrix[mid][n-1]==target) return true;
+            else if(matrix[mid][n-1]<target){
+                top=mid+1;
             }
             else{
-                return false;
-            }
-        }
-        return false;
-    }
-```
-
-* ¶ş·Ö·¨ÓÃÓÚ²éÕÒÒ»¶¨´æÔÚµÄÊı£¬¿ÉÒÔÓÃÌ×Â··¨£¬µ«ÊÇ¶ÔÓÚÕâÖÖ²»Ò»¶¨´æÔÚµÄÊı£¬¿ÉÒÔ²ÉÓÃÏàËÆµÄ½á¹¹
-* Ñ­»·Ìõ¼şµÄ¸Ä±ä£¬»òÕß×óÓÒÏÂ±êµÄ±ä¸ü·½Ê½¶¼¿ÉÒÔÎ¢µ÷
-```Java
-	//beats 68.22%
-	public boolean searchMatrix(int[][] matrix, int target) {
-        if(matrix==null||matrix.length==0||matrix[0].length==0) return false;
-        int m=matrix.length,n=matrix[0].length;
-        
-        //Ê×ÏÈ¶ş·Ö·¨È·¶¨ËùÔÚµÄĞĞ
-        int row=-1;
-        int top=0,bottom=m-1;
-        while(top<bottom-1){//ÓÉÓÚÏÂÃætopµÄ¸³ÖµÓï¾ä¹ØÏµ£¬µ±bottom=top+1Ê±£¬Èç¹û×ßÁËelse·ÖÖ§£¬ÄÇÃ´Ñ­»·ÊÇ³ö²»È¥µÄ
-            int mid=top+(bottom-top>>1);
-            if(matrix[mid][0]>target){
                 bottom=mid-1;
             }
-            else{
-                top=mid;//ÕâÀï·Ç³£ÖØÒª,¾ø¶Ô²»ÄÜĞ´mid+1£¬ÒòÎªĞĞÊ×Ğ¡ÓÚtarget,targetÒ²¿ÉÄÜ´¦ÓÚ¸ÃĞĞµÄ·¶Î§ÖĞ
-            }
         }
         
-        if(matrix[bottom][0]<=target) row=bottom;
-        else row=top;
-        
-        //Æä´ÎÔÚÕÒµ½µÄĞĞ£¬ÓÃ¶ş·Ö·¨È·¶¨ËùÔÚÁĞ
+        if(matrix[top][0]>target) return false;
         
         int left=0,right=n-1;
         while(left<=right){
             int mid=left+(right-left>>1);
-            if(matrix[row][mid]==target){
-                return true;
-            }
-            else if(matrix[row][mid]>target){
-                right=mid-1;
+            if(matrix[top][mid]==target) return true;
+            else if(matrix[top][mid]<target){
+                left=mid+1;
             }
             else{
-                left=mid+1;
+                right=mid-1;
             }
         }
         
-        //²»È¥¾À½áµ½µ×ÄÄ¸ö²ÅÊÇ½á¹ûÁË
-        if(right>=0&&matrix[row][right]==target) return true;
-        if(left<=n-1&&matrix[row][left]==target) return true;
-        
         return false;
     }
+}
+```
+
+* brilliant solution
+```Java
+//#########^^^^^^^^^
+//#########^^^^^^^^^
+//#########^^^^^^^^^
+//########$+++++++++
+//********++++++++++
+//********++++++++++
+//********++++++++++
+//å½“$<target,é‚£ä¹ˆç”±#ç»„æˆçš„åŒºåŸŸ(åŒ…æ‹¬$)éƒ½ä¼šæ¯”targetå°ï¼Œå› æ­¤è¯¥åŒºåŸŸå¯ä»¥èˆå¼ƒ
+//å½“$>target,é‚£ä¹ˆç”±+ç»„æˆçš„åŒºåŸŸ(åŒ…æ‹¬$)éƒ½ä¼šæ¯”targetå¤§ï¼Œå› æ­¤è¯¥åŒºåŸŸå¯ä»¥èˆå¼ƒ
+//ä½†æ˜¯è¿™æ ·çœ‹èµ·æ¥è¦æ‰¾çš„æ•°å¯èƒ½è¿˜ä¼šå­˜åœ¨äº^ç»„æˆçš„åŒºåŸŸä¸­ï¼Œä½†å®é™…ä¸Šè¿™æ˜¯ä¸å¯èƒ½çš„ï¼Œ^æ˜¯ç”±#å’Œå’Œ+å…±åŒç»„æˆçš„åŒºåŸŸ
+//å› æ­¤è¦æ‰¾çš„æ•°åªå¯èƒ½å­˜åœ¨äº*ä¸­
+public class Solution {
+    public boolean searchMatrix(int[][] matrix, int target) {
+        if(matrix==null||matrix.length==0||matrix[0].length==0) return false;
+        int m=matrix.length;
+        int n=matrix[0].length;
+        
+        int row=0,col=n-1;
+        while(row<m&&col>=0){
+            if(matrix[row][col]==target) return true;
+            else if(matrix[row][col]>target){
+                col--;//ä¾‹å¦‚4*4çš„æ•°ç»„matrix,matrix[2][2]<target,é‚£ä¹ˆmatrix[3][2]>matrix[2][2]>target,å› æ­¤col>=2éƒ½ä¸å¯èƒ½æœ‰ä¸targetç›¸åŒçš„ï¼Œå› æ­¤é€’å‡å³å¯
+            }
+            else 
+                row++;//åŒç†ï¼Œä¾‹å¦‚4*4çš„æ•°ç»„matrix,matrix[2][2]>target
+        }
+        return false;
+    }
+}
 ```

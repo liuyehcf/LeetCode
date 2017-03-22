@@ -21,23 +21,29 @@
     }
 ```
 
-* ÏßĞÔÊ±¼äÅÅĞò
+* çº¿æ€§æ—¶é—´æ’åº
 ```Java
-	//beats 54.47%
-	public void sortColors(int[] nums) {
-        int[] tempNums=new int[nums.length];
-        System.arraycopy(nums,0,tempNums,0,nums.length);
+//beats 54.47%
+public class Solution {
+    public void sortColors(int[] nums) {
         int[] cnt=new int[3];
         for(int num:nums){
             cnt[num]++;
         }
-        
         for(int i=1;i<3;i++){
             cnt[i]+=cnt[i-1];
         }
         
-        for(int num:tempNums){
-            nums[--cnt[num]]=num;
+        int[] temp=new int[nums.length];
+        for(int num:nums){
+            int index=cnt[num];
+            temp[index-1]=num;
+            cnt[num]--;
+        }
+        
+        for(int i=0;i<nums.length;i++){
+            nums[i]=temp[i];
         }
     }
+}
 ```

@@ -1,45 +1,39 @@
 # Set Matrix Zeroes
 
 ```Java
-	//beats 26.35%
-	public void setZeroes(int[][] matrix) {
-        if(matrix==null||matrix.length==0||matrix[0].length==0) throw new RuntimeException();
-        int m=matrix.length,n=matrix[0].length;
-        boolean[] rowsZero=new boolean[m];
-        boolean[] colsZero=new boolean[n];
+//beats 27.46%
+public class Solution {
+    public void setZeroes(int[][] matrix) {
+        int m=matrix.length;
+        int n=matrix[0].length;
         
-        for(int i=0;i<m;i++){
-            for(int j=0;j<n;j++){
-                if(matrix[i][j]==0){
-                    rowsZero[i]=true;
-                    colsZero[j]=true;
+        boolean[] rows=new boolean[m];
+        boolean[] cols=new boolean[n];
+        
+        for(int row=0;row<m;row++){
+            for(int col=0;col<n;col++){
+                if(matrix[row][col]==0){
+                    rows[row]=true;
+                    cols[col]=true;
                 }
             }
         }
         
         for(int i=0;i<m;i++){
-            if(rowsZero[i]) fill(matrix,i,'r');
+            if(rows[i]){
+                for(int j=0;j<n;j++){
+                    matrix[i][j]=0;
+                }
+            }
         }
         
         for(int i=0;i<n;i++){
-            if(colsZero[i]) fill(matrix,i,'c');
-        }
-    }
-    
-    private void fill(int[][] matrix,int i,char c){
-        int m=matrix.length,n=matrix[0].length;
-        if(c=='r'){
-            for(int j=0;j<n;j++){
-                matrix[i][j]=0;
+            if(cols[i]){
+                for(int j=0;j<m;j++){
+                    matrix[j][i]=0;
+                }
             }
         }
-        else if(c=='c'){
-            for(int j=0;j<m;j++){
-                matrix[j][i]=0;
-            }
-        }
-        else{
-            throw new RuntimeException();
-        }
     }
+}
 ```
