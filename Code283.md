@@ -1,22 +1,20 @@
 # Move Zeroes
 
 ```Java
-	//beats 19.86%
-	public void moveZeroes(int[] nums) {
-        int i=-1;
-        for(int j=0;j<nums.length;j++){
-            if(nums[j]!=0){
-                exchange(nums,++i,j);
+//beats 19.86%
+public class Solution {
+    public void moveZeroes(int[] nums) {
+        int boundary=0;
+        int iter=0;
+        while(iter<nums.length){
+            if(nums[iter]!=0){
+                nums[boundary++]=nums[iter];
             }
+            iter++;
         }
-        for(int j=i+1;j<nums.length;j++){
-            nums[j]=0;
+        while(boundary<nums.length){
+            nums[boundary++]=0;
         }
     }
-    
-    private void exchange(int[]nums,int i,int j){
-        int temp=nums[i];
-        nums[i]=nums[j];
-        nums[j]=temp;
-    }
+}
 ```
