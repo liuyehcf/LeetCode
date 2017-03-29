@@ -18,13 +18,13 @@
 * Code142:1
 * Code143:1
 * Code147:2,Chaos
-* Code148:N,Chaos,Important,Ӧ���и����Ľⷨ
-* Code160:Confused,Important,������,����ת����
+* Code148:N,Chaos,Important,应锟斤拷锟叫革拷锟斤拷锟侥解法
+* Code160:Confused,Important,锟斤拷锟斤拷锟斤拷,锟斤拷锟斤拷转锟斤拷锟斤拷
 * Code203:1
 
 # 2016.12.17
 * Code206:1
-* Code234:Confused,Important,������,����ת����
+* Code234:Confused,Important,锟斤拷锟斤拷锟斤拷,锟斤拷锟斤拷转锟斤拷锟斤拷
 * Code237:2,
 * Code328:1,
 * Code369:Locked
@@ -45,7 +45,7 @@
 
 
 # 2016.12.19
-* 2016.12.18δ���ɵ�Code4��Code11
+* 2016.12.18未锟斤拷锟缴碉拷Code4锟斤拷Code11
 * Code34:2,Important
 * Code35:2,Same(34)
 * Code39:2,Important
@@ -88,10 +88,10 @@
 * Code105:2,Important
 
 # 2016.12.30
-* ��������2016.12.22δ���ɵ�
+* 锟斤拷锟斤拷锟斤拷锟斤拷2016.12.22未锟斤拷锟缴碉拷
 
 # 2017.1.2
-* ��������2016.12.30δ���ɵ�
+* 锟斤拷锟斤拷锟斤拷锟斤拷2016.12.30未锟斤拷锟缴碉拷
 
 # 2017.1.3
 * Code106:1
@@ -175,8 +175,8 @@
 //Restart
 
 # 2017.3.2
-* Code201:Confused(������Χ���߼���),Important
-* Code202:2,ע��ѭ���˳�������
+* Code201:Confused(锟斤拷锟斤拷锟斤拷围锟斤拷锟竭硷拷锟斤拷),Important
+* Code202:2,注锟斤拷循锟斤拷锟剿筹拷锟斤拷锟斤拷锟斤拷
 * Code203:1
 * Code204:2
 * Code205:2,Important
@@ -254,7 +254,7 @@
 * Code235:1,Important
 * Code31:1,Important
 * Code32:2,Confused,Important
-* Code33:1
+* Code33:1,Confused
 * Code34:1,Important
 * Code35:1,Important
 
@@ -380,11 +380,11 @@
 * Code284:N,Important
 * Code285:Locked
 
-# 2017.3.25
-* Code81:
-* Code82:
-* Code83:
-* Code84:
+# 2017.3.29
+* Code81:Confused
+* Code82:1,Important
+* Code83:1
+* Code84:N,Confused,Important
 * Code85:
 
 

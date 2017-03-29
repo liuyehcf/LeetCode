@@ -20,3 +20,39 @@
         return pseudoHead.next;
     }
 ```
+
+
+```Java
+//beats 25.25%
+public class Solution {
+    public ListNode deleteDuplicates(ListNode head) {
+        if(head==null) return null;
+        ListNode pseudoHead=new ListNode(0);
+        pseudoHead.next=head;
+        ListNode ppre=pseudoHead;
+        ListNode pre=null;
+        ListNode iter=head;
+        while(iter!=null){
+            if(pre==null){
+                pre=iter;
+                iter=iter.next;
+            }
+            else{
+                if(iter.val==pre.val){
+                    while(iter!=null&&iter.val==pre.val){
+                        iter=iter.next;
+                    }
+                    ppre.next=iter;
+                    pre=null;
+                }
+                else{
+                    ppre=pre;
+                    pre=iter;
+                    iter=iter.next;
+                }
+            }
+        }
+        return pseudoHead.next;
+    }
+}
+```

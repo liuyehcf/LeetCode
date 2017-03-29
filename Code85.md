@@ -1,6 +1,6 @@
 # Maximal Rectangle
 
-* ×¢Òâµã£ºµ±Õ»¶¥ÔªËØĞèÒªµ¯³öÊ±£¬Æä±ß½ç·¶Î§Îª£º(Õ»´Î¶¥Î»ÖÃ+1)µ½(µ±Ç°µü´ú-1)
+* æ³¨æ„ç‚¹ï¼šå½“æ ˆé¡¶å…ƒç´ éœ€è¦å¼¹å‡ºæ—¶ï¼Œå…¶è¾¹ç•ŒèŒƒå›´ä¸ºï¼š(æ ˆæ¬¡é¡¶ä½ç½®+1)åˆ°(å½“å‰è¿­ä»£-1)
 
 ```Java
 	//beats 65.14
@@ -37,6 +37,52 @@
                 
             int leftBoundary=stack.isEmpty()?0:(stack.peek()+1);
             res=Math.max(res,(heights.length-1-leftBoundary+1)*heights[topPos]);
+        }
+        return res;
+    }
+```
+
+
+```Java
+//çµå¼‚äº‹ä»¶ï¼Œæˆ‘æ›¹
+public int maximalRectangle(char[][] matrix) {
+        if(matrix==null||matrix.length==0||matrix[0].length==0) return 0;
+        int m=matrix.length;
+        int n=matrix[0].length;
+        int[] heights=new int[n];
+        int res=0;
+        for(int row=0;row<m;row++){
+            for(int col=0;col<n;col++){
+                if(matrix[row][col]=='1'){
+                    heights[col]++;
+                }
+                else{
+                    heights[col]=0;
+                }
+            }
+            Math.max(res,largestRectangleArea(heights));//SB,æ²¡æœ‰èµ‹å€¼
+        }
+        return res;
+    }
+    
+    private int largestRectangleArea(int[] heights) {
+        LinkedList<Integer> stack=new LinkedList<Integer>();
+        int i=0;
+        int res=0;
+        while(i<heights.length){
+            while(!stack.isEmpty()&&heights[stack.peek()]>heights[i]){
+                int posRight=i-1;
+                int curHigh=heights[stack.pop()];
+                int posLeft=stack.isEmpty()?-1:stack.peek();
+                res=Math.max(res,(posRight-(posLeft+1)+1)*curHigh);
+            }
+            stack.push(i++);
+        }
+        while(!stack.isEmpty()){
+            int posRight=stack.pop();
+            int curHigh=heights[posRight];
+            int posLeft=stack.isEmpty()?-1:stack.peek();
+            res=Math.max(res,(heights.length-1-(posLeft+1)+1)*curHigh);
         }
         return res;
     }

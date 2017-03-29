@@ -34,3 +34,30 @@
         return res;
     }
 ```
+
+
+```Java
+public class Solution {
+    public int largestRectangleArea(int[] heights) {
+        LinkedList<Integer> stack=new LinkedList<Integer>();
+        int i=0;
+        int res=0;
+        while(i<heights.length){
+            while(!stack.isEmpty()&&heights[stack.peek()]>=heights[i]){
+                int posRight=i-1;
+                int curHigh=heights[stack.pop()];
+                int posLeft=stack.isEmpty()?-1:stack.peek();
+                res=Math.max(res,(posRight-(posLeft+1)+1)*curHigh);
+            }
+            stack.push(i++);
+        }
+        while(!stack.isEmpty()){
+            int posRight=stack.pop();
+            int curHigh=heights[posRight];
+            int posLeft=stack.isEmpty()?-1:stack.peek();
+            res=Math.max(res,(heights.length-1-(posLeft+1)+1)*curHigh);
+        }
+        return res;
+    }
+}
+```
