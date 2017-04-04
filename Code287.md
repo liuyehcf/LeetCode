@@ -2,23 +2,25 @@
 
 ```Java
 	//beats 55.26%
-	public int findDuplicate(int[] nums) {
+public class Solution {
+    public int findDuplicate(int[] nums) {
         int iter=0;
         while(iter<nums.length){
-            if(nums[iter]==iter+1){
-                iter++;
-            }
+            if(nums[iter]==iter+1) iter++;
             else{
                 if(nums[nums[iter]-1]==nums[iter]) return nums[iter];
-                exchange(nums,iter,nums[iter]-1);
+                else{
+                    exchange(nums,iter,nums[iter]-1);
+                }
             }
         }
-        throw new RuntimeException();
+        return -1;
     }
     
-    private void exchange(int[]nums,int i,int j){
+    private void exchange(int[] nums,int i,int j){
         int temp=nums[i];
         nums[i]=nums[j];
         nums[j]=temp;
     }
+}
 ```

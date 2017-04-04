@@ -27,7 +27,7 @@
         int liveCnt=0;
         int deadCnt=0;
         if(row-1>=0&&col-1>=0){
-            if(board[row-1][col-1]==0||board[row-1][col-1]==2||board[row-1][col-1]==3) deadCnt++;  //<Warn>:ÕâÀï¸Õ¿ªÊ¼Ð´µÄÊÇ4¶ø²»ÊÇ3£¬×¢ÒâÊÇÔ­Ê¼×´Ì¬¶ø²»ÊÇ¸Ä±äºóµÄ×´Ì¬
+            if(board[row-1][col-1]==0||board[row-1][col-1]==2||board[row-1][col-1]==3) deadCnt++;  //<Warn>:è¿™é‡Œåˆšå¼€å§‹å†™çš„æ˜¯4è€Œä¸æ˜¯3ï¼Œæ³¨æ„æ˜¯åŽŸå§‹çŠ¶æ€è€Œä¸æ˜¯æ”¹å˜åŽçš„çŠ¶æ€
             else liveCnt++;
         }
         if(row-1>=0){
@@ -80,4 +80,68 @@
         if(board[row][col]==2||board[row][col]==4) board[row][col]=0;
         else board[row][col]=1;
     }
+```
+
+
+```Java
+public class Solution {
+    /**
+     * 0-0:2
+     * 0-1:3
+     * 1-0:4
+     * 1-1:5
+     */
+    public void gameOfLife(int[][] board) {
+        if(board==null||board.length==0||board[0].length==0) return;
+        int m=board.length;
+        int n=board[0].length;
+        
+        for(int i=0;i<m;i++){
+            for(int j=0;j<n;j++){
+                int liveCnt=count(board,i,j);
+                if(board[i][j]==1){
+                    if(liveCnt<2) board[i][j]=4;
+                    else if(liveCnt>3) board[i][j]=4;
+                    else board[i][j]=5;
+                }
+                else{
+                    if(liveCnt==3) board[i][j]=3;
+                    else board[i][j]=2;
+                }
+            }
+        }
+        for(int i=0;i<m;i++){
+            for(int j=0;j<n;j++){
+                if(board[i][j]==3||board[i][j]==5){
+                    board[i][j]=1;
+                }
+                else{
+                    board[i][j]=0;
+                }
+            }
+        }
+    }
+    private int count(int[][] board,int row,int col){
+        int m=board.length;
+        int n=board[0].length;
+        
+        int left=row>0?row-1:row;
+        int right=row<m-1?row+1:row;
+        
+        int top=col>0?col-1:col;
+        int bottom=col<n-1?col+1:col;
+        
+        int liveCnt=0;
+        
+        for(int i=left;i<=right;i++){
+            for(int j=top;j<=bottom;j++){
+                if(i==row&&j==col) continue;
+                if(board[i][j]==1||board[i][j]==4||board[i][j]==5){
+                    liveCnt++;
+                }
+            }
+        }
+        return liveCnt;
+    }
+}
 ```
