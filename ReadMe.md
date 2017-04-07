@@ -394,4 +394,15 @@
 * Code289:1,(更简单的统计live节点个数的方法)
 * Code290:1,Important
 
+# 2017.4.7
+* Code86:1,Important(与数组相同的形式/链表独有的形式)
+* Code87:Confused
+* Code88:1
+* Code89:1,Important
+* Code90:1,Important
+* Code291:Locked
+* Code292:1
+* Code293:Locked
+* Code294:Locked
+* Code295:Confused
 

@@ -1,6 +1,6 @@
-# Partition List(¿ìÅÅÖĞµÄpartitionµÄÁ´±íÊµÏÖ)
+# Partition List(å¿«æ’ä¸­çš„partitionçš„é“¾è¡¨å®ç°)
 
-* ×¢Òâµã£ºÈ¡³öÖµĞ¡ÓÚÖ¸¶¨ÖµµÄ½Úµã£¬ĞèÒªÎ¬»¤ÆäÇ°Ò»¸ö½Úµã(pre)£¬¶øpreµÄÎ¬»¤Óë"iterÊÇ·ñÓëĞ¡ÓÚÖ¸¶¨ÖµµÄÇø¼äÓĞ¹ØÁª"ÓĞ¹ØÏµ
+* æ³¨æ„ç‚¹ï¼šå–å‡ºå€¼å°äºæŒ‡å®šå€¼çš„èŠ‚ç‚¹ï¼Œéœ€è¦ç»´æŠ¤å…¶å‰ä¸€ä¸ªèŠ‚ç‚¹(pre)ï¼Œè€Œpreçš„ç»´æŠ¤ä¸"iteræ˜¯å¦ä¸å°äºæŒ‡å®šå€¼çš„åŒºé—´æœ‰å…³è”"æœ‰å…³ç³»
 
 ```Java
 	//beats 5.35
@@ -13,19 +13,19 @@
         
         while(iter!=null){
             if(iter.val<x){
-                //ÏÈÈ¡³ö¸ÃÔªËØ£¬²¢Î¬»¤Á´±í
+                //å…ˆå–å‡ºè¯¥å…ƒç´ ï¼Œå¹¶ç»´æŠ¤é“¾è¡¨
                 pre.next=iter.next;
-                ListNode tempNext1=pre.next;//<Warn1>£ºpre.next¿ÉÄÜÔÚÏÂÃæ´úÂëÖĞ»á·¢Éú±ä¶¯£¬Òò´ËÕâÀïĞèÒª±£´æÒ»ÏÂÒÔ±ã¸üĞÂiter
+                ListNode tempNext1=pre.next;//<Warn1>ï¼špre.nextå¯èƒ½åœ¨ä¸‹é¢ä»£ç ä¸­ä¼šå‘ç”Ÿå˜åŠ¨ï¼Œå› æ­¤è¿™é‡Œéœ€è¦ä¿å­˜ä¸€ä¸‹ä»¥ä¾¿æ›´æ–°iter
 
-                //½«iter²åÈëµ½Ç°Ãæ²¿·Ö,²¢Î¬»¤Á´±í
+                //å°†iteræ’å…¥åˆ°å‰é¢éƒ¨åˆ†,å¹¶ç»´æŠ¤é“¾è¡¨
                 ListNode tempNext2=smalltail.next;
                 smalltail.next=iter;
                 iter.next=tempNext2;
-                smalltail=iter;//<Warn2>£ºÕâÀïÍü¼Ç¸üĞÂÁË
+                smalltail=iter;//<Warn2>ï¼šè¿™é‡Œå¿˜è®°æ›´æ–°äº†
                 
                 iter=tempNext1;
                 
-                //<Warn3>£ºµ±Á½²¿·Ö·ÖÀëÊ±²Å²»ĞèÒª¸üĞÂpre£¬·ñÔòĞèÒª¸üĞÂpre
+                //<Warn3>ï¼šå½“ä¸¤éƒ¨åˆ†åˆ†ç¦»æ—¶æ‰ä¸éœ€è¦æ›´æ–°preï¼Œå¦åˆ™éœ€è¦æ›´æ–°pre
                 if(iter==smalltail.next)
                     pre=smalltail;
             }
@@ -48,14 +48,14 @@
     }
 ```
 
-* ¸üÆ¯ÁÁµÄĞ´·¨
+* æ›´æ¼‚äº®çš„å†™æ³•
 ```Java
 	public ListNode partition(ListNode head, int x) {
         ListNode pseudoHead=new ListNode(0);
         pseudoHead.next=head;
         
-        ListNode i=pseudoHead;//¶ÔÓ¦ÓÚÊı×éÇé¿öµÄË÷Òıi
-        ListNode pre=pseudoHead;//µ±È¡³öÄ³½ÚµãÊ±£¬ĞèÒª½«ÆäÇ°ºó½ÚµãÁ¬½ÓÆğÀ´£¬Òò´ËÒªÓÃµ½Ç°Çı½Úµã
+        ListNode i=pseudoHead;//å¯¹åº”äºæ•°ç»„æƒ…å†µçš„ç´¢å¼•i
+        ListNode pre=pseudoHead;//å½“å–å‡ºæŸèŠ‚ç‚¹æ—¶ï¼Œéœ€è¦å°†å…¶å‰åèŠ‚ç‚¹è¿æ¥èµ·æ¥ï¼Œå› æ­¤è¦ç”¨åˆ°å‰é©±èŠ‚ç‚¹
         
         ListNode iter=head;
         while(iter!=null){
@@ -69,7 +69,7 @@
                     i=i.next;
                     iter=tempIterNext;
                 }
-                else{ //µ½Ä¿Ç°ÎªÖ¹£¬°üÀ¨µ±Ç°µÄiter½Úµã£¬ËùÓĞ½Úµã¶¼ÒÆµ½ÁË×ó±ßµÄÇøÓò£¬Ò²¾ÍÊÇiÓëpreÊÇÖØºÏµÄ£¬Òò´Ë²»ĞèÒª½»»»²Ù×÷
+                else{ //åˆ°ç›®å‰ä¸ºæ­¢ï¼ŒåŒ…æ‹¬å½“å‰çš„iterèŠ‚ç‚¹ï¼Œæ‰€æœ‰èŠ‚ç‚¹éƒ½ç§»åˆ°äº†å·¦è¾¹çš„åŒºåŸŸï¼Œä¹Ÿå°±æ˜¯iä¸preæ˜¯é‡åˆçš„ï¼Œå› æ­¤ä¸éœ€è¦äº¤æ¢æ“ä½œ
                     pre=iter;
                     i=i.next;
                     iter=iter.next;
@@ -83,4 +83,32 @@
         
         return pseudoHead.next;
     }
+```
+
+*ã€€æœ€ç®€å•çš„æƒ³æ³•ï¼Œä¸è¦å¯¹æ•°ç»„å½¢å¼çš„partitionäº§ç”Ÿæ€ç»´å®šåŠ¿
+```Java
+//beats 8.18%
+public class Solution {
+    public ListNode partition(ListNode head, int x) {
+        ListNode smallPseudoHead=new ListNode(0);
+        ListNode largePseudoHead=new ListNode(0);
+        ListNode smallIter=smallPseudoHead;
+        ListNode largeIter=largePseudoHead;
+        ListNode iter=head;
+        while(iter!=null){
+            if(iter.val<x){
+                smallIter.next=iter;
+                smallIter=iter;
+            }
+            else{
+                largeIter.next=iter;
+                largeIter=iter;
+            }
+            iter=iter.next;
+        }
+        smallIter.next=largePseudoHead.next;
+        largeIter.next=null;
+        return smallPseudoHead.next;
+    }
+}
 ```
