@@ -1,6 +1,7 @@
 # Unique Binary Search Trees II
 
-* ÕâÖÖµİ¹é»á°üº¬ºÜ¶àµÄÖØ¸´£¬¼´Ã»ÓĞ±¸ÍüÂ¼
+* è¿™ç§é€’å½’ä¼šåŒ…å«å¾ˆå¤šçš„é‡å¤ï¼Œå³æ²¡æœ‰å¤‡å¿˜å½•
+
 ```Java
 	//beats 20%
 	public List<TreeNode> generateTrees(int n) {
@@ -36,8 +37,8 @@
     }
 ```
 
+* åŠ¨æ€è§„åˆ’
 
-* ¶¯Ì¬¹æ»®
 ```Java
 	//beats 85.08%
 	public List<TreeNode> generateTrees(int n) {

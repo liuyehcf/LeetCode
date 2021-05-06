@@ -120,3 +120,72 @@ public class Solution {
     }
 }
 ```
+
+```java
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+class Solution {
+    public ListNode rotateRight(ListNode head, int k) {
+        ListNode pseudoHead=new ListNode();
+        pseudoHead.next=head;
+        
+        int cnt=0;
+        ListNode iter=head;
+        
+        while(iter!=null){
+            cnt++;
+            iter=iter.next;
+        }
+        
+        int length=cnt;
+        if(length==0) {
+            return pseudoHead.next;
+        }
+        
+        k=k%length;
+        if(k==0){
+            return pseudoHead.next;
+        }
+        
+        int leftLength=length-k;
+        int rightLength=length-leftLength;
+        
+        ListNode firstNodeOfLeftPart=pseudoHead.next;
+        ListNode lastNodeOfLeftPart=null;
+        
+        ListNode firstNodeOfRightPart=null;
+        ListNode lastNodeOfRightPart=null;
+        
+        iter=pseudoHead;
+        cnt=0;
+        
+        while(cnt<leftLength){
+            cnt++;
+            iter=iter.next;
+        }
+        lastNodeOfLeftPart=iter;
+        firstNodeOfRightPart=iter.next;
+        
+        cnt=0;
+        while(cnt<rightLength){
+            cnt++;
+            iter=iter.next;
+        }
+        lastNodeOfRightPart=iter;
+        
+        pseudoHead.next=firstNodeOfRightPart;
+        lastNodeOfRightPart.next=firstNodeOfLeftPart;
+        lastNodeOfLeftPart.next=null;
+        
+        return pseudoHead.next;
+    }
+}
+```
