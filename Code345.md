@@ -1,7 +1,7 @@
 # Reverse Vowels of a String(反转元音字符)
 
 ## 找出所有元音字符的位置，然后遍历这些位置，调转一下即可
-```Java
+```java
    public String reverseVowels(String s) {
         String vowels="aeiouAEIOU";
         List<Integer> posVowels=new ArrayList<Integer>();
@@ -17,11 +17,13 @@
             ary[pos2]=temp;
         }
         return String.valueOf(ary);
-    }
+   }
+}
 ```
 
-```Java
-    public String reverseVowels(String s) {
+```java
+class Solution {
+public String reverseVowels(String s) {
         String vowels="aeiouAEIOU";
         int start=0,end=s.length()-1;
         
@@ -42,5 +44,6 @@
             end--;
         }
         return String.valueOf(ary);
-    }
+   }
+}
 ```

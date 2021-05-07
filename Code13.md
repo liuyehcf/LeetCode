@@ -1,8 +1,8 @@
 # Roman to Integer
 
-```Java
+```java
 //beats 91.33%
-public class Solution {
+class Solution {
     public int romanToInt(String s) {
         int res=0;
         for(int i=0;i<s.length();i++){

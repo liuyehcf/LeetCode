@@ -1,8 +1,8 @@
 # Missing Number
 
-```Java
+```java
 //beats 15.65%
-public class Solution {
+class Solution {
     public int missingNumber(int[] nums) {
         int boundary=nums.length-1;
         int iter=0;

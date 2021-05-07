@@ -1,8 +1,9 @@
 # Sort List
 
 * �鲢���򣬱Ƚ���
-```Java
-    //beats 2.19%
+```java
+class Solution {
+//beats 2.19%
     public ListNode sortList(ListNode head) {
         ListNode pseudoHead=new ListNode(0);
         pseudoHead.next=head;
@@ -52,13 +53,15 @@
         }
         iter.next=tail2;
         return pseudoHead.next;
-    }
+   }
+}
 ```
 
 
 * ����������ʱ���������ʱ���������򷴶���Ƚ���???
-```Java
-    public ListNode sortList(ListNode head) {
+```java
+class Solution {
+public ListNode sortList(ListNode head) {
         ListNode pseudoHead=new ListNode(0);
         pseudoHead.next=head;
         sort(pseudoHead,null);
@@ -149,5 +152,6 @@
             iter.next=tail;
         }
         return x;
-    }
+   }
+}
 ```

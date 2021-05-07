@@ -1,6 +1,6 @@
 # Bitwise AND of Numbers Range
 
-public class Solution {
+class Solution {
     public int rangeBitwiseAnd(int m, int n) {
         if(n==0) return 0;
         int moveOffset=1;

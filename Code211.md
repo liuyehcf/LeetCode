@@ -1,7 +1,7 @@
 # Add and Search Word - Data structure design
 
 
-```Java
+```java
 //beats 20
 public class WordDictionary {
     

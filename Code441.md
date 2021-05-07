@@ -1,5 +1,5 @@
 # 给定n找出(1+2+...+i)<=n的最大值i
-```Java
+```java
 public int arrangeCoins(int n) {
         long left=0,right=n;
         while(left<=right){
@@ -13,5 +13,6 @@ public int arrangeCoins(int n) {
             }
         }
         return (int)right;
-    }
+   }
+}
 ```

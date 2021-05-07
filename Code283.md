@@ -1,8 +1,8 @@
 # Move Zeroes
 
-```Java
+```java
 //beats 19.86%
-public class Solution {
+class Solution {
     public void moveZeroes(int[] nums) {
         int boundary=0;
         int iter=0;

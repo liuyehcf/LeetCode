@@ -1,8 +1,8 @@
 # Kth Smallest Element in a BST
 
-```Java
+```java
 //beats 52.40%
-public class Solution {
+class Solution {
     private int cnt;
     private int res;
     public int kthSmallest(TreeNode root, int k) {

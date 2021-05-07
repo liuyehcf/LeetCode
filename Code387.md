@@ -6,8 +6,9 @@
 * ��Ҫ����һ����������¼���������߼�¼λ��
 
 * �����Ǵ�Characterӳ�䵽λ��
-```Java
-    public int firstUniqChar(String s) {
+```java
+class Solution {
+public int firstUniqChar(String s) {
         Map<Character,Integer> mapCharToPos=new HashMap<Character,Integer>();
         int[] cnt=new int[s.length()];
         for(int i=0;i<s.length();i++){
@@ -23,12 +24,14 @@
             if(cnt[i]==1) return i;
         }
         return -1;
-    }
+   }
+}
 ```
 
 * �����Ǵ�Characterӳ�䵽����
-```Java
-    public int firstUniqChar(String s) {
+```java
+class Solution {
+public int firstUniqChar(String s) {
         Map<Character,Integer> mapCharToCount=new HashMap<Character,Integer>();
         int[] pos=new int[26];
         for(int i=0;i<s.length();i++){
@@ -47,13 +50,15 @@
             }
         }
         return res==Integer.MAX_VALUE?-1:res;
-    }
+   }
+}
 ```
 
 ## ˼ά��ʽ�����
 
-```Java
-    public int firstUniqChar(String s) {
+```java
+class Solution {
+public int firstUniqChar(String s) {
         int[] cnt=new int[26];
         for(char c:s.toCharArray()){
             cnt[c-'a']++;
@@ -62,5 +67,6 @@
             if(cnt[s.charAt(i)-'a']==1) return i;
         }
         return -1;
-    }
+   }
+}
 ```

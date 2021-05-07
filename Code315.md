@@ -4,8 +4,9 @@
 * ����֮�����ڷ�����룬�������Ա�֤��������ĳ�ڵ�ʱ�����ϵĽڵ㶼�����������֣����ͳ��ֵʱ��Ч��
 * ����ά����ֵΪС�ڸýڵ�Ľڵ���Ŀ������ڸýڵ�Ľڵ���Ŀ
 
-```Java
-    //beats 79.19%
+```java
+class Solution {
+//beats 79.19%
     class TreeNode{
         int val;
         TreeNode left;
@@ -59,5 +60,6 @@
             insert(res,nums[i]);
         }
         return res;
-    }
+   }
+}
 ```

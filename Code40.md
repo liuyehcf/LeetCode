@@ -1,7 +1,8 @@
 # Combination Sum II
 
-```Java
-    //beats 43.23%
+```java
+class Solution {
+//beats 43.23%
     public class Solution {
     public List<List<Integer>> combinationSum2(int[] candidates, int target) {
         Arrays.sort(candidates);

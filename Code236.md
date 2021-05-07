@@ -1,8 +1,8 @@
 # Lowest Common Ancestor of a Binary Tree
 
 * 超时
-```Java
-public class Solution {
+```java
+class Solution {
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
         if(root==p||root==q) return root;
         else if(isChild(root.left,p)&&isChild(root.left,q)) return lowestCommonAncestor(root.left,p,q);
@@ -20,9 +20,9 @@ public class Solution {
 ```
 
 * Brilliant
-```Java
+```java
 //beats 10.48%
-public class Solution {
+class Solution {
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
         if(root==null) return null;
         if(root==p||root==q) return root;

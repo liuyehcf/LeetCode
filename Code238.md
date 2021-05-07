@@ -1,7 +1,8 @@
 # Product of Array Except Self
 
-```Java
-    //beats 12.05%
+```java
+class Solution {
+//beats 12.05%
     public int[] productExceptSelf(int[] nums) {
         int[] res=new int[nums.length];
         int temp=1;
@@ -14,5 +15,6 @@
             res[i]*=temp;
         }
         return res;
-    }
+   }
+}
 ```

@@ -1,8 +1,8 @@
 # Valid Number
 
 * 弱智题，我艹
-```Java
-public class Solution {
+```java
+class Solution {
     public boolean isNumber(String s) {
         s=s.trim();
         int i=0;
@@ -47,8 +47,8 @@ public class Solution {
 ```
 
 
-```Java
-public class Solution {
+```java
+class Solution {
     public boolean isNumber(String s) {
         s = s.trim();
     

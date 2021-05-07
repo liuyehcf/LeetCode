@@ -1,9 +1,9 @@
 # Add Digits
 
 
-```Java
+```java
 //beats 24.54%
-public class Solution {
+class Solution {
     public int addDigits(int num) {
         while(num>=10){
             num=add(num);

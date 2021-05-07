@@ -2,8 +2,9 @@
 
 * 注意点：当栈顶元素需要弹出时，其边界范围为：(栈次顶位置+1)到(当前迭代-1)
 
-```Java
-    //beats 65.14
+```java
+class Solution {
+//beats 65.14
     public int maximalRectangle(char[][] matrix) {
         if(matrix==null||matrix.length==0||matrix[0].length==0) return 0;
         int[] heights=new int[matrix[0].length];
@@ -39,11 +40,12 @@
             res=Math.max(res,(heights.length-1-leftBoundary+1)*heights[topPos]);
         }
         return res;
-    }
+   }
+}
 ```
 
 
-```Java
+```java
 //灵异事件，我曹
 public int maximalRectangle(char[][] matrix) {
         if(matrix==null||matrix.length==0||matrix[0].length==0) return 0;
@@ -85,5 +87,6 @@ public int maximalRectangle(char[][] matrix) {
             res=Math.max(res,(heights.length-1-(posLeft+1)+1)*curHigh);
         }
         return res;
-    }
+   }
+}
 ```

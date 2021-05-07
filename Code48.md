@@ -1,8 +1,8 @@
 # Rotate Image
 
-```Java
+```java
 //beats 61.12%
-public class Solution {
+class Solution {
     public void rotate(int[][] matrix) {
         if(matrix==null||matrix.length==0||matrix[0].length==0) return;
         if(matrix.length!=matrix[0].length) return;

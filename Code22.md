@@ -1,9 +1,9 @@
 # Generate Parentheses
 
 
-```Java
+```java
 //beats 60.56%
-public class Solution {
+class Solution {
     public List<String> generateParenthesis(int n) {
         List<String> res=new ArrayList<String>();
         StringBuilder sb=new StringBuilder();

@@ -8,8 +8,9 @@
 * 1 5*ugly(1) 5*ugly(2) 5*ugly(3) 5*ugly(4) 5*ugly(5)...
 
 
-```Java
-    //beats 55.72%
+```java
+class Solution {
+//beats 55.72%
     public int nthUglyNumber(int n) {
         int[] primes={2,3,5};
         int[] factors={2,3,5};
@@ -34,13 +35,14 @@
             minimum=Math.min(minimum,num);
         }
         return minimum;
-    }
+   }
+}
 ```
 
 
-```Java
+```java
 //beats 7%
-public class Solution {
+class Solution {
     public int nthUglyNumber(int n) {
         if(n<=0) throw new RuntimeException();
         Queue<Long> queue=new PriorityQueue<Long>();

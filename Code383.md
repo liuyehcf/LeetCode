@@ -1,9 +1,10 @@
-# Ransom Note(ÅÐ¶ÏºóÒ»¸ö×Ö·û´®ÊÇ·ñ°üº¬Ç°Ò»¸ö×Ö·û´®µÄËùÓÐ×Ö·û£¬Ë³Ðò²»ÖØÒª)
+# Ransom Note(ï¿½Ð¶Ïºï¿½Ò»ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½Ç·ï¿½ï¿½ï¿½ï¿½Ç°Ò»ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½Ë³ï¿½ï¿½ï¿½ï¿½Òª)
 
-* »ù±¾Ë¼Â·¾ÍÊÇ½´×Ï
+* ï¿½ï¿½ï¿½ï¿½Ë¼Â·ï¿½ï¿½ï¿½Ç½ï¿½ï¿½ï¿½
 
-```Java
-    public boolean canConstruct(String ransomNote, String magazine) {
+```java
+class Solution {
+public boolean canConstruct(String ransomNote, String magazine) {
         int[] cnt=new int[26];
         for(char c:magazine.toCharArray()){
             cnt[c-'a']++;
@@ -12,5 +13,6 @@
             if(--cnt[c-'a']<0) return false;
         }
         return true;
-    }
+   }
+}
 ```

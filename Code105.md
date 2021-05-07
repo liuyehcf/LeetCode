@@ -1,7 +1,8 @@
 # Construct Binary Tree from Preorder and Inorder Traversal
 
-```Java
-    //beats 84.86%
+```java
+class Solution {
+//beats 84.86%
     public TreeNode buildTree(int[] preorder, int[] inorder) {
         Map<Integer,Integer> map=new HashMap<Integer,Integer>();
         for(int i=0;i<inorder.length;i++){
@@ -24,5 +25,6 @@
         root.right=helper(preorder,pstart+1+leftTreeSize-1+1,pend,inorder,rootIndexOfInorder+1,iend,map);
         return root;
         
-    }
+   }
+}
 ```

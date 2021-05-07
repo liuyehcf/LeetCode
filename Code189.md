@@ -1,7 +1,8 @@
 # Rotate Array
 
-```Java
-    //beats 6.04%
+```java
+class Solution {
+//beats 6.04%
     public void rotate(int[] nums, int k) {
         int leftSize=k%nums.length;//<Warn>:ע�����
         inverse(nums,0,nums.length-1);
@@ -15,5 +16,6 @@
             nums[i]=nums[end-(i-begin)];
             nums[end-(i-begin)]=temp;
         }
-    }
+   }
+}
 ```

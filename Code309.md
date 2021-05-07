@@ -2,8 +2,9 @@
 
 * �޷���֮ǰ�Ķ�̬�滮�����㣬��buy[i]/sell[i]��ʾ��i����������������
 * ��buys[i]/rests[i]/sells[i]��ʾǰi�죬���һ�ν���Ϊ����Ϣ�������������
-```Java
-    //beats 36.32%
+```java
+class Solution {
+//beats 36.32%
     public int maxProfit(int[] prices) {
         if(prices.length<=1) return 0;
         //ǰn�죬���ݣ�����������棬�����Ƶ�n��ľ�����Ϊ,���һ�������ݣ���
@@ -17,12 +18,14 @@
             sells[i]=Math.max(sells[i-1],buys[i]+prices[i-1]);
         }
         return sells[prices.length];
-    }
+   }
+}
 ```
 
 * ���߸ɴ಻Ҫrests
-```Java
-    public int maxProfit(int[] prices) {
+```java
+class Solution {
+public int maxProfit(int[] prices) {
         if(prices.length<=1) return 0;
         //ǰn�죬���ݣ�����������棬�����Ƶ�n��ľ�����Ϊ,���һ�������ݣ���
         int[] buys=new int[prices.length+1];
@@ -36,5 +39,6 @@
             sells[i]=Math.max(sells[i-1],buys[i]+prices[i-1]);
         }
         return sells[prices.length];
-    }
+   }
+}
 ```

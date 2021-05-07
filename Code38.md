@@ -1,7 +1,7 @@
 # Count and Say
 
-```Java
-public class Solution {
+```java
+class Solution {
     public String countAndSay(int n) {
         String cur="1";
         while(n>1){

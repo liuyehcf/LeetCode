@@ -1,9 +1,9 @@
 # Expression Add Operators
 
 
-```Java
+```java
 //beats 83.89%
-public class Solution {
+class Solution {
     public List<String> addOperators(String num, int target) {
         List<String> res=new ArrayList<String>();
         StringBuilder sb=new StringBuilder();

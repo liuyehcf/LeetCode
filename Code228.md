@@ -2,8 +2,9 @@
 # Summary Ranges
 
 
-```Java
-    //beats 7.06%
+```java
+class Solution {
+//beats 7.06%
     public List<String> summaryRanges(int[] nums) {
         List<String> res=new ArrayList<String>();
         if(nums==null||nums.length==0) return res;
@@ -30,13 +31,14 @@
             sb.append(Integer.toString(nums[left])).append("->").append(Integer.toString(nums[right]));
         }
         return sb.toString();
-    }
+   }
+}
 ```
 
 
-```Java
+```java
 //beats 67.80%
-public class Solution {
+class Solution {
     public List<String> summaryRanges(int[] nums) {
         List<String> res=new ArrayList<String>();
         if(nums==null||nums.length==0) return res;

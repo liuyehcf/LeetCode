@@ -1,8 +1,8 @@
 # Perfect Squares
 
 
-```Java
-public class Solution {
+```java
+class Solution {
     public int numSquares(int n) {
         int[] dp=new int[n+1];
         Arrays.fill(dp,Integer.MAX_VALUE);

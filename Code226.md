@@ -1,7 +1,7 @@
 # Invert Binary Tree
 
-```Java
-public class Solution {
+```java
+class Solution {
     public TreeNode invertTree(TreeNode root) {
         if(root==null) return root;
         TreeNode left=root.left;

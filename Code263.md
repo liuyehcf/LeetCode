@@ -1,8 +1,8 @@
 # Ugly Number
 
 
-```Java
-public class Solution {
+```java
+class Solution {
     public boolean isUgly(int num) {
         if(num<1) return false;
         while(num!=1){

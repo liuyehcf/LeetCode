@@ -1,7 +1,8 @@
 # Linked List Cycle II
 
-```Java
-    //beats 17.34%
+```java
+class Solution {
+//beats 17.34%
     public ListNode detectCycle(ListNode head) {
         ListNode fast=head,slow=head;
         ListNode meetPoint=null;
@@ -24,5 +25,6 @@
             slow2=slow2.next;
         }
         return slow1;
-    }
+   }
+}
 ```

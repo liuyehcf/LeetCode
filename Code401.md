@@ -2,7 +2,7 @@
 
 ##　下面代码有问题，当４个灯亮时，为什么不可能是1:00 (32+16+8+4)
 
-```Java
+```java
    public List<String> readBinaryWatch(int num) {
         int[] minits=new int[]{480,240,120,60,32,16,8,4,2,1};
         List<String> res=new LinkedList<String>();
@@ -29,5 +29,6 @@
             return res+":0"+Integer.toString(minits);
         else
             return res+":"+Integer.toString(minits);
-    }
+   }
+}
 ```

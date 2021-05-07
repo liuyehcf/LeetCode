@@ -1,7 +1,8 @@
 # Merge Intervals
 
-```Java
-    //beats 59.82%
+```java
+class Solution {
+//beats 59.82%
     public List<Interval> merge(List<Interval> intervals) {
         Collections.sort(intervals,new Comparator<Interval>(){
             @Override
@@ -27,5 +28,6 @@
         res.add(iter);
         
         return res;
-    }
+   }
+}
 ```

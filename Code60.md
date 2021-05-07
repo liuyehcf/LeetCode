@@ -2,7 +2,7 @@
 
 ```
 //beats 36.19%
-public class Solution {
+class Solution {
     public String getPermutation(int n, int k) {
         StringBuilder sb=new StringBuilder();
         

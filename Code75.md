@@ -1,7 +1,8 @@
 # Sort Colors
 
-```Java
-    //beats 54.47%
+```java
+class Solution {
+//beats 54.47%
     public void sortColors(int[] nums) {
         int[] cnt=new int[3];
         for(int num:nums){
@@ -18,13 +19,14 @@
         while(--cnt[2]>=0){
             nums[iter++]=2;
         }
-    }
+   }
+}
 ```
 
 * 线性时间排序
-```Java
+```java
 //beats 54.47%
-public class Solution {
+class Solution {
     public void sortColors(int[] nums) {
         int[] cnt=new int[3];
         for(int num:nums){

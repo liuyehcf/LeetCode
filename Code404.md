@@ -2,8 +2,9 @@
 
 * һ���ڵ�����Ϊ��ΪҶ�ڵ�
 * ���⴫��һ�����������ýڵ����丸�ڵ�����ӻ����Һ��Ӽ���
-```Java
-    //beats 43.45%
+```java
+class Solution {
+//beats 43.45%
     private int sum;
     public int sumOfLeftLeaves(TreeNode root) {
         if(root==null) return 0;
@@ -19,5 +20,6 @@
         }
         if(root.left!=null) helper(root.left,true);
         if(root.right!=null) helper(root.right,false);
-    }
+   }
+}
 ```

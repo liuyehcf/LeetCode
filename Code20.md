@@ -1,7 +1,7 @@
 # Valid Parentheses
 
-```Java
-public class Solution {
+```java
+class Solution {
     public boolean isValid(String s) {
         LinkedList<Integer> stack=new LinkedList<Integer>();
         for(int i=0;i<s.length();i++){

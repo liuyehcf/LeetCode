@@ -1,7 +1,8 @@
 # Add Strings(��String������ӷ�)
 
-```Java
-    public String addStrings(String num1, String num2) {
+```java
+class Solution {
+public String addStrings(String num1, String num2) {
         int carry=0;
         int iter1=num1.length()-1,iter2=num2.length()-1;
         StringBuilder sb=new StringBuilder();
@@ -24,5 +25,6 @@
             sb.insert(0,carry);
         return sb.toString();
         
-    }
+   }
+}
 ```

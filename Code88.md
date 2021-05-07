@@ -1,8 +1,8 @@
 # Merge Sorted Array
 
-```Java
+```java
 //beats 48.81%
-public class Solution {
+class Solution {
     public void merge(int[] nums1, int m, int[] nums2, int n) {
         int iter=nums1.length-1;
         

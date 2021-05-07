@@ -1,6 +1,6 @@
 # Search in Rotated Sorted Array II
 
-```Java
+```java
 //beats 100%
 class Solution {
     public boolean search(int[] nums, int target) {

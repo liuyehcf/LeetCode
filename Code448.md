@@ -1,7 +1,8 @@
 # Find All Numbers Disappeared in an Array
 
-```Java
-    //beats 20.75%
+```java
+class Solution {
+//beats 20.75%
     public List<Integer> findDisappearedNumbers(int[] nums) {
         List<Integer> res=new ArrayList<Integer>();
         
@@ -33,5 +34,6 @@
         int temp=nums[i];
         nums[i]=nums[j];
         nums[j]=temp;
-    }
+   }
+}
 ```

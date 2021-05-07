@@ -1,8 +1,8 @@
 # Jump Game II
 
-```Java
+```java
 //beats 43.04%
-public class Solution {
+class Solution {
     public int jump(int[] nums) {
         int curFarest=0;
         int curFar=0;

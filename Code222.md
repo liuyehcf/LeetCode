@@ -1,9 +1,9 @@
 # Count Complete Tree Nodes
 
 
-```Java
+```java
 //beats 53.06%
-public class Solution {
+class Solution {
     public int countNodes(TreeNode root) {
         int h=height(root);
         

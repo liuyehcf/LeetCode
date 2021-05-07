@@ -1,8 +1,8 @@
 # Length of Last Word
 
-```Java
+```java
 //beats 74.63%
-public class Solution {
+class Solution {
     public int lengthOfLastWord(String s) {
         if(s==null) return 0;
         s=s.trim();

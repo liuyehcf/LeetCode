@@ -1,8 +1,8 @@
 # Minimum Path Sum
 
-```Java
+```java
 //beats 3.96%
-public class Solution {
+class Solution {
     public int minPathSum(int[][] grid) {
         if(grid==null||grid.length==0||grid[0].length==0) return 0;
         int m=grid.length;

@@ -1,7 +1,7 @@
 # Isomorphic Strings
 * 仅仅计算出现次数是不行的，例如"aba"与"baa"
 ```
-public class Solution {
+class Solution {
     public boolean isIsomorphic(String s, String t) {
         int[] patterns=new int[128];
         int[] patternt=new int[128];

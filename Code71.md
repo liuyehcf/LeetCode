@@ -1,9 +1,9 @@
 # Simplify Path
 
 
-```Java
+```java
 //beats 58.76%
-public class Solution {
+class Solution {
     public String simplifyPath(String path) {
         if(path==null||path.length()==0) return path;
         

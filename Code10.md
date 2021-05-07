@@ -1,8 +1,9 @@
 # Regular Expression Matching
 
 
-```Java
-    //beats 83.69%
+```java
+class Solution {
+//beats 83.69%
     public boolean isMatch(String s, String p) {
         boolean[][] dp=new boolean[s.length()+1][p.length()+1];
         dp[0][0]=true;
@@ -34,5 +35,6 @@
     private char getChar(String s,int i){
         if(i<0||i>=s.length()) return '\0';
         return s.charAt(i);
-    }
+   }
+}
 ```

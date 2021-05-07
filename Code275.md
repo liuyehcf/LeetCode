@@ -1,7 +1,7 @@
 #　H-Index II
 
-```Java
-public class Solution {
+```java
+class Solution {
     public int hIndex(int[] citations) {
         int left=1,right=citations.length;
         while(left<=right){

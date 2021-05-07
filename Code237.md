@@ -1,7 +1,8 @@
 # Delete Node in a Linked List
 
-```Java
-    //beats 5.56%
+```java
+class Solution {
+//beats 5.56%
     public void deleteNode(ListNode node) {
         ListNode iter=node;
         ListNode pre=null;
@@ -11,5 +12,6 @@
             iter=iter.next;
         }
         pre.next=null;
-    }
+   }
+}
 ```

@@ -1,7 +1,8 @@
 # Remove Duplicates from Sorted List
 
-```Java
-    //beats 15.20%
+```java
+class Solution {
+//beats 15.20%
     public ListNode deleteDuplicates(ListNode head) {
         ListNode pseudoHead=new ListNode(0);
         pseudoHead.next=head;
@@ -20,12 +21,13 @@
             }
         }
         return pseudoHead.next;
-    }
+   }
+}
 ```
 
-```Java
+```java
 //beats 5.79%
-public class Solution {
+class Solution {
     public ListNode deleteDuplicates(ListNode head) {
         if(head==null) return null;
         ListNode pre=null;

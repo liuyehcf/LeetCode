@@ -1,9 +1,9 @@
 # Binary Tree Paths
 
 * 注意需要判断是否为叶节点的递归，必须传入非空节点，而且保存结果是在当前一次递归中，因此无论何种分支都必须回溯
-```Java
+```java
 //beats 76.69%
-public class Solution {
+class Solution {
     public List<String> binaryTreePaths(TreeNode root) {
         List<String> res=new ArrayList<String>();
         StringBuilder sb=new StringBuilder();

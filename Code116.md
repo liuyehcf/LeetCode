@@ -1,8 +1,9 @@
 # Populating Next Right Pointers in Each Node
 
 
-```Java
-    public void connect(TreeLinkNode root) {
+```java
+class Solution {
+public void connect(TreeLinkNode root) {
         Queue<TreeLinkNode> queue=new LinkedList<TreeLinkNode>();
         if(root!=null) queue.offer(root);
         
@@ -21,5 +22,6 @@
             }
             pre.next=null;
         }
-    }
+   }
+}
 ```

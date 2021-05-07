@@ -2,8 +2,9 @@
 
 * BFS
 
-```Java
-    //beats 80.10%
+```java
+class Solution {
+//beats 80.10%
     public class Solution {
     public boolean canFinish(int numCourses, int[][] prerequisites) {
         List<Integer>[] graph=new List[numCourses];
@@ -51,8 +52,8 @@
 ```
 
 
-```Java
-public class Solution {
+```java
+class Solution {
     public boolean canFinish(int numCourses, int[][] prerequisites) {
         List<Integer>[] graph=new List[numCourses];
         for(int i=0;i<numCourses;i++){
@@ -96,8 +97,9 @@ public class Solution {
 
 
 * DFS
-```Java
-    public boolean canFinish(int numCourses, int[][] prerequisites) {
+```java
+class Solution {
+public boolean canFinish(int numCourses, int[][] prerequisites) {
         List<Integer>[] graph=new List[numCourses];
         for(int i=0;i<numCourses;i++){
             graph[i]=new ArrayList<Integer>();
@@ -132,5 +134,6 @@ public class Solution {
         visiting[node]=false;
         visited[node]=true;
         return true;
-    }
+   }
+}
 ```

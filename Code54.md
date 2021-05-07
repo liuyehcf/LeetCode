@@ -1,8 +1,8 @@
 # Spiral Matrix
 
-```Java
+```java
 //beats 15.46%
-public class Solution {
+class Solution {
     public List<Integer> spiralOrder(int[][] matrix) {
         List<Integer> res=new ArrayList<Integer>();
         

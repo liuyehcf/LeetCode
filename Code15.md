@@ -1,7 +1,8 @@
 # 3Sum
 
-```Java
-    //beats 13.98%
+```java
+class Solution {
+//beats 13.98%
     public List<List<Integer>> threeSum(int[] nums) {
         Arrays.sort(nums);
         List<List<Integer>> res=new ArrayList<List<Integer>>();
@@ -17,12 +18,14 @@
             }
         }
         return res;
-    }
+   }
+}
 ```
 
 
-```Java
-    //beats 18.87%
+```java
+class Solution {
+//beats 18.87%
     public List<List<Integer>> threeSum(int[] nums) {
         Arrays.sort(nums);
         List<List<Integer>> res=new ArrayList<List<Integer>>();
@@ -47,5 +50,6 @@
             }
         }
         return res;
-    }
+   }
+}
 ```

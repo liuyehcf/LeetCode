@@ -1,7 +1,7 @@
 # Word Pattern
 
-```Java
-public class Solution {
+```java
+class Solution {
     public boolean wordPattern(String pattern, String str) {
         String[] words=str.split(" ");
         if(words.length!=pattern.length()) return false;

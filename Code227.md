@@ -1,8 +1,8 @@
 # Basic Calculator II
 
 
-```Java
-public class Solution {
+```java
+class Solution {
     public int calculate(String s) {
         int pre=0;
         int res=0;

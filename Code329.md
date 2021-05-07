@@ -1,8 +1,9 @@
 # Longest Increasing Path in a Matrix
 
 * ��̬�滮����һ��Ķ�̬�滮��ͬ�����ֻ�Ǳ����˼������ֵ���е��������¼�Ķ�̬�滮
-```Java
-    //beats 31.74
+```java
+class Solution {
+//beats 31.74
     public int longestIncreasingPath(int[][] matrix) {
         if(matrix==null||matrix.length==0||matrix[0].length==0) return 0;
         int m=matrix.length;
@@ -42,5 +43,6 @@
             dp[row][col]=Math.max(dp[row][col+1]+1,dp[row][col]);
         }
         return dp[row][col];
-    }
+   }
+}
 ```

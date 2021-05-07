@@ -1,8 +1,8 @@
 # Gray Code
 
-```Java
+```java
 //beats 16.81%
-public class Solution {
+class Solution {
     public List<Integer> grayCode(int n) {
         List<Integer> res=new ArrayList<Integer>();
         if(n<0) return res;

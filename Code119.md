@@ -1,7 +1,8 @@
 # Pascal's Triangle II
 
-```Java
-    //4.78%
+```java
+class Solution {
+//4.78%
     public List<Integer> getRow(int rowIndex) {
         if(rowIndex<0) return null;
         List<Integer> pre=new ArrayList<Integer>(Arrays.asList(1));
@@ -15,5 +16,6 @@
             pre=cur;
         }
         return pre;
-    }
+   }
+}
 ```

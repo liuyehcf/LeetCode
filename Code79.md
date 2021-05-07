@@ -1,8 +1,8 @@
 # Word Search
 
-```Java
+```java
 //beats 85.01%
-public class Solution {
+class Solution {
     public boolean exist(char[][] board, String word) {
         if(board==null||board.length==0||board[0].length==0) return false;
         int m=board.length;

@@ -1,8 +1,8 @@
 # Letter Combinations of a Phone Number
 
-```Java
+```java
 //beats 50.42%
-public class Solution {
+class Solution {
     private String[] table={
         "abc","def","ghi","jkl","mno","pqrs","tuv","wxyz"
     };

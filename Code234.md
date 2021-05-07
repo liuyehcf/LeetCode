@@ -1,7 +1,8 @@
 # Palindrome Linked List
 
-```Java
-    //beats 37.13%
+```java
+class Solution {
+//beats 37.13%
     public boolean isPalindrome(ListNode head) {
         if(head==null) return true;
         ListNode slow=head,fast=head;
@@ -30,5 +31,6 @@
             iter.next=temppseudoHeadNext;
             iter=tempIterNext;
         }
-    }
+   }
+}
 ```

@@ -3,8 +3,9 @@
 * ���һ��ը˭�����һ��ը��Ԫ�ز�Ӱ��֮ǰը�Ľ��
 * ����һ������left [a1 a2 a3 ... an] right,������ըai����ô��ʱ�Ľ������left*ai*right+dp[a1][ai-1]+dp[ai+1][an]
 
-```Java
-    //beats 9.22%
+```java
+class Solution {
+//beats 9.22%
     public int maxCoins(int[] nums) {
         if(nums==null||nums.length==0) return 0;
         int n=nums.length;
@@ -28,5 +29,6 @@
     private int get2(int[] nums,int i){
         if(i<0||i>=nums.length)return 1;
         return nums[i];
-    }
+   }
+}
 ```

@@ -1,8 +1,8 @@
 # Integer to English Words
 
-```Java
+```java
 //beats 65.71%
-public class Solution {
+class Solution {
     public String numberToWords(int num) {
         if(num==0) return "Zero";
         

@@ -2,9 +2,9 @@
 
 
 * stupid solution
-```Java
+```java
 //beats 1.78%
-public class Solution {
+class Solution {
     public int hIndex(int[] citations) {
         for(int h=citations.length;h>=1;h--){
             int largeCnt=0;
@@ -23,9 +23,9 @@ public class Solution {
 ```
 
 * better solution(dichotomy)
-```Java
+```java
 //beats 55.63%
-public class Solution {
+class Solution {
     public int hIndex(int[] citations) {
         int left=1,right=citations.length;
         while(left<=right){
@@ -56,8 +56,8 @@ public class Solution {
 ```
 
 * brilliant solution
-```Java
-public class Solution {
+```java
+class Solution {
     public int hIndex(int[] citations) {
         int len=citations.length;
         int[] cnt=new int[len+1];

@@ -1,8 +1,9 @@
 # Next Permutation
 
 
-```Java
-    //beats 27.55%
+```java
+class Solution {
+//beats 27.55%
     public void nextPermutation(int[] nums) {
         for(int i=nums.length-2;i>=0;i--){
             int index=-1;
@@ -47,11 +48,13 @@
         int temp=nums[i];
         nums[i]=nums[j];
         nums[j]=temp;
-    }
+   }
+}
 ```
 
-```Java
-    //beats 8.42%
+```java
+class Solution {
+//beats 8.42%
     public void nextPermutation(int[] nums) {
         for(int left=nums.length-2;left>=0;left--){
             for(int right=nums.length-1;right>left;right--){
@@ -96,8 +99,9 @@
 ```
 
 
-```Java
-    //beats 24.63%
+```java
+class Solution {
+//beats 24.63%
     public void nextPermutation(int[] nums) {
         for(int i=nums.length-2;i>=0;i--){
             if(nums[i+1]<=nums[i]) continue;   
@@ -131,11 +135,13 @@
         for(int i=left;i<=left+(right-left>>1);i++){
             exchange(nums,i,right-(i-left));
         }
-    }
+   }
+}
 ```
 
-```Java
-    //beats 33.05%
+```java
+class Solution {
+//beats 33.05%
     public void nextPermutation(int[] nums) {
         for(int i=nums.length-2;i>=0;i--){
             if(nums[i]<nums[i+1]){
@@ -167,13 +173,14 @@
         for(int i=left;i<=left+(right-left>>1);i++){
             exchange(nums,i,right-(i-left));
         }
-    }
+   }
+}
 ```
 
 
-```Java
+```java
 //beats 30.1%
-public class Solution {
+class Solution {
     public void nextPermutation(int[] nums) {
         int i=nums.length-2;
         while(i>=0){

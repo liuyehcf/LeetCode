@@ -1,9 +1,9 @@
 # First Bad Version
 
 
-```Java
+```java
 //beats 37.10%
-public class Solution extends VersionControl {
+class Solution extends VersionControl {
     public int firstBadVersion(int n) {
         int left=1,right=n;
         if(!isBadVersion(n)) throw new RuntimeException();

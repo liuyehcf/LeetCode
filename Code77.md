@@ -1,9 +1,9 @@
 # Combinations
 
 
-```Java
+```java
 //beats 56.71%
-public class Solution {
+class Solution {
     public List<List<Integer>> combine(int n, int k) {
         List<List<Integer>> res=new ArrayList<List<Integer>>();
         List<Integer> cur=new ArrayList<Integer>();

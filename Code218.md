@@ -1,8 +1,8 @@
 # The Skyline Problem
 
-```Java
+```java
 //beats 77.92%
-public class Solution {
+class Solution {
     private class Point{
         int high;
         boolean exists;

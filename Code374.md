@@ -1,10 +1,11 @@
-# Guess Number Higher or Lower(²ÂÊý×Ö)
+# Guess Number Higher or Lower(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)
 
-* Ã»É¶ºÃËµµÄ£¬¶þ·Ö£¬ÐÅÏ¢ÂÛÉ¨Ã¤¾­µäÌâ
+* Ã»É¶ï¿½ï¿½Ëµï¿½Ä£ï¿½ï¿½ï¿½ï¿½Ö£ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½É¨Ã¤ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 
-```Java
-    public int guessNumber(int n) {
+```java
+class Solution {
+public int guessNumber(int n) {
         int left=1,right=n;
         while(left<=right){
             int mid=left+(right-left>>1);
@@ -17,5 +18,6 @@
             }
         }
         throw new RuntimeException();
-    }
+   }
+}
 ```

@@ -1,7 +1,8 @@
 # Combination Sum
 
-```Java
-    //beats 84.16%
+```java
+class Solution {
+//beats 84.16%
     public List<List<Integer>> combinationSum(int[] candidates, int target) {
         List<List<Integer>> res=new ArrayList<List<Integer>>();
         List<Integer> cur=new ArrayList<Integer>();
@@ -23,11 +24,13 @@
             }
             else break;
         }
-    }
+   }
+}
 ```
 
-```Java
-    //64.21%
+```java
+class Solution {
+//64.21%
     public List<List<Integer>> combinationSum(int[] candidates, int target) {
         List<List<Integer>> res=new ArrayList<List<Integer>>();
         List<Integer> cur=new ArrayList<Integer>();
@@ -51,5 +54,6 @@
             cur.remove(cur.size()-1);
         } 
         
-    }
+   }
+}
 ```

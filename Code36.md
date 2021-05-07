@@ -1,8 +1,8 @@
 # Valid Sudoku
 
-```Java
+```java
 //beats 43.49%
-public class Solution {
+class Solution {
     public boolean isValidSudoku(char[][] board) {
         boolean[][] rows=new boolean[9][9];
         boolean[][] cols=new boolean[9][9];

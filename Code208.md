@@ -1,7 +1,7 @@
 # Implement Trie (Prefix Tree)
 
 
-```Java
+```java
 public class Trie {
     
     class TrieNode{

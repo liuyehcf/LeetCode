@@ -1,7 +1,8 @@
 # Kth Largest Element in an Array
 
-```Java
-    //beats 34.28%
+```java
+class Solution {
+//beats 34.28%
     public int findKthLargest(int[] nums, int k) {
         return helper(nums,0,nums.length-1,nums.length+1-k);
     }
@@ -39,5 +40,6 @@
         int temp=nums[i];
         nums[i]=nums[j];
         nums[j]=temp;
-    }
+   }
+}
 ```

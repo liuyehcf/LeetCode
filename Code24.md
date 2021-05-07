@@ -1,7 +1,8 @@
 # Swap Nodes in Pairs
 
-```Java
-    //beats 22.11%
+```java
+class Solution {
+//beats 22.11%
     public ListNode swapPairs(ListNode head) {
         ListNode pseudoHead=new ListNode(0);
         pseudoHead.next=head;//<Warn3>锟斤拷锟角呵ｏ拷锟斤拷锟斤拷漏锟斤拷
@@ -24,13 +25,14 @@
         }
         
         return pseudoHead.next;
-    }
+   }
+}
 ```
 
 
-```Java
+```java
 //beats 2.72%
-public class Solution {
+class Solution {
     public ListNode swapPairs(ListNode head) {
         ListNode pseudoHead=new ListNode(0);
         pseudoHead.next=head;

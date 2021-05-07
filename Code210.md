@@ -1,8 +1,8 @@
 # Course Schedule II
 
 * BFS
-```Java
-public class Solution {
+```java
+class Solution {
     public int[] findOrder(int numCourses, int[][] prerequisites) {
         if(numCourses<=0||prerequisites==null) return new int[0];
         

@@ -2,8 +2,9 @@
 
 * ����һ��������ͬ��set�Ͳ�������
 
-```Java
-    public int[] intersect(int[] nums1, int[] nums2) {
+```java
+class Solution {
+public int[] intersect(int[] nums1, int[] nums2) {
         Arrays.sort(nums1);
         Arrays.sort(nums2);
         
@@ -26,5 +27,6 @@
             res[iter++]=num;
         }
         return res;
-    }
+   }
+}
 ```

@@ -1,8 +1,9 @@
 # Minimum Height Trees
 
 * ��̬���½ڵ�Ķ�(����ȵĶ����ǣ���ýڵ����ڵ�δ���ʽڵ����Ŀ)
-```Java
-    //beats 98.85%
+```java
+class Solution {
+//beats 98.85%
     public List<Integer> findMinHeightTrees(int n, int[][] edges) {
         if(n==1) return Arrays.asList(0);
         @SuppressWarnings("unchecked")
@@ -50,12 +51,14 @@
         
         return curStep;
         
-    }
+   }
+}
 ```
 
 * ��һ�ַ���������̬���½ڵ�Ķȣ����Ǹ����ڽӱ�
-```Java
-    //beats 59.68%
+```java
+class Solution {
+//beats 59.68%
     public List<Integer> findMinHeightTrees(int n, int[][] edges) {
         if(n==1) return Arrays.asList(0);
         @SuppressWarnings("unchecked")
@@ -97,5 +100,6 @@
         
         return curStep;
         
-    }
+   }
+}
 ```

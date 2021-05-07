@@ -1,8 +1,8 @@
 # Subsets II
 
-```Java
+```java
 //beats 36.53%
-public class Solution {
+class Solution {
     public List<List<Integer>> subsetsWithDup(int[] nums) {
         Arrays.sort(nums);
         List<List<Integer>> res=new ArrayList<List<Integer>>();

@@ -1,7 +1,8 @@
 # Intersection of Two Linked Lists
 
-```Java
-    //beats 39.40%
+```java
+class Solution {
+//beats 39.40%
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
         ListNode iter1=headA,iter2=headB;
         int len1=0,len2=0;
@@ -33,5 +34,6 @@
             iter2=iter2.next;
         }
         return null;
-    }
+   }
+}
 ```

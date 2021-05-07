@@ -1,8 +1,9 @@
 # Third Maximum Number
 
 * ����˼·
-```Java
-    //beats 27.18%
+```java
+class Solution {
+//beats 27.18%
     public int thirdMax(int[] nums) {
         Set<Integer> uniqueSet=new HashSet<Integer>();
         for(int num:nums){
@@ -51,13 +52,15 @@
         int temp=nums[i];
         nums[i]=nums[j];
         nums[j]=temp;
-    }
+   }
+}
 ```
 
 * Ӧ���и��õķ���
 
-```Java
-    public int thirdMax(int[] nums) {
+```java
+class Solution {
+public int thirdMax(int[] nums) {
         int max, mid, small, count;
         max = mid = small = Integer.MIN_VALUE;
         count = 0;  //Count how many top elements have been found.
@@ -93,5 +96,6 @@
         } else {
             return max;
         }
-    }
+   }
+}
 ```

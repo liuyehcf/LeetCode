@@ -1,8 +1,8 @@
 #  Permutations
 
-```Java
+```java
 //beats 58.84%
-public class Solution {
+class Solution {
     public List<List<Integer>> permute(int[] nums) {
         List<List<Integer>> res=new ArrayList<List<Integer>>();
         if(nums==null||nums.length==0) return res;

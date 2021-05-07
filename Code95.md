@@ -2,8 +2,9 @@
 
 * 这种递归会包含很多的重复，即没有备忘录
 
-```Java
-    //beats 20%
+```java
+class Solution {
+//beats 20%
     public List<TreeNode> generateTrees(int n) {
         if(n==0) return new ArrayList<TreeNode>();
         int[] nums=new int[n];
@@ -34,13 +35,15 @@
             }
         }
         return res;
-    }
+   }
+}
 ```
 
 * 动态规划
 
-```Java
-    //beats 85.08%
+```java
+class Solution {
+//beats 85.08%
     public List<TreeNode> generateTrees(int n) {
         if(n==0) return new ArrayList<TreeNode>();
         
@@ -87,5 +90,6 @@
         int n=dp.length;
         if(i>j) return nullList;
         return dp[i][j];
-    }
+   }
+}
 ```

@@ -1,9 +1,10 @@
-# Find the Difference(Á½¸ö×Ö·û´®ÖÐÕÒ³ö²»Í¬µÄ×Ö·û)
+# Find the Difference(ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò³ï¿½ï¿½ï¿½Í¬ï¿½ï¿½ï¿½Ö·ï¿½)
 
-*Ã»Ê²Ã´ºÃËµµÄ£¬ºÜ³£¹æ
+*Ã»Ê²Ã´ï¿½ï¿½Ëµï¿½Ä£ï¿½ï¿½Ü³ï¿½ï¿½ï¿½
 
-```Java
-    //beats 86%
+```java
+class Solution {
+//beats 86%
     public char findTheDifference(String s, String t) {
         int[] count=new int[26];
         for(char c:s.toCharArray())
@@ -14,5 +15,6 @@
             if(count[i]!=0) return (char)(i+'a');
         }
         throw new RuntimeException();
-    }
+   }
+}
 ```

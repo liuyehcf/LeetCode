@@ -1,9 +1,9 @@
 # Search a 2D Matrix
 
 * 二分法
-```Java
+```java
 //beats 8.35%
-public class Solution {
+class Solution {
     public boolean searchMatrix(int[][] matrix, int target) {
         if(matrix==null||matrix.length==0||matrix[0].length==0) return false;
         int m=matrix.length;
@@ -44,7 +44,7 @@ public class Solution {
 ```
 
 * brilliant solution
-```Java
+```java
 //#########^^^^^^^^^
 //#########^^^^^^^^^
 //#########^^^^^^^^^
@@ -56,7 +56,7 @@ public class Solution {
 //当$>target,那么由+组成的区域(包括$)都会比target大，因此该区域可以舍弃
 //但是这样看起来要找的数可能还会存在于^组成的区域中，但实际上这是不可能的，^是由#和和+共同组成的区域
 //因此要找的数只可能存在于*中
-public class Solution {
+class Solution {
     public boolean searchMatrix(int[][] matrix, int target) {
         if(matrix==null||matrix.length==0||matrix[0].length==0) return false;
         int m=matrix.length;

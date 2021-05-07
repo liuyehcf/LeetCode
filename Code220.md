@@ -1,7 +1,7 @@
 # Contains Duplicate III
 
-```Java
-public class Solution {
+```java
+class Solution {
     public boolean containsNearbyAlmostDuplicate(int[] nums, int k, int t) {
         if(nums==null||nums.length<2||t<0||k<0) return false;
         double max=Integer.MIN_VALUE;

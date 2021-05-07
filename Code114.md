@@ -1,7 +1,8 @@
 # Flatten Binary Tree to Linked List
 
-```Java
-    //beats 27.93%
+```java
+class Solution {
+//beats 27.93%
     public void flatten(TreeNode root) {
         if(root==null) return;
         helper(root);
@@ -27,12 +28,14 @@
             res[1]=rightRes[1];
         }
         return res;
-    }
+   }
+}
 ```
 
 
-```Java
-    private TreeNode pre;
+```java
+class Solution {
+private TreeNode pre;
     public void flatten(TreeNode root) {
         pre=null;
         helper(root);
@@ -50,5 +53,6 @@
             helper(root.left);
             helper(right);
         }
-    }
+   }
+}
 ```

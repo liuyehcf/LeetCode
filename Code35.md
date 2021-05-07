@@ -1,7 +1,8 @@
 # Search Insert Position
 
-```Java
-    public int searchInsert(int[] nums, int target) {
+```java
+class Solution {
+public int searchInsert(int[] nums, int target) {
         int left=0,right=nums.length-1;
         
         if(target<nums[left]) return 0;
@@ -17,5 +18,6 @@
             }
         }
         return left;
-    }
+   }
+}
 ```

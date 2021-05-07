@@ -1,8 +1,9 @@
 # Word Search II
 
 * ��ʱ
-```Java
-    public List<String> findWords(char[][] board, String[] words) {
+```java
+class Solution {
+public List<String> findWords(char[][] board, String[] words) {
         Set<String> set=new HashSet<String>();
         int m=board.length;
         int n=board[0].length;
@@ -51,5 +52,6 @@
         
         visited[row][col]=false;
         return false;
-    }
+   }
+}
 ```

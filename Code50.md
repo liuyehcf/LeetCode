@@ -1,8 +1,8 @@
 # Pow(x, n)
 
-```Java
+```java
 //beats 50.44%
-public class Solution {
+class Solution {
     public double myPow(double x, int n) {
         if(n==0) return 1;
         else if(n==1) return x;
@@ -16,9 +16,9 @@ public class Solution {
 ```
 
 
-```Java
+```java
 //beats 19.75%
-public class Solution {
+class Solution {
     public double myPow(double x, int n) {
         Map<Integer,Double> map=new HashMap<Integer,Double>();
         return pow(x,n,map);

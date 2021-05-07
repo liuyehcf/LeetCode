@@ -1,7 +1,8 @@
 # Reverse Linked List II
 
-```Java
-    //beats 14.82%
+```java
+class Solution {
+//beats 14.82%
     public ListNode reverseBetween(ListNode head, int m, int n) {
         ListNode pseudoHead=new ListNode(0);
         pseudoHead.next=head;
@@ -27,5 +28,6 @@
             iter.next=tempPseudoHeadNext;
             iter=tempIterNext;
         }
-    }
+   }
+}
 ```

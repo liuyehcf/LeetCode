@@ -1,7 +1,7 @@
 # Valid Anagram
 
-```Java
-public class Solution {
+```java
+class Solution {
     public boolean isAnagram(String s, String t) {
         int[] cnt=new int[128];
         for(char c:s.toCharArray()){

@@ -1,7 +1,8 @@
 # Insertion Sort List
 
-```Java
-    //beats 74.77%
+```java
+class Solution {
+//beats 74.77%
     public ListNode insertionSortList(ListNode head) {
         ListNode pseudoHead=new ListNode(0);
         ListNode iter=head;
@@ -31,5 +32,6 @@
             pre.next=curNode;
             curNode.next=null;
         }
-    }
+   }
+}
 ```

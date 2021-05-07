@@ -1,7 +1,8 @@
 # Balanced Binary Tree
 
-```Java
-    //beats 72.87%
+```java
+class Solution {
+//beats 72.87%
     boolean flag;
     public boolean isBalanced(TreeNode root) {
         flag=true;
@@ -19,5 +20,6 @@
         if(Math.abs(leftDepth-rightDepth)>1) flag=false;
         
         return Math.max(leftDepth,rightDepth)+1;
-    }
+   }
+}
 ```

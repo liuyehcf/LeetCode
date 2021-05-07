@@ -1,7 +1,8 @@
 # Reverse Nodes in k-Group
 
-```Java
-    //beats 10.07%
+```java
+class Solution {
+//beats 10.07%
     public ListNode reverseKGroup(ListNode head, int k) {
         ListNode pseudoHead=new ListNode(0);
         pseudoHead.next=head;
@@ -33,13 +34,14 @@
             pseudoHead.next=iter;
             iter=tempNext;
         }
-    }
+   }
+}
 ```
 
 * brilliant solution
-```Java
+```java
 //beats 57.16%
-public class Solution {
+class Solution {
     public ListNode reverseKGroup(ListNode head, int k) {
         ListNode pseudoHead=new ListNode(0);
         pseudoHead.next=head;

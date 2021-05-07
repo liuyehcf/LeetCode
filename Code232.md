@@ -1,6 +1,6 @@
 # Implement Queue using Stacks
 
-```Java
+```java
 //beats 25.79%
 public class MyQueue {
     

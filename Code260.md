@@ -1,7 +1,7 @@
 # Single Number III
 
-```Java
-public class Solution {
+```java
+class Solution {
     public int[] singleNumber(int[] nums) {
         if(nums==null||nums.length<2) throw new RuntimeException();
         int val1=nums[0];

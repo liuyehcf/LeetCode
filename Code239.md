@@ -1,8 +1,8 @@
 # Sliding Window Maximum
 
-```Java
+```java
 //beats 17.10%
-public class Solution {
+class Solution {
     public int[] maxSlidingWindow(int[] nums, int k) {
         if(nums==null||nums.length==0||k>nums.length) return new int[0];
         int[] res=new int[nums.length-k+1];
@@ -24,9 +24,9 @@ public class Solution {
 ```
 
 
-```Java
+```java
 //beats 87.88%
-public class Solution {
+class Solution {
     public int[] maxSlidingWindow(int[] nums, int k) {
         if(nums==null||nums.length==0||k>nums.length) return new int[0];
         

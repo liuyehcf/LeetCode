@@ -1,8 +1,8 @@
 # Basic Calculator
 
-```Java
+```java
 //beats 33.17%
-public class Solution {
+class Solution {
     public int calculate(String s) {
         LinkedList<Integer> stackPre=new LinkedList<Integer>();
         LinkedList<Integer> stackRes=new LinkedList<Integer>();

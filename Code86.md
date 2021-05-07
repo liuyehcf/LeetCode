@@ -2,8 +2,9 @@
 
 * 注意点：取出值小于指定值的节点，需要维护其前一个节点(pre)，而pre的维护与"iter是否与小于指定值的区间有关联"有关系
 
-```Java
-    //beats 5.35
+```java
+class Solution {
+//beats 5.35
     public ListNode partition(ListNode head, int x) {
         ListNode pseudoHead=new ListNode(0);
         pseudoHead.next=head;
@@ -45,12 +46,14 @@
             iter=iter.next;
         }
         System.out.println();
-    }
+   }
+}
 ```
 
 * 更漂亮的写法
-```Java
-    public ListNode partition(ListNode head, int x) {
+```java
+class Solution {
+public ListNode partition(ListNode head, int x) {
         ListNode pseudoHead=new ListNode(0);
         pseudoHead.next=head;
         
@@ -82,13 +85,14 @@
         }
         
         return pseudoHead.next;
-    }
+   }
+}
 ```
 
 *　最简单的想法，不要对数组形式的partition产生思维定势
-```Java
+```java
 //beats 8.18%
-public class Solution {
+class Solution {
     public ListNode partition(ListNode head, int x) {
         ListNode smallPseudoHead=new ListNode(0);
         ListNode largePseudoHead=new ListNode(0);

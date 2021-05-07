@@ -1,8 +1,9 @@
 # Remove Linked List Elements
 
 
-```Java
-    //beats 51.07%
+```java
+class Solution {
+//beats 51.07%
     public ListNode removeElements(ListNode head, int val) {
         ListNode pseudoHead=new ListNode(0);
         pseudoHead.next=head;

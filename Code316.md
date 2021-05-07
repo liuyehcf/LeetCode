@@ -4,8 +4,9 @@
 * ����ǰ��ĸ���ڶ����У�����(continue)
 * ����ǰ��ĸ����ջ����ĸ������ջ����ĸ�ں������Դ��ڣ���ô���䵯����ѹ�뵱ǰԪ��
 
-```Java
-    public String removeDuplicateLetters(String s) {
+```java
+class Solution {
+public String removeDuplicateLetters(String s) {
         int[] cnt=new int[26];
         boolean[] isVisited=new boolean[26];
         LinkedList<Character> stack=new LinkedList<Character>();
@@ -34,5 +35,6 @@
             sb.insert(0,stack.pop());
         }
         return sb.toString();
-    }
+   }
+}
 ```

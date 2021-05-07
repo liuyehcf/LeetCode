@@ -1,7 +1,7 @@
 # Sqrt(x)
 
-```Java
-public class Solution {
+```java
+class Solution {
     public int mySqrt(int x) {
         if(x<4) return x==0?0:1;
         Long res=2L*mySqrt(x/4);
@@ -12,8 +12,8 @@ public class Solution {
 ```
 
 
-```Java
-public class Solution {
+```java
+class Solution {
     public int mySqrt(int x) {
         Long r=(long)x;
         while(r*r>x){

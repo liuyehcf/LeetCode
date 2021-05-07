@@ -1,8 +1,8 @@
 # Longest Valid Parentheses
 
-```Java
+```java
 //beats 78.15%
-public class Solution {
+class Solution {
     public int longestValidParentheses(String s) {
         if(s==null||s.length()==0) return 0;
         if(s.length()<2) return 0;

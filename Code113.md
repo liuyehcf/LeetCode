@@ -1,7 +1,8 @@
 # Path Sum II
 
-```Java
-    //beats 47.57%
+```java
+class Solution {
+//beats 47.57%
     public List<List<Integer>> pathSum(TreeNode root, int sum) {
         List<List<Integer>> res=new ArrayList<List<Integer>>();
         if(root==null) return res;
@@ -27,5 +28,6 @@
         if(root.right!=null) helper(root.right,sum,curVal,iter,res);
         
         iter.remove(iter.size()-1);
-    }
+   }
+}
 ```

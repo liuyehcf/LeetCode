@@ -1,9 +1,9 @@
 # Edit Distance
 
 * 删和增可以看成同一种，于是就变成了两种，change或者insert
-```Java
+```java
 //beats 78.01%
-public class Solution {
+class Solution {
     public int minDistance(String word1, String word2) {
         if(word1==null||word2==null) return 0;
         int len1=word1.length(),len2=word2.length();
@@ -36,7 +36,7 @@ public class Solution {
 
 
 * 文件diff的实现，并指出具体的修改方式
-```Java
+```java
 public class FileDiff {
     public static void diff(String path1,String path2) throws IOException{
 

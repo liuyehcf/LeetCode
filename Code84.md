@@ -7,8 +7,9 @@
 *
 * 另一个注意点：右边界是iter-1，而不是栈顶位置
 * 综上，注意点：当栈顶元素需要弹出时，其边界范围为：(栈次顶位置+1)到(当前迭代-1)
-```Java
-    //beats 85.07%
+```java
+class Solution {
+//beats 85.07%
     public int largestRectangleArea(int[] heights) {
         LinkedList<Integer> stack=new LinkedList<Integer>();
         int res=0;
@@ -32,12 +33,13 @@
             res=Math.max(res,(heights.length-1-leftBoundary+1)*heights[topPos]);
         }
         return res;
-    }
+   }
+}
 ```
 
 
-```Java
-public class Solution {
+```java
+class Solution {
     public int largestRectangleArea(int[] heights) {
         LinkedList<Integer> stack=new LinkedList<Integer>();
         int i=0;

@@ -1,8 +1,8 @@
 # Substring with Concatenation of All Words
 
 * Time limit
-```Java
-public class Solution {
+```java
+class Solution {
     public List<Integer> findSubstring(String s, String[] words) {
         Set<Integer> res=new HashSet<Integer>();
         if(words.length==0) return new ArrayList<Integer>();

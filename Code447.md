@@ -1,7 +1,8 @@
 # Number of Boomerangs(����n����ά���꣬����tuple(i,j,k)�ĸ���������i��j�ľ������i��k�ľ���)
 
-```Java
-    public int numberOfBoomerangs(int[][] points) {
+```java
+class Solution {
+public int numberOfBoomerangs(int[][] points) {
         int res=0;
         for(int i=0;i<points.length;i++){
             int[] point_i=points[i];
@@ -24,5 +25,6 @@
     }
     private int distance(int[] p1,int[] p2){
         return (p1[0]-p2[0])*(p1[0]-p2[0])+(p1[1]-p2[1])*(p1[1]-p2[1]);
-    }
+   }
+}
 ```

@@ -1,8 +1,8 @@
 # Different Ways to Add Parentheses
 
-```Java
+```java
 //beats 5.14%
-public class Solution {
+class Solution {
     public List<Integer> diffWaysToCompute(String input) {
         return helper(input);
     }
@@ -46,8 +46,8 @@ public class Solution {
 ```
 
 * add cache
-```Java
-public class Solution {
+```java
+class Solution {
     public List<Integer> diffWaysToCompute(String input) {
         map=new HashMap<String,List<Integer>>();
         return helper(input);

@@ -1,8 +1,8 @@
 # beats 76.79%
 
 
-```Java
-public class Solution {
+```java
+class Solution {
     private int cnt;
     public int totalNQueens(int n) {
         cnt=0;

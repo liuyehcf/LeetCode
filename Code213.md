@@ -1,8 +1,9 @@
 # House Robber II
 
 
-```Java
-    //beats 66.72%
+```java
+class Solution {
+//beats 66.72%
     public int rob(int[] nums) {
         if(nums==null||nums.length<1) return 0;
         if(nums.length==1) return nums[0];
@@ -27,5 +28,6 @@
         }
         
         return Math.max(dp1[nums.length-2],dp2[nums.length-2]);
-    }
+   }
+}
 ```

@@ -1,7 +1,7 @@
 # Power of Two
 
-```Java
-public class Solution {
+```java
+class Solution {
     public boolean isPowerOfTwo(int n) {
         if(n<0) return false;
         int cnt=0;

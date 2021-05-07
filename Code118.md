@@ -1,7 +1,8 @@
 # Pascal's Triangle
 
-```Java
-    //beats 27.34%
+```java
+class Solution {
+//beats 27.34%
     public List<List<Integer>> generate(int numRows) {
         List<List<Integer>> res=new ArrayList<List<Integer>>();
         if(numRows<=0) return res;
@@ -19,5 +20,6 @@
         }
         
         return res;
-    }
+   }
+}
 ```

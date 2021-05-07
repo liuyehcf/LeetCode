@@ -1,7 +1,8 @@
 # 
 
-```Java
-    //beats 77.50%
+```java
+class Solution {
+//beats 77.50%
     public int majorityElement(int[] nums) {
         int pre=nums[0];
         int cnt=1;
@@ -17,5 +18,6 @@
             }
         }
         return pre;
-    }
+   }
+}
 ```

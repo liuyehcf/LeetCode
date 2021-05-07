@@ -1,7 +1,8 @@
 # Binary Tree Level Order Traversal
 
-```Java
-    //beats 5.12%
+```java
+class Solution {
+//beats 5.12%
     public List<List<Integer>> levelOrder(TreeNode root) {
         List<List<Integer>> res=new ArrayList<List<Integer>>();
         Queue<TreeNode> queue=new LinkedList<TreeNode>();
@@ -19,5 +20,6 @@
             res.add(curLevel);
         }
         return res;
-    }
+   }
+}
 ```

@@ -1,8 +1,8 @@
 # Sudoku Solver
 
-```Java
+```java
 //beats 87.66%
-public class Solution {
+class Solution {
     public void solveSudoku(char[][] board) {
         boolean[][] rows=new boolean[9][9];
         boolean[][] cols=new boolean[9][9];

@@ -1,8 +1,9 @@
 # Add Two Numbers II
 
 * �Ƚ������뵽��˼·�����˶���Ŀռ�
-```Java
-    //beats 2.80%
+```java
+class Solution {
+//beats 2.80%
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         List<Integer> num1=new ArrayList<Integer>();
         List<Integer> num2=new ArrayList<Integer>();
@@ -57,12 +58,14 @@
         ListNode tempNext=pseudoHead.next;
         pseudoHead.next=node;
         node.next=tempNext;
-    }
+   }
+}
 ```
 
 
-```Java
-    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+```java
+class Solution {
+public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         LinkedList<Integer> stack1=new LinkedList<Integer>();
         LinkedList<Integer> stack2=new LinkedList<Integer>();
         
@@ -96,12 +99,14 @@
         ListNode tempNext=pseudoHead.next;
         pseudoHead.next=node;
         node.next=tempNext;
-    }
+   }
+}
 ```
 
 * ȡ���������ã������˵�
-```Java
-    //beats 60%
+```java
+class Solution {
+//beats 60%
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         LinkedList<Integer> stack1=new LinkedList<Integer>();
         LinkedList<Integer> stack2=new LinkedList<Integer>();
@@ -135,5 +140,6 @@
             head=node;
         }
         return head;
-    }
+   }
+}
 ```

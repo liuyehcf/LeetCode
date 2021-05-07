@@ -1,7 +1,8 @@
 # Odd Even Linked List
 
-```Java
-    //beats 3.89%
+```java
+class Solution {
+//beats 3.89%
     public ListNode oddEvenList(ListNode head) {
         ListNode oddPseudoHead=new ListNode(0);
         ListNode evenPesudoHead=new ListNode(0);
@@ -29,5 +30,6 @@
         oddIter.next=evenPesudoHead.next;
         evenIter.next=null;
         return oddPseudoHead.next;
-    }
+   }
+}
 ```

@@ -1,7 +1,8 @@
 # Reverse Linked List
 
-```Java
-    //beats 31.28%
+```java
+class Solution {
+//beats 31.28%
     public ListNode reverseList(ListNode head) {
         ListNode pseudoHead=new ListNode(0);
         pseudoHead.next=head;
@@ -19,5 +20,6 @@
             iter.next=tempPseudoHeadNext;
             iter=tempIterNext;
         }
-    }
+   }
+}
 ```

@@ -1,7 +1,8 @@
 # Spiral Matrix II
 
-```Java
-    //beats 14.48%
+```java
+class Solution {
+//beats 14.48%
     private int iter;
     public int[][] generateMatrix(int n) {
         int[][] matrix=new int[n][n];
@@ -33,11 +34,12 @@
         for(int i=bottom;i>top;i--){
             matrix[i][left]=iter++;
         }
-    }
+   }
+}
 ```
 
-```Java
-public class Solution {
+```java
+class Solution {
     private int cnt;
     public int[][] generateMatrix(int n) {
         int[][] matrix=new int[n][n];

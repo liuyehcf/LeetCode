@@ -1,8 +1,8 @@
 # Plus One
 
-```Java
+```java
 //beats 3.69%
-public class Solution {
+class Solution {
     public int[] plusOne(int[] digits) {
         List<Integer> list=new LinkedList<Integer>();
         

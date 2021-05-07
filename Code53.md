@@ -1,8 +1,8 @@
 # Maximum Subarray
 
-```Java
+```java
 //beats 91.59%
-public class Solution {
+class Solution {
     public int maxSubArray(int[] nums) {
         if(nums==null||nums.length==0) return 0;
         int[] dp=new int[nums.length];

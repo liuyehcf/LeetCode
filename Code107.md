@@ -1,7 +1,8 @@
 #  Binary Tree Level Order Traversal II
 
-```Java
-    //beats 70.16%
+```java
+class Solution {
+//beats 70.16%
     public List<List<Integer>> levelOrderBottom(TreeNode root) {
         List<List<Integer>> res=new LinkedList<List<Integer>>();
         
@@ -24,5 +25,6 @@
         }
         
         return res;
-    }
+   }
+}
 ```

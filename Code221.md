@@ -1,9 +1,9 @@
 # Maximal Square
 
 
-```Java
+```java
 //beats 58.60%
-public class Solution {
+class Solution {
     public int maximalSquare(char[][] matrix) {
         if(matrix==null||matrix.length==0||matrix[0].length==0) return 0;
         int m=matrix.length;

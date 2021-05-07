@@ -1,7 +1,8 @@
 # Convert Sorted List to Binary Search Tree
 
-```Java
-    //11.68%
+```java
+class Solution {
+//11.68%
     public TreeNode sortedListToBST(ListNode head) {
         ListNode pseudoHead=new ListNode(0);
         pseudoHead.next=head;
@@ -23,5 +24,6 @@
         root.left=helper(pseudoHead,leftPartTail);
         root.right=helper(rightPartPseudoHead,tail);
         return root;
-    }
+   }
+}
 ```

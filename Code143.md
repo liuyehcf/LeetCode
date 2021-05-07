@@ -1,8 +1,9 @@
 # Reorder List
 
 
-```Java
-    //beats 10.44%
+```java
+class Solution {
+//beats 10.44%
     public void reorderList(ListNode head) {
         List<ListNode> list=new ArrayList<ListNode>();
         ListNode iter=head;
@@ -26,5 +27,6 @@
             iter=iter.next;
         }
         iter.next=null;
-    }
+   }
+}
 ```

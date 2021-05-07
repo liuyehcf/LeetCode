@@ -1,8 +1,9 @@
 # 3Sum Closest
 
 
-```Java
-    //beats 77.70%
+```java
+class Solution {
+//beats 77.70%
     public int threeSumClosest(int[] nums, int target) {
         Arrays.sort(nums);
         int diff=Integer.MAX_VALUE;
@@ -28,5 +29,6 @@
             }
         }
         return res;
-    }
+   }
+}
 ```

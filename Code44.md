@@ -1,8 +1,8 @@
 # Wildcard Matching
 
-```Java
+```java
 //beats 57.91%
-public class Solution {
+class Solution {
     public boolean isMatch(String s, String p) {
         boolean[][] dp=new boolean[s.length()+1][p.length()+1];
         

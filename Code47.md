@@ -1,9 +1,9 @@
 #
 
 * 排序，每个位置取值去除重复即可
-```Java
+```java
 //beats 19.48%
-public class Solution {
+class Solution {
     public List<List<Integer>> permuteUnique(int[] nums) {
         List<List<Integer>> res=new ArrayList<List<Integer>>();
         if(nums==null||nums.length==0) return res;
@@ -37,9 +37,9 @@ public class Solution {
 
 
 * 另一种思路，不排序，也可以去重复
-```Java
+```java
 //beats 17.28%
-public class Solution {
+class Solution {
     public List<List<Integer>> permuteUnique(int[] nums) {
         List<List<Integer>> res=new ArrayList<List<Integer>>();
         if(nums==null||nums.length==0) return res;

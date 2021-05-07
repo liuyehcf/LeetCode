@@ -1,7 +1,8 @@
 # Insert Interval
 
-```Java
-    //beats 72.52%
+```java
+class Solution {
+//beats 72.52%
     public List<Interval> insert(List<Interval> intervals, Interval newInterval) {
         List<Interval> res=new ArrayList<Interval>();
         
@@ -24,11 +25,12 @@
         if(newInterval!=null) res.add(newInterval);
         
         return res;
-    }
+   }
+}
 ```
 
-```Java
-public class Solution {
+```java
+class Solution {
     public List<Interval> insert(List<Interval> intervals, Interval newInterval) {
         List<Interval> res=new ArrayList<Interval>();
         

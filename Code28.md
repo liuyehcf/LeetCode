@@ -1,9 +1,9 @@
 # Implement strStr()
 
 * KMP Algorithm
-```Java
+```java
 //beats 8.76%
-public class Solution {
+class Solution {
     public int strStr(String s, String pattern) {
         if(pattern.length()==0)  return 0;
         if(s.length()==0) return -1;

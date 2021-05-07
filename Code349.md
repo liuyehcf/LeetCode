@@ -1,8 +1,9 @@
 # Intersection of Two Arrays(两个数组的交集)
 
 * 用set来除重复即可
-```Java
-    public int[] intersection(int[] nums1, int[] nums2) {
+```java
+class Solution {
+public int[] intersection(int[] nums1, int[] nums2) {
         Set<Integer> set=new HashSet<Integer>();
         for(int num:nums1)
             set.add(num);
@@ -18,5 +19,6 @@
             res[iter++]=num;
         }
         return res;
-    }
+   }
+}
 ```

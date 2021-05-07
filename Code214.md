@@ -1,8 +1,9 @@
 # Shortest Palindrome
 
 
-```Java
-    //beats 34.5%
+```java
+class Solution {
+//beats 34.5%
     public String shortestPalindrome(String s) {
         if(s.length()==0) return s;
         String ss=s+"&"+new StringBuilder(s).reverse().toString();
@@ -22,5 +23,6 @@
             pi[i]=k;
         }
         return new StringBuilder(s.substring(pi[ss.length()-1])).reverse().toString()+s;
-    }
+   }
+}
 ```

@@ -1,7 +1,8 @@
 # Recover Binary Search Tree
 
-```Java
-    //beats 34.36%
+```java
+class Solution {
+//beats 34.36%
     private TreeNode first,second,pre;
     public void recoverTree(TreeNode root) {
         first=null;
@@ -29,5 +30,6 @@
             pre=root;
             helper(root.right);
         }
-    }
+   }
+}
 ```

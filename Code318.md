@@ -1,8 +1,9 @@
 # Maximum Product of Word Lengths(������������ͬ��ĸ���ַ����ĳ��Ȼ�)
 
 * һ��˼·:ȡ�������ַ���������26����ĸ�ıȶ�
-```Java
-    //beats 16%
+```java
+class Solution {
+//beats 16%
     public int maxProduct(String[] words) {
         if(words==null||words.length<2) return 0;
         
@@ -31,13 +32,15 @@
             else if(cnt1[i]>0&&cnt2[i]>0) return 0;
         }
         return num1*num2;
-    }
+   }
+}
 ```
 
 * �߼�˼·:��λͼ�����бȶԣ���������ַ�����������ͬ����ĸ�������ǵ��߼���Ϊ0
 
-```Java
-    //beats 68.84%
+```java
+class Solution {
+//beats 68.84%
     public int maxProduct(String[] words) {
         if(words==null||words.length<2) return 0;
         
@@ -57,5 +60,6 @@
             }
         }
         return res;
-    }
+   }
+}
 ```

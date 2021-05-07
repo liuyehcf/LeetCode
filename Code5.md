@@ -1,8 +1,9 @@
 # Longest Palindromic Substring 
  
 * 动态规划
-```Java
-    //beats 13.47%
+```java
+class Solution {
+//beats 13.47%
     public String longestPalindrome(String s) {
         if(s==null||s.length()==0) return "";
         boolean[][] dp=new boolean[s.length()][s.length()];
@@ -43,12 +44,14 @@
             }
         }
         return res;
-    }
+   }
+}
 ```
 
 * else
-```Java
-    //beats 50%
+```java
+class Solution {
+//beats 50%
     public String longestPalindrome(String s) {
         String res="";
         for(int i=0;i<s.length();i++){
@@ -69,13 +72,15 @@
         }
         if(right-1<left+1) return "";
         return s.substring(left+1,right-1+1);
-    }
+   }
+}
 ```
 
 
 * 改进过的
-```Java
-    //beats 87.61%
+```java
+class Solution {
+//beats 87.61%
     int[] range;
     public String longestPalindrome(String s) {
         if(s==null||s.length()==0) return "";
@@ -96,5 +101,6 @@
             range[0]=left+1;
             range[1]=right-1;
         }
-    }
+   }
+}
 ```

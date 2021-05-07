@@ -1,9 +1,9 @@
 # Search in Rotated Sorted Array
 
 * 二分法
-```Java
+```java
 //beats 58.13%
-public class Solution {
+class Solution {
     public int search(int[] nums, int target) {
         if(nums==null||nums.length==0) return -1;
         int left=0,right=nums.length-1;
@@ -52,8 +52,8 @@ public class Solution {
 ```
 
 * 同上，换种方式找临界点
-```Java
-public class Solution {
+```java
+class Solution {
     public int search(int[] nums, int target) {
         if(nums==null||nums.length==0) return -1;
         int left=0,right=nums.length-1;
@@ -101,8 +101,8 @@ public class Solution {
 ```
 
 
-```Java
-public class Solution {
+```java
+class Solution {
     public int search(int[] nums, int target) {
         int n=nums.length;
         int lo=0,hi=n-1;

@@ -1,8 +1,8 @@
 # Group Anagrams
 
-```Java
+```java
 //beats 52.44%
-public class Solution {
+class Solution {
     public List<List<String>> groupAnagrams(String[] strs) {
         Map<String,List<String>> map=new HashMap<String,List<String>>();
         

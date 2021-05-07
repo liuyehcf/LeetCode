@@ -1,8 +1,8 @@
 # Set Matrix Zeroes
 
-```Java
+```java
 //beats 27.46%
-public class Solution {
+class Solution {
     public void setZeroes(int[][] matrix) {
         int m=matrix.length;
         int n=matrix[0].length;

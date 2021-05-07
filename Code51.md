@@ -1,8 +1,8 @@
 # N-Queens
 
-```Java
+```java
 //beats 41.58%
-public class Solution {
+class Solution {
     public List<List<String>> solveNQueens(int n) {
         boolean[] rows=new boolean[n];
         boolean[] cols=new boolean[n];

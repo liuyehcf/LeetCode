@@ -1,7 +1,8 @@
 # Game of Life
 
-```Java
-    //beats 13.37%
+```java
+class Solution {
+//beats 13.37%
     public void gameOfLife(int[][] board) {
         if(board==null||board.length==0||board[0].length==0) return;
         for(int row=0;row<board.length;row++){
@@ -79,12 +80,13 @@
     private void restoreStatus(int[][] board,int row,int col){
         if(board[row][col]==2||board[row][col]==4) board[row][col]=0;
         else board[row][col]=1;
-    }
+   }
+}
 ```
 
 
-```Java
-public class Solution {
+```java
+class Solution {
     /**
      * 0-0:2
      * 0-1:3

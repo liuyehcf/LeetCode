@@ -1,7 +1,8 @@
 # Binary Tree Maximum Path Sum
 
-```Java
-    //beats 9.34%
+```java
+class Solution {
+//beats 9.34%
     int max=0;
     
     public int maxPathSum(TreeNode root) {
@@ -21,5 +22,6 @@
         
         max=Math.max(max,root.val+left+right);//��������������
         return root.val+Math.max(left,right);
-    }
+   }
+}
 ```

@@ -1,7 +1,7 @@
 # Integer to Roman
 
-```Java
-public class Solution {
+```java
+class Solution {
     public String intToRoman(int num) {
         String[][] convertTable={
             {"","I","II","III","IV","V","VI","VII","VIII","IX"},

@@ -1,8 +1,8 @@
 # Search a 2D Matrix II
 
-```Java
+```java
 //beats 6.96%
-public class Solution {
+class Solution {
     public boolean searchMatrix(int[][] matrix, int target) {
         if(matrix==null||matrix.length==0||matrix[0].length==0) return false;
         
@@ -47,8 +47,8 @@ public class Solution {
 ```
 
 
-```Java
-public class Solution {
+```java
+class Solution {
     public boolean searchMatrix(int[][] matrix, int target) {
         if(matrix==null||matrix.length==0||matrix[0].length==0) return false;
         

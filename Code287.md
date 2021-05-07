@@ -1,8 +1,9 @@
 # Find the Duplicate Number
 
-```Java
-    //beats 55.26%
-public class Solution {
+```java
+class Solution {
+//beats 55.26%
+class Solution {
     public int findDuplicate(int[] nums) {
         int iter=0;
         while(iter<nums.length){

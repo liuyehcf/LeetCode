@@ -1,7 +1,8 @@
 # Linked List Cycle
 
-```Java
-    public boolean hasCycle(ListNode head) {
+```java
+class Solution {
+public boolean hasCycle(ListNode head) {
         ListNode slow=head,fast=head;
         boolean flag=false;//<Warn>:��Ҫ��һ�������ע���Ƿ��ڿ�ʼ����ʱ������Ȼ��Ҫ�ų���
         while(fast!=null&&fast.next!=null){
@@ -11,12 +12,14 @@
             flag=true;
         }
         return false;
-    }
+   }
+}
 ```
 
 * ����˼·��������ʼλ�ü���
-```Java
-    //beats 9.95%
+```java
+class Solution {
+//beats 9.95%
     public boolean hasCycle(ListNode head) {
         ListNode pseudoHead=new ListNode(0);
         pseudoHead.next=head;
@@ -27,5 +30,6 @@
             slow=slow.next;
         }
         return false;
-    }
+   }
+}
 ```

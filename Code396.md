@@ -1,9 +1,10 @@
 # Rotate Function
 
-* ³£¹æ·½·¨£ººÜÂý
+* ï¿½ï¿½ï¿½æ·½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
-```Java
-    //beats 15%
+```java
+class Solution {
+//beats 15%
     public int maxRotateFunction(int[] A) {
         if(A.length==0) return 0;
         int res=Integer.MIN_VALUE;
@@ -22,5 +23,6 @@
                 iter=0;
         }
         return res;
-    }
+   }
+}
 ```

@@ -1,9 +1,9 @@
 # Minimum Window Substring
 
 
-```Java
+```java
 //beats 80.37%
-public class Solution {
+class Solution {
     public String minWindow(String s, String t) {
         int[] cntT=new int[128];
         for(char c:t.toCharArray()){

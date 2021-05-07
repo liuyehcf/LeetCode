@@ -2,7 +2,7 @@
 
 ```
 //beats 30.23%
-public class Solution {
+class Solution {
     public boolean isHappy(int n) {
         Set<Integer> set=new HashSet<Integer>();
         while(n>0&&n!=1){

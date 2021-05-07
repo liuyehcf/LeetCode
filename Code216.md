@@ -1,7 +1,8 @@
 # Combination Sum III
 
-```Java
-    //beats 52.94%
+```java
+class Solution {
+//beats 52.94%
     public List<List<Integer>> combinationSum3(int k, int n) {
         List<List<Integer>> res=new ArrayList<List<Integer>>();
         List<Integer> cur=new ArrayList<Integer>();
@@ -21,5 +22,6 @@
             helper(k,n-i,index+1,i+1,res,cur);
             cur.remove(cur.size()-1);
         }
-    }
+   }
+}
 ```
