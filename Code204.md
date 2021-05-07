@@ -1,6 +1,6 @@
 # Count Primes
 
-```
+```java
 //beats 34.93
 class Solution {
     public int countPrimes(int n) {

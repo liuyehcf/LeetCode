@@ -1,6 +1,6 @@
 # Isomorphic Strings
 * 仅仅计算出现次数是不行的，例如"aba"与"baa"
-```
+```java
 class Solution {
     public boolean isIsomorphic(String s, String t) {
         int[] patterns=new int[128];

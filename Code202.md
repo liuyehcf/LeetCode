@@ -1,6 +1,6 @@
 # Happy Number
 
-```
+```java
 //beats 30.23%
 class Solution {
     public boolean isHappy(int n) {

@@ -1,6 +1,6 @@
 # Permutation Sequence
 
-```
+```java
 //beats 36.19%
 class Solution {
     public String getPermutation(int n, int k) {
