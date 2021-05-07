@@ -1,8 +1,8 @@
 # Symmetric Tree
 
 ```Java
-	//beats 23.60%
-	public boolean isSymmetric(TreeNode root) {
+    //beats 23.60%
+    public boolean isSymmetric(TreeNode root) {
         if(root==null) return true;
         return helper(root.left,root.right);
     }

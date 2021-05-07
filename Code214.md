@@ -2,8 +2,8 @@
 
 
 ```Java
-	//beats 34.5%
-	public String shortestPalindrome(String s) {
+    //beats 34.5%
+    public String shortestPalindrome(String s) {
         if(s.length()==0) return s;
         String ss=s+"&"+new StringBuilder(s).reverse().toString();
         

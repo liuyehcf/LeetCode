@@ -1,7 +1,7 @@
 # Find the Duplicate Number
 
 ```Java
-	//beats 55.26%
+    //beats 55.26%
 public class Solution {
     public int findDuplicate(int[] nums) {
         int iter=0;

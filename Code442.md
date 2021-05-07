@@ -1,9 +1,9 @@
 # Find All Duplicates in an Array
 
 ```Java
-	//beats 16.71%
-	public List<Integer> findDuplicates(int[] nums) {
-        Set<Integer> set=new HashSet<Integer>();//<Warn>:¸Õ¿ªÊ¼ÊÇArrayList£¬ÕâÑù»áµ¼ÖÂÖØ¸´
+    //beats 16.71%
+    public List<Integer> findDuplicates(int[] nums) {
+        Set<Integer> set=new HashSet<Integer>();//<Warn>:ï¿½Õ¿ï¿½Ê¼ï¿½ï¿½ArrayListï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½áµ¼ï¿½ï¿½ï¿½Ø¸ï¿½
         int iter=0;
         while(iter<nums.length){
             if(nums[iter]==iter+1){

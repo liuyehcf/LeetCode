@@ -1,8 +1,8 @@
 # Binary Tree Zigzag Level Order Traversal
 
 ```Java
-	//beats 41.11%
-	public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
+    //beats 41.11%
+    public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
         List<List<Integer>> res=new ArrayList<List<Integer>>();
         Queue<TreeNode> queue=new LinkedList<TreeNode>();
         if(root!=null) queue.offer(root);

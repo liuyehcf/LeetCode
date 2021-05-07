@@ -1,8 +1,8 @@
 # 4Sum
 
 ```Java
-	//beats 29.54%
-	public List<List<Integer>> fourSum(int[] nums, int target) {
+    //beats 29.54%
+    public List<List<Integer>> fourSum(int[] nums, int target) {
         Arrays.sort(nums);
         List<List<Integer>> res=new ArrayList<List<Integer>>();
         for(int i=0;i<nums.length-3;i++){

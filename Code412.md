@@ -1,10 +1,10 @@
 # Fizz Buzz
 
-* нчад╣длБ
+* О©╫О©╫О©╫д╣О©╫О©╫О©╫
 
 ```Java
-	//42.52%
-	public List<String> fizzBuzz(int n) {
+    //42.52%
+    public List<String> fizzBuzz(int n) {
         List<String> res=new ArrayList<String>();
         for(int num=1;num<=n;num++){
             if(num%3==0&&num%5==0)

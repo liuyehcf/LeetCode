@@ -1,8 +1,8 @@
 # Reverse Integer
 
 ```Java
-	//beats 45.89%
-	public int reverse(int x) {
+    //beats 45.89%
+    public int reverse(int x) {
         boolean isPositive=x>0;
         long absx=Math.abs((long)x);
         long res=0;

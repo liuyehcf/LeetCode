@@ -1,12 +1,12 @@
-# Best Time to Buy and Sell Stock with Cooldown(ÂòÂô×î´óÊÕÒæ£¬ÂòÂôÖ®¼äÖÁÉÙ¼ä¸ôÒ»Ìì)
+# Best Time to Buy and Sell Stock with Cooldown(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½æ£¬ï¿½ï¿½ï¿½ï¿½Ö®ï¿½ï¿½ï¿½ï¿½ï¿½Ù¼ï¿½ï¿½Ò»ï¿½ï¿½)
 
-* ÎÞ·¨ÓÃÖ®Ç°µÄ¶¯Ì¬¹æ»®À´¼ÆËã£¬¼´buy[i]/sell[i]±íÊ¾µÚi´ÎÂò»òÂôµÄ×î´óÊÕÒæ
-* ÓÃbuys[i]/rests[i]/sells[i]±íÊ¾Ç°iÌì£¬×îºóÒ»´Î½»Ò×ÎªÂò£¬ÐÝÏ¢£¬ÂôµÄ×î´óÊÕÒæ
+* ï¿½Þ·ï¿½ï¿½ï¿½Ö®Ç°ï¿½Ä¶ï¿½Ì¬ï¿½æ»®ï¿½ï¿½ï¿½ï¿½ï¿½ã£¬ï¿½ï¿½buy[i]/sell[i]ï¿½ï¿½Ê¾ï¿½ï¿½iï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+* ï¿½ï¿½buys[i]/rests[i]/sells[i]ï¿½ï¿½Ê¾Ç°iï¿½ì£¬ï¿½ï¿½ï¿½Ò»ï¿½Î½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 ```Java
-	//beats 36.32%
-	public int maxProfit(int[] prices) {
+    //beats 36.32%
+    public int maxProfit(int[] prices) {
         if(prices.length<=1) return 0;
-        //Ç°nÌì£¬Âò£¬ÐÝ£¬ÂôµÄ×î´óÊÕÒæ£¬²»ÏÞÖÆµÚnÌìµÄ¾ßÌåÐÐÎª,×îºóÒ»´ÎÊÇÂò£¬ÐÝ£¬Âô
+        //Ç°nï¿½ì£¬ï¿½ï¿½ï¿½Ý£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½æ£¬ï¿½ï¿½ï¿½ï¿½ï¿½Æµï¿½nï¿½ï¿½Ä¾ï¿½ï¿½ï¿½ï¿½ï¿½Îª,ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý£ï¿½ï¿½ï¿½
         int[] buys=new int[prices.length+1];
         int[] rests=new int[prices.length+1];
         int[] sells=new int[prices.length+1];
@@ -20,11 +20,11 @@
     }
 ```
 
-* »òÕß¸É´à²»Òªrests
+* ï¿½ï¿½ï¿½ß¸É´à²»Òªrests
 ```Java
-	public int maxProfit(int[] prices) {
+    public int maxProfit(int[] prices) {
         if(prices.length<=1) return 0;
-        //Ç°nÌì£¬Âò£¬ÐÝ£¬ÂôµÄ×î´óÊÕÒæ£¬²»ÏÞÖÆµÚnÌìµÄ¾ßÌåÐÐÎª,×îºóÒ»´ÎÊÇÂò£¬ÐÝ£¬Âô
+        //Ç°nï¿½ì£¬ï¿½ï¿½ï¿½Ý£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½æ£¬ï¿½ï¿½ï¿½ï¿½ï¿½Æµï¿½nï¿½ï¿½Ä¾ï¿½ï¿½ï¿½ï¿½ï¿½Îª,ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý£ï¿½ï¿½ï¿½
         int[] buys=new int[prices.length+1];
         int[] sells=new int[prices.length+1];
         buys[0]=Integer.MIN_VALUE;

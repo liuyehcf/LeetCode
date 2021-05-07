@@ -1,13 +1,13 @@
-# First Unique Character in a String(ÕÒµ½µÚÒ»¸ö²»ÖØ¸´µÄ×Ö·ûµÄÏÂ±ê£¬Ã»ÓĞÔò·µ»Ø-1)
+# First Unique Character in a String(ï¿½Òµï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Ø¸ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½Â±ê£¬Ã»ï¿½ï¿½ï¿½ò·µ»ï¿½-1)
 
-## Ò»°ãË¼Â·
+## Ò»ï¿½ï¿½Ë¼Â·
 
-* ×î¿ªÊ¼¿¨¿ÇÁËÒ»ÏÂ£¬¾ÍÏëÓÃÒ»¸ömapÀ´Íê³ÉÕâµÀÌâ£¬´ÓCharacterµ½³öÏÖµÄÎ»ÖÃ»òÕß´ÓCharacterµ½³öÏÖµÄ´ÎÊı£¬¶¼²»ĞĞ
-* ĞèÒªÔö¼ÓÒ»¸öÊı×éÀ´¼ÇÂ¼´ÎÊı£¬»òÕß¼ÇÂ¼Î»ÖÃ
+* ï¿½î¿ªÊ¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½Â£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½mapï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½â£¬ï¿½ï¿½Characterï¿½ï¿½ï¿½ï¿½ï¿½Öµï¿½Î»ï¿½Ã»ï¿½ï¿½ß´ï¿½Characterï¿½ï¿½ï¿½ï¿½ï¿½ÖµÄ´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+* ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß¼ï¿½Â¼Î»ï¿½ï¿½
 
-* ÒÔÏÂÊÇ´ÓCharacterÓ³Éäµ½Î»ÖÃ
+* ï¿½ï¿½ï¿½ï¿½ï¿½Ç´ï¿½CharacterÓ³ï¿½äµ½Î»ï¿½ï¿½
 ```Java
-	public int firstUniqChar(String s) {
+    public int firstUniqChar(String s) {
         Map<Character,Integer> mapCharToPos=new HashMap<Character,Integer>();
         int[] cnt=new int[s.length()];
         for(int i=0;i<s.length();i++){
@@ -26,9 +26,9 @@
     }
 ```
 
-* ÒÔÏÂÊÇ´ÓCharacterÓ³Éäµ½´ÎÊı
+* ï¿½ï¿½ï¿½ï¿½ï¿½Ç´ï¿½CharacterÓ³ï¿½äµ½ï¿½ï¿½ï¿½ï¿½
 ```Java
-	public int firstUniqChar(String s) {
+    public int firstUniqChar(String s) {
         Map<Character,Integer> mapCharToCount=new HashMap<Character,Integer>();
         int[] pos=new int[26];
         for(int i=0;i<s.length();i++){
@@ -50,10 +50,10 @@
     }
 ```
 
-## Ë¼Î¬¶¨Ê½Õæ¿ÉÅÂ
+## Ë¼Î¬ï¿½ï¿½Ê½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 ```Java
-	public int firstUniqChar(String s) {
+    public int firstUniqChar(String s) {
         int[] cnt=new int[26];
         for(char c:s.toCharArray()){
             cnt[c-'a']++;

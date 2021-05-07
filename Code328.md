@@ -1,8 +1,8 @@
 # Odd Even Linked List
 
 ```Java
-	//beats 3.89%
-	public ListNode oddEvenList(ListNode head) {
+    //beats 3.89%
+    public ListNode oddEvenList(ListNode head) {
         ListNode oddPseudoHead=new ListNode(0);
         ListNode evenPesudoHead=new ListNode(0);
         boolean flag=true;

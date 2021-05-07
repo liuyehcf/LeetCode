@@ -1,7 +1,7 @@
 # Implement Stack using Queues
 
 ```Java
-	public class MyStack {
+    public class MyStack {
 
     Queue<Integer> queue;
     /** Initialize your data structure here. */

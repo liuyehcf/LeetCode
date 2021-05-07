@@ -1,9 +1,9 @@
 # Rotate Array
 
 ```Java
-	//beats 6.04%
-	public void rotate(int[] nums, int k) {
-        int leftSize=k%nums.length;//<Warn>:×¢ÒâÕâ¾ä
+    //beats 6.04%
+    public void rotate(int[] nums, int k) {
+        int leftSize=k%nums.length;//<Warn>:×¢ï¿½ï¿½ï¿½ï¿½ï¿½
         inverse(nums,0,nums.length-1);
         inverse(nums,0,leftSize-1);
         inverse(nums,leftSize,nums.length-1);

@@ -1,11 +1,11 @@
 # Remove Duplicate Letters
 
-* 精髓：堆栈
-* 若当前字母已在队列中，跳过(continue)
-* 若当前字母大于栈顶字母，并且栈顶字母在后续中仍存在，那么将其弹出，压入当前元素
+* 锟斤拷锟借：锟斤拷栈
+* 锟斤拷锟斤拷前锟斤拷母锟斤拷锟节讹拷锟斤拷锟叫ｏ拷锟斤拷锟斤拷(continue)
+* 锟斤拷锟斤拷前锟斤拷母锟斤拷锟斤拷栈锟斤拷锟斤拷母锟斤拷锟斤拷锟斤拷栈锟斤拷锟斤拷母锟节猴拷锟斤拷锟斤拷锟皆达拷锟节ｏ拷锟斤拷么锟斤拷锟戒弹锟斤拷锟斤拷压锟诫当前元锟斤拷
 
 ```Java
-	public String removeDuplicateLetters(String s) {
+    public String removeDuplicateLetters(String s) {
         int[] cnt=new int[26];
         boolean[] isVisited=new boolean[26];
         LinkedList<Character> stack=new LinkedList<Character>();

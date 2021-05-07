@@ -1,8 +1,8 @@
 # Game of Life
 
 ```Java
-	//beats 13.37%
-	public void gameOfLife(int[][] board) {
+    //beats 13.37%
+    public void gameOfLife(int[][] board) {
         if(board==null||board.length==0||board[0].length==0) return;
         for(int row=0;row<board.length;row++){
             for(int col=0;col<board[0].length;col++){

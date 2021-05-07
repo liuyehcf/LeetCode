@@ -1,8 +1,8 @@
 # Convert Sorted Array to Binary Search Tree
 
 ```Java
-	//beats 11.75%
-	public TreeNode sortedArrayToBST(int[] nums) {
+    //beats 11.75%
+    public TreeNode sortedArrayToBST(int[] nums) {
         return helper(nums,0,nums.length-1);
     }
     

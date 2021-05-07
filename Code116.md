@@ -2,7 +2,7 @@
 
 
 ```Java
-	public void connect(TreeLinkNode root) {
+    public void connect(TreeLinkNode root) {
         Queue<TreeLinkNode> queue=new LinkedList<TreeLinkNode>();
         if(root!=null) queue.offer(root);
         

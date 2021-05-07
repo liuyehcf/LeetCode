@@ -2,8 +2,8 @@
 
 
 ```Java
-	//beats 10.44%
-	public void reorderList(ListNode head) {
+    //beats 10.44%
+    public void reorderList(ListNode head) {
         List<ListNode> list=new ArrayList<ListNode>();
         ListNode iter=head;
         while(iter!=null){

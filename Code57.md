@@ -1,8 +1,8 @@
 # Insert Interval
 
 ```Java
-	//beats 72.52%
-	public List<Interval> insert(List<Interval> intervals, Interval newInterval) {
+    //beats 72.52%
+    public List<Interval> insert(List<Interval> intervals, Interval newInterval) {
         List<Interval> res=new ArrayList<Interval>();
         
         for(int i=0;i<intervals.size();i++){

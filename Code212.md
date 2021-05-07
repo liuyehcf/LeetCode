@@ -1,8 +1,8 @@
 # Word Search II
 
-* ³¬Ê±
+* ï¿½ï¿½Ê±
 ```Java
-	public List<String> findWords(char[][] board, String[] words) {
+    public List<String> findWords(char[][] board, String[] words) {
         Set<String> set=new HashSet<String>();
         int m=board.length;
         int n=board[0].length;

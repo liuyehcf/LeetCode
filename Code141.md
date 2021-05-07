@@ -1,9 +1,9 @@
 # Linked List Cycle
 
 ```Java
-	public boolean hasCycle(ListNode head) {
+    public boolean hasCycle(ListNode head) {
         ListNode slow=head,fast=head;
-        boolean flag=false;//<Warn>:ÐèÒªÓÐÒ»¸ö±ê¼ÇÀ´×¢Ã÷ÊÇ·ñ´¦ÓÚ¿ªÊ¼£¬Æð²½Ê±ÏàÓö×ÔÈ»ÊÇÒªÅÅ³ýµÄ
+        boolean flag=false;//<Warn>:ï¿½ï¿½Òªï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×¢ï¿½ï¿½ï¿½Ç·ï¿½ï¿½Ú¿ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È»ï¿½ï¿½Òªï¿½Å³ï¿½ï¿½ï¿½
         while(fast!=null&&fast.next!=null){
             if(fast==slow&&flag) return true;
             fast=fast.next.next;
@@ -14,10 +14,10 @@
     }
 ```
 
-* »»ÖÖË¼Â·£¬´í¿ªÆðÊ¼Î»ÖÃ¼´¿É
+* ï¿½ï¿½ï¿½ï¿½Ë¼Â·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼Î»ï¿½Ã¼ï¿½ï¿½ï¿½
 ```Java
-	//beats 9.95%
-	public boolean hasCycle(ListNode head) {
+    //beats 9.95%
+    public boolean hasCycle(ListNode head) {
         ListNode pseudoHead=new ListNode(0);
         pseudoHead.next=head;
         ListNode slow=pseudoHead,fast=head;

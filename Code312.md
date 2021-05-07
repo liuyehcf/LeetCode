@@ -1,11 +1,11 @@
-# Burst Balloons(ÆøÇò±¬Õ¨µÄ×î´óÖµ)
+# Burst Balloons(ï¿½ï¿½ï¿½ï¿½Õ¨ï¿½ï¿½ï¿½ï¿½ï¿½Öµ)
 
-* ×îºóÒ»¸öÕ¨Ë­£¬×îºóÒ»¸öÕ¨µÄÔªËØ²»Ó°ÏìÖ®Ç°Õ¨µÄ½á¹û
-* ¶ÔÓÚÒ»¸öÇø¼äleft [a1 a2 a3 ... an] right,Èç¹û×îºóÕ¨ai£¬ÄÇÃ´´ËÊ±µÄ½á¹û¾ÍÊÇleft*ai*right+dp[a1][ai-1]+dp[ai+1][an]
+* ï¿½ï¿½ï¿½Ò»ï¿½ï¿½Õ¨Ë­ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½Õ¨ï¿½ï¿½Ôªï¿½Ø²ï¿½Ó°ï¿½ï¿½Ö®Ç°Õ¨ï¿½Ä½ï¿½ï¿½
+* ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½left [a1 a2 a3 ... an] right,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Õ¨aiï¿½ï¿½ï¿½ï¿½Ã´ï¿½ï¿½Ê±ï¿½Ä½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½left*ai*right+dp[a1][ai-1]+dp[ai+1][an]
 
 ```Java
-	//beats 9.22%
-	public int maxCoins(int[] nums) {
+    //beats 9.22%
+    public int maxCoins(int[] nums) {
         if(nums==null||nums.length==0) return 0;
         int n=nums.length;
         int[][] dp=new int[n][n];

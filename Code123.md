@@ -1,8 +1,8 @@
 # Best Time to Buy and Sell Stock III
 
 ```Java
-	//beats 21.50%
-	public int maxProfit(int[] prices) {
+    //beats 21.50%
+    public int maxProfit(int[] prices) {
         int[] buys=new int[2];
         int[] sells=new int[2];
         Arrays.fill(buys,Integer.MIN_VALUE);

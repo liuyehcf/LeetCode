@@ -3,8 +3,8 @@
 * 注意点：取出值小于指定值的节点，需要维护其前一个节点(pre)，而pre的维护与"iter是否与小于指定值的区间有关联"有关系
 
 ```Java
-	//beats 5.35
-	public ListNode partition(ListNode head, int x) {
+    //beats 5.35
+    public ListNode partition(ListNode head, int x) {
         ListNode pseudoHead=new ListNode(0);
         pseudoHead.next=head;
         ListNode smalltail=pseudoHead;
@@ -50,7 +50,7 @@
 
 * 更漂亮的写法
 ```Java
-	public ListNode partition(ListNode head, int x) {
+    public ListNode partition(ListNode head, int x) {
         ListNode pseudoHead=new ListNode(0);
         pseudoHead.next=head;
         

@@ -2,8 +2,8 @@
 
 
 ```Java
-	//beats 27.55%
-	public void nextPermutation(int[] nums) {
+    //beats 27.55%
+    public void nextPermutation(int[] nums) {
         for(int i=nums.length-2;i>=0;i--){
             int index=-1;
             for(int j=i+1;j<nums.length;j++){
@@ -51,8 +51,8 @@
 ```
 
 ```Java
-	//beats 8.42%
-	public void nextPermutation(int[] nums) {
+    //beats 8.42%
+    public void nextPermutation(int[] nums) {
         for(int left=nums.length-2;left>=0;left--){
             for(int right=nums.length-1;right>left;right--){
                 if(nums[right]>nums[left]){
@@ -97,8 +97,8 @@
 
 
 ```Java
-	//beats 24.63%
-	public void nextPermutation(int[] nums) {
+    //beats 24.63%
+    public void nextPermutation(int[] nums) {
         for(int i=nums.length-2;i>=0;i--){
             if(nums[i+1]<=nums[i]) continue;   
             int left=i+1,right=nums.length-1;   
@@ -135,8 +135,8 @@
 ```
 
 ```Java
-	//beats 33.05%
-	public void nextPermutation(int[] nums) {
+    //beats 33.05%
+    public void nextPermutation(int[] nums) {
         for(int i=nums.length-2;i>=0;i--){
             if(nums[i]<nums[i+1]){
                 int left=i+1,right=nums.length-1;

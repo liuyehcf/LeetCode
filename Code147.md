@@ -1,8 +1,8 @@
 # Insertion Sort List
 
 ```Java
-	//beats 74.77%
-	public ListNode insertionSortList(ListNode head) {
+    //beats 74.77%
+    public ListNode insertionSortList(ListNode head) {
         ListNode pseudoHead=new ListNode(0);
         ListNode iter=head;
         while(iter!=null){

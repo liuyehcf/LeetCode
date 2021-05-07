@@ -4,7 +4,7 @@
 * 假设leftHigh低于右边，那么需要移动左边，而更新左边的条件与面积是否需要更新作为判断，这是不对的
 * 更新leftHigh与面积是否需要更新无关!!!
 ```Java
-	public int maxArea(int[] height) {
+    public int maxArea(int[] height) {
         int left=0,right=height.length-1;
         int leftHigh=height[left],rightHigh=height[right];
         int res=area(left,right,leftHigh,rightHigh);
@@ -34,8 +34,8 @@
 
 
 ```Java 
-	//beats 73.18%
-	public int maxArea(int[] height) {
+    //beats 73.18%
+    public int maxArea(int[] height) {
         int left=0,right=height.length-1;
         int leftHigh=height[left],rightHigh=height[right];
         int res=area(left,right,leftHigh,rightHigh);

@@ -1,8 +1,8 @@
 # Find All Numbers Disappeared in an Array
 
 ```Java
-	//beats 20.75%
-	public List<Integer> findDisappearedNumbers(int[] nums) {
+    //beats 20.75%
+    public List<Integer> findDisappearedNumbers(int[] nums) {
         List<Integer> res=new ArrayList<Integer>();
         
         int iter=0;

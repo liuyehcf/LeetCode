@@ -1,8 +1,8 @@
 # Merge k Sorted Lists
 
 ```Java
-	//超时
-	public ListNode mergeKLists(ListNode[] lists) {
+    //超时
+    public ListNode mergeKLists(ListNode[] lists) {
         ListNode pseudoHead=new ListNode(0);
         ListNode iter=pseudoHead;
         ListNode cur=null;
@@ -31,8 +31,8 @@
 
 
 ```Java
-	//beats 27.70%
-	public ListNode mergeKLists(ListNode[] lists) {
+    //beats 27.70%
+    public ListNode mergeKLists(ListNode[] lists) {
         ListNode pseudoHead=new ListNode(0);
         ListNode iter=pseudoHead;
         Queue<ListNode> queue=new PriorityQueue<ListNode>(new Comparator<ListNode>(){

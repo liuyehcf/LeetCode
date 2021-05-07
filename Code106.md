@@ -1,9 +1,9 @@
 # Construct Binary Tree from Inorder and Postorder Traversal
 
-* ×¢Òâµã£¬Á½¸öÊý×éµÄ×óÓÒ×ø±ê¶¼ÊÇÐèÒªµÄ
+* ×¢ï¿½ï¿½ã£¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ê¶¼ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½
 ```Java
-	//beats 75.85%
-	public TreeNode buildTree(int[] inorder, int[] postorder) {
+    //beats 75.85%
+    public TreeNode buildTree(int[] inorder, int[] postorder) {
         Map<Integer,Integer> map=new HashMap<Integer,Integer>();
         for(int i=0;i<inorder.length;i++){
             map.put(inorder[i],i);

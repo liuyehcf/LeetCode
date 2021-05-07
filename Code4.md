@@ -1,8 +1,8 @@
 # Median of Two Sorted Arrays
 
 ```Java
-	//beats 14.36%
-	public double findMedianSortedArrays(int[] nums1, int[] nums2) {
+    //beats 14.36%
+    public double findMedianSortedArrays(int[] nums1, int[] nums2) {
         int len1=nums1.length,len2=nums2.length;
         return (find_N(nums1,0,nums2,0,(len1+len2+1)/2)+find_N(nums1,0,nums2,0,(len1+len2+2)/2))/2;
     }

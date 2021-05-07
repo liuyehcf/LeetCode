@@ -1,7 +1,7 @@
-# Number of Boomerangs(¸ø¶¨n¸ö¶þÎ¬×ø±ê£¬·µ»Øtuple(i,j,k)µÄ¸öÊý£¬Âú×ãiµ½jµÄ¾àÀëµÈÓÚiµ½kµÄ¾àÀë)
+# Number of Boomerangs(ï¿½ï¿½ï¿½ï¿½nï¿½ï¿½ï¿½ï¿½Î¬ï¿½ï¿½ï¿½ê£¬ï¿½ï¿½ï¿½ï¿½tuple(i,j,k)ï¿½Ä¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½iï¿½ï¿½jï¿½Ä¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½iï¿½ï¿½kï¿½Ä¾ï¿½ï¿½ï¿½)
 
 ```Java
-	public int numberOfBoomerangs(int[][] points) {
+    public int numberOfBoomerangs(int[][] points) {
         int res=0;
         for(int i=0;i<points.length;i++){
             int[] point_i=points[i];

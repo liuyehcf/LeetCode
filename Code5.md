@@ -2,8 +2,8 @@
  
 * 动态规划
 ```Java
-	//beats 13.47%
-	public String longestPalindrome(String s) {
+    //beats 13.47%
+    public String longestPalindrome(String s) {
         if(s==null||s.length()==0) return "";
         boolean[][] dp=new boolean[s.length()][s.length()];
         
@@ -21,9 +21,9 @@
         }
         return res;
     }
-	
-	
-	public String longestPalindrome(String s) {
+    
+    
+    public String longestPalindrome(String s) {
         if(s==null||s.length()==0) return "";
         boolean[][] dp=new boolean[s.length()][s.length()];
         for(int i=0;i<s.length();i++){
@@ -48,8 +48,8 @@
 
 * else
 ```Java
-	//beats 50%
-	public String longestPalindrome(String s) {
+    //beats 50%
+    public String longestPalindrome(String s) {
         String res="";
         for(int i=0;i<s.length();i++){
             String tem1=helper(s,i,i);
@@ -75,8 +75,8 @@
 
 * 改进过的
 ```Java
-	//beats 87.61%
-	int[] range;
+    //beats 87.61%
+    int[] range;
     public String longestPalindrome(String s) {
         if(s==null||s.length()==0) return "";
         range=new int[2];

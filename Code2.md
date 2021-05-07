@@ -3,8 +3,8 @@
 * 注意点：分为三部分，第一部分：两个序列都未到末端；第二部分：只剩一个序列未到末端；第三部分：处理最后的进位
 
 ```Java
-	//beats 64.04%
-	public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+    //beats 64.04%
+    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         ListNode pseudoHead=new ListNode(0);
         ListNode iter=pseudoHead;
         int carry=0;

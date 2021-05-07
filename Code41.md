@@ -1,7 +1,7 @@
 # First Missing Positive
 
 ```Java
-	//beats 70.30%
+    //beats 70.30%
 public class Solution {
     public int firstMissingPositive(int[] nums) {
         int boundary=nums.length-1;

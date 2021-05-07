@@ -1,8 +1,8 @@
 # Remove Duplicates from Sorted List
 
 ```Java
-	//beats 15.20%
-	public ListNode deleteDuplicates(ListNode head) {
+    //beats 15.20%
+    public ListNode deleteDuplicates(ListNode head) {
         ListNode pseudoHead=new ListNode(0);
         pseudoHead.next=head;
         ListNode iter=head;

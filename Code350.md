@@ -1,9 +1,9 @@
-# Intersection of Two Arrays II(Á½¸öÊý×éµÄ½»¼¯£¬¿É°üº¬ÖØ¸´)
+# Intersection of Two Arrays II(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É°ï¿½ï¿½ï¿½ï¿½Ø¸ï¿½)
 
-* ÓëÉÏÒ»¸ö·½·¨²»Í¬£¬set¾Í²»ÄÜÓÃÁË
+* ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¬ï¿½ï¿½setï¿½Í²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 ```Java
-	public int[] intersect(int[] nums1, int[] nums2) {
+    public int[] intersect(int[] nums1, int[] nums2) {
         Arrays.sort(nums1);
         Arrays.sort(nums2);
         

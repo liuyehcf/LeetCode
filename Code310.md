@@ -1,9 +1,9 @@
 # Minimum Height Trees
 
-* ¶¯Ì¬¸üÐÂ½ÚµãµÄ¶È(ÕâÀï¶ÈµÄ¶¨ÒåÊÇ£¬Óë¸Ã½ÚµãÏàÁÚµÄÎ´·ÃÎÊ½ÚµãµÄÊýÄ¿)
+* ï¿½ï¿½Ì¬ï¿½ï¿½ï¿½Â½Úµï¿½Ä¶ï¿½(ï¿½ï¿½ï¿½ï¿½ÈµÄ¶ï¿½ï¿½ï¿½ï¿½Ç£ï¿½ï¿½ï¿½Ã½Úµï¿½ï¿½ï¿½ï¿½Úµï¿½Î´ï¿½ï¿½ï¿½Ê½Úµï¿½ï¿½ï¿½ï¿½Ä¿)
 ```Java
-	//beats 98.85%
-	public List<Integer> findMinHeightTrees(int n, int[][] edges) {
+    //beats 98.85%
+    public List<Integer> findMinHeightTrees(int n, int[][] edges) {
         if(n==1) return Arrays.asList(0);
         @SuppressWarnings("unchecked")
         List<Integer>[] graph=new List[n];
@@ -22,7 +22,7 @@
         
         List<Integer> curStep=new ArrayList<Integer>();
         for(int i=0;i<n;i++){
-            if(degrees[i]==1){  //¶ÈÎª1Ê±£¬±íÃ÷´ËÊ±ËüÎª"Ïà¶ÔµÄÒ¶½Úµã"
+            if(degrees[i]==1){  //ï¿½ï¿½Îª1Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½Îª"ï¿½ï¿½Ôµï¿½Ò¶ï¿½Úµï¿½"
                 curStep.add(i);
                 degrees[i]--;
             }
@@ -38,7 +38,7 @@
                 for(int otherNode:adjacentList){
                     if(--degrees[otherNode]==1){
                         nextStep.add(otherNode);
-                        degrees[otherNode]--;//ÕâÀï²»½øÐÐÅÐ¶ÏÁË£¬¼´±ãÊÇÒÑ¾­·ÃÎÊ¹ýµÄµã-1Ò²Ã»ÓÐ¹ØÏµ£¬ÒòÎªÖ»ÓÐ¶ÈÎª1²Å»áÌí¼Óµ½ÏÂÒ»´Î·ÃÎÊµÄ±íÖÐ
+                        degrees[otherNode]--;//ï¿½ï¿½ï¿½ï²»ï¿½ï¿½ï¿½ï¿½ï¿½Ð¶ï¿½ï¿½Ë£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¾ï¿½ï¿½ï¿½ï¿½Ê¹ï¿½ï¿½Äµï¿½-1Ò²Ã»ï¿½Ð¹ï¿½Ïµï¿½ï¿½ï¿½ï¿½ÎªÖ»ï¿½Ð¶ï¿½Îª1ï¿½Å»ï¿½ï¿½ï¿½ï¿½Óµï¿½ï¿½ï¿½Ò»ï¿½Î·ï¿½ï¿½ÊµÄ±ï¿½ï¿½ï¿½
                     }
                 }
             }
@@ -53,10 +53,10 @@
     }
 ```
 
-* ÁíÒ»ÖÖ·½·¨£¬²»¶¯Ì¬¸üÐÂ½ÚµãµÄ¶È£¬¶øÊÇ¸üÐÂÁÚ½Ó±í
+* ï¿½ï¿½Ò»ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì¬ï¿½ï¿½ï¿½Â½Úµï¿½Ä¶È£ï¿½ï¿½ï¿½ï¿½Ç¸ï¿½ï¿½ï¿½ï¿½Ú½Ó±ï¿½
 ```Java
-	//beats 59.68%
-	public List<Integer> findMinHeightTrees(int n, int[][] edges) {
+    //beats 59.68%
+    public List<Integer> findMinHeightTrees(int n, int[][] edges) {
         if(n==1) return Arrays.asList(0);
         @SuppressWarnings("unchecked")
         Set<Integer>[] graph=new Set[n];
@@ -84,7 +84,7 @@
                 int curNode=curStep.get(i);
                 Set<Integer> adjacentList=graph[curNode];
                 for(int otherNode:adjacentList){
-                    graph[otherNode].remove(curNode);//Õâ²½²Ù×÷µ¼ÖÂÐÔÄÜ½µµÍ¿©
+                    graph[otherNode].remove(curNode);//ï¿½â²½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ü½ï¿½ï¿½Í¿ï¿½
                     if(graph[otherNode].size()==1)
                         nextStep.add(otherNode);
                 }

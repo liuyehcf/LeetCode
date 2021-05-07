@@ -51,7 +51,7 @@ private int count;
 
 * 更好的方法DFS
 ```Java
-	public int pathSum(TreeNode root, int sum) {
+    public int pathSum(TreeNode root, int sum) {
         if(root == null)
             return 0;
         return findPath(root, sum) + pathSum(root.left, sum) + pathSum(root.right, sum);
@@ -71,7 +71,7 @@ private int count;
 
 * 更更好的方法
 ```Java
-	public int pathSum(TreeNode root, int sum) {
+    public int pathSum(TreeNode root, int sum) {
         HashMap<Integer, Integer> preSum = new HashMap();
         preSum.put(0,1);
         helper(root, 0, sum, preSum);

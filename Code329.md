@@ -1,9 +1,9 @@
 # Longest Increasing Path in a Matrix
 
-* 动态规划，与一般的动态规划不同，这个只是保存了计算过的值，有点像带备忘录的动态规划
+* 锟斤拷态锟芥划锟斤拷锟斤拷一锟斤拷亩锟教拷婊拷锟酵拷锟斤拷锟斤拷只锟角憋拷锟斤拷锟剿硷拷锟斤拷锟斤拷锟街碉拷锟斤拷械锟斤拷锟斤拷锟斤拷锟斤拷录锟侥讹拷态锟芥划
 ```Java
-	//beats 31.74
-	public int longestIncreasingPath(int[][] matrix) {
+    //beats 31.74
+    public int longestIncreasingPath(int[][] matrix) {
         if(matrix==null||matrix.length==0||matrix[0].length==0) return 0;
         int m=matrix.length;
         int n=matrix[0].length;

@@ -2,8 +2,8 @@
 * 注锟斤拷锟姐，某一时锟教ｏ拷只锟斤拷num1锟斤拷num2锟斤拷锟斤拷之一锟斤拷锟芥换为num锟斤拷锟斤拷使cnt1锟斤拷cnt2锟斤拷为0
 
 ```Java
-	//beats 62.63%
-	public List<Integer> majorityElement(int[] nums) {
+    //beats 62.63%
+    public List<Integer> majorityElement(int[] nums) {
         List<Integer> res=new ArrayList<Integer>();
         int cnt1=0;
         int cnt2=0;

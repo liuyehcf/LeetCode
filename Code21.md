@@ -3,8 +3,8 @@
 * 相对于设置一个哨兵，我倾向于分成两步：当两个序列都为到末端，当其中一个序列到末端
 
 ```Java
-	//beats 25.68%
-	public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
+    //beats 25.68%
+    public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
         ListNode pseudoHead=new ListNode(0);
         ListNode iter=pseudoHead,iter1=l1,iter2=l2;
         while(iter1!=null&&iter2!=null){

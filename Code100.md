@@ -1,7 +1,7 @@
 # Same Tree
 
 ```Java
-	public boolean isSameTree(TreeNode p, TreeNode q) {
+    public boolean isSameTree(TreeNode p, TreeNode q) {
         return helper(p,q);
     }
     

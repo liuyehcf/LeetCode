@@ -1,8 +1,8 @@
 # Linked List Cycle II
 
 ```Java
-	//beats 17.34%
-	public ListNode detectCycle(ListNode head) {
+    //beats 17.34%
+    public ListNode detectCycle(ListNode head) {
         ListNode fast=head,slow=head;
         ListNode meetPoint=null;
         boolean flag=false;

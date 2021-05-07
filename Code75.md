@@ -1,8 +1,8 @@
 # Sort Colors
 
 ```Java
-	//beats 54.47%
-	public void sortColors(int[] nums) {
+    //beats 54.47%
+    public void sortColors(int[] nums) {
         int[] cnt=new int[3];
         for(int num:nums){
             cnt[num]++;

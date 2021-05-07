@@ -1,7 +1,7 @@
 # Trapping Rain Water
 
 ```Java
-	//beats 92.67%
+    //beats 92.67%
 public class Solution {
     public int trap(int[] height) {
         if(height==null||height.length==0) return 0;

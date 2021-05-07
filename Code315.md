@@ -1,12 +1,12 @@
 # Count of Smaller Numbers After Self
 
-* Ê×ÏÈÒªÏëµ½Ê÷
-* ÇÉÃîÖ®´¦ÔÚÓÚ·´Ïò²åÈë£¬ÕâÑù¿ÉÒÔ±£Ö¤£¬µ±²åÈëÄ³½ÚµãÊ±£¬Ê÷ÉÏµÄ½Úµã¶¼ÊÇÓÒÓÚËü³öÏÖ£¬Òò´ËÍ³¼ÆÖµÊ±ÓÐÐ§µÄ
-* ¶îÍâÎ¬»¤µÄÖµÎªÐ¡ÓÚ¸Ã½ÚµãµÄ½ÚµãÊýÄ¿£¬ÓëµÈÓÚ¸Ã½ÚµãµÄ½ÚµãÊýÄ¿
+* ï¿½ï¿½ï¿½ï¿½Òªï¿½ëµ½ï¿½ï¿½
+* ï¿½ï¿½ï¿½ï¿½Ö®ï¿½ï¿½ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½ï¿½ï¿½ë£¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô±ï¿½Ö¤ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä³ï¿½Úµï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ÏµÄ½Úµã¶¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö£ï¿½ï¿½ï¿½ï¿½Í³ï¿½ï¿½ÖµÊ±ï¿½ï¿½Ð§ï¿½ï¿½
+* ï¿½ï¿½ï¿½ï¿½Î¬ï¿½ï¿½ï¿½ï¿½ÖµÎªÐ¡ï¿½Ú¸Ã½Úµï¿½Ä½Úµï¿½ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú¸Ã½Úµï¿½Ä½Úµï¿½ï¿½ï¿½Ä¿
 
 ```Java
     //beats 79.19%
-	class TreeNode{
+    class TreeNode{
         int val;
         TreeNode left;
         TreeNode right;
@@ -37,7 +37,7 @@
         }
         
         if(x!=null){
-            res.add(0,x.cnt+count);   //µ±³öÏÖÖØ¸´½ÚµãÊ±£¬»¹ÐèÒªÍ³¼ÆÆä×ó±ß½ÚµãµÄÊýÄ¿£¬¹Ø¼ü
+            res.add(0,x.cnt+count);   //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø¸ï¿½ï¿½Úµï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÒªÍ³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß½Úµï¿½ï¿½ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½Ø¼ï¿½
         }
         else {
             TreeNode z=new TreeNode(val);

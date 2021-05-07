@@ -1,12 +1,12 @@
 # Reverse Linked List II
 
 ```Java
-	//beats 14.82%
-	public ListNode reverseBetween(ListNode head, int m, int n) {
+    //beats 14.82%
+    public ListNode reverseBetween(ListNode head, int m, int n) {
         ListNode pseudoHead=new ListNode(0);
         pseudoHead.next=head;
         int cnt=0;
-        ListNode iter=pseudoHead,left=null,right=null;//<Warn1>£ºiter´íÎóµØ³õÊ¼»¯³ÉÁËhead£¬²»ÒªË¼Î¬¶¨Ê½£¡£¡£¡
+        ListNode iter=pseudoHead,left=null,right=null;//<Warn1>ï¿½ï¿½iterï¿½ï¿½ï¿½ï¿½Ø³ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½headï¿½ï¿½ï¿½ï¿½ÒªË¼Î¬ï¿½ï¿½Ê½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         while(iter!=null){
             if(cnt==m-1) left=iter;
             if(cnt==n+1) right=iter;
@@ -20,7 +20,7 @@
     private void reverse(ListNode pseudoHead,ListNode tail){
         ListNode iter=pseudoHead.next;
         pseudoHead.next=tail;
-        while(iter!=tail){//<Warn2>£º´íÎóÐ´³ÉÁËiter!=null
+        while(iter!=tail){//<Warn2>ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð´ï¿½ï¿½ï¿½ï¿½iter!=null
             ListNode tempPseudoHeadNext=pseudoHead.next;
             ListNode tempIterNext=iter.next;
             pseudoHead.next=iter;

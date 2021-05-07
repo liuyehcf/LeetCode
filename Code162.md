@@ -1,8 +1,8 @@
 # Find Peak Element
 
 ```Java
-	//beats 1.20%
-	public int findPeakElement(int[] nums) {
+    //beats 1.20%
+    public int findPeakElement(int[] nums) {
         for(int i=0;i<nums.length;i++){
             if(get(nums,i)>get(nums,i-1)&&get(nums,i)>get(nums,i+1)) return i;
         }

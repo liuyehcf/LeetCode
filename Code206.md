@@ -1,8 +1,8 @@
 # Reverse Linked List
 
 ```Java
-	//beats 31.28%
-	public ListNode reverseList(ListNode head) {
+    //beats 31.28%
+    public ListNode reverseList(ListNode head) {
         ListNode pseudoHead=new ListNode(0);
         pseudoHead.next=head;
         reverse(pseudoHead,null);

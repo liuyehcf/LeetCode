@@ -1,8 +1,8 @@
 # Maximum Product Subarray
 
 ```Java
-	//beats 13.69%
-	public int maxProduct(int[] nums) {
+    //beats 13.69%
+    public int maxProduct(int[] nums) {
         if(nums==null||nums.length==0) return 0;
         int[] dpMin=new int[nums.length];
         int[] dpMax=new int[nums.length];

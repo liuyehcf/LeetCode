@@ -1,8 +1,8 @@
 # 3Sum
 
 ```Java
-	//beats 13.98%
-	public List<List<Integer>> threeSum(int[] nums) {
+    //beats 13.98%
+    public List<List<Integer>> threeSum(int[] nums) {
         Arrays.sort(nums);
         List<List<Integer>> res=new ArrayList<List<Integer>>();
         for(int i=0;i<nums.length;i++){
@@ -22,8 +22,8 @@
 
 
 ```Java
-	//beats 18.87%
-	public List<List<Integer>> threeSum(int[] nums) {
+    //beats 18.87%
+    public List<List<Integer>> threeSum(int[] nums) {
         Arrays.sort(nums);
         List<List<Integer>> res=new ArrayList<List<Integer>>();
         for(int i=0;i<nums.length-2;i++){

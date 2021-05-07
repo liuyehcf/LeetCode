@@ -1,8 +1,8 @@
 # Validate Binary Search Tree
 
 ```Java
-	//beats 37.60%
-	public boolean isValidBST(TreeNode root) {
+    //beats 37.60%
+    public boolean isValidBST(TreeNode root) {
         return helper(root,Long.MIN_VALUE,Long.MAX_VALUE);
     }
     

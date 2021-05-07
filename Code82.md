@@ -1,7 +1,7 @@
 # Remove Duplicates from Sorted List II
 
 ```Java
-	public ListNode deleteDuplicates(ListNode head) {
+    public ListNode deleteDuplicates(ListNode head) {
         ListNode pseudoHead=new ListNode(0);
         pseudoHead.next=head;//<Warn1:>miss this
         ListNode pre=pseudoHead,iter=head;

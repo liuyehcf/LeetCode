@@ -3,7 +3,7 @@
 * 链表长为L，除去倒数第n个数，就是除去正数第L+1-n个数
 
 ```Java
-	//beats 79.77%
+    //beats 79.77%
 public class Solution {
     public ListNode removeNthFromEnd(ListNode head, int n) {
         ListNode pseudoHead=new ListNode(0);

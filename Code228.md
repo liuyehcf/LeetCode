@@ -3,8 +3,8 @@
 
 
 ```Java
-	//beats 7.06%
-	public List<String> summaryRanges(int[] nums) {
+    //beats 7.06%
+    public List<String> summaryRanges(int[] nums) {
         List<String> res=new ArrayList<String>();
         if(nums==null||nums.length==0) return res;
         

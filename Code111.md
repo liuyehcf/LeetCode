@@ -1,8 +1,8 @@
 # Minimum Depth of Binary Tree
 
 ```Java
-	//beats 17.66%
-	int min;
+    //beats 17.66%
+    int min;
     public int minDepth(TreeNode root) {
         min=Integer.MAX_VALUE;
         if(root==null) return 0;

@@ -1,8 +1,8 @@
 #  Copy List with Random Pointer
 
 ```Java
-	//beats 48.44%
-	public RandomListNode copyRandomList(RandomListNode head) {
+    //beats 48.44%
+    public RandomListNode copyRandomList(RandomListNode head) {
         RandomListNode pseudoHead=new RandomListNode(0);
         RandomListNode pseudoCopyHead=new RandomListNode(0);
         RandomListNode iter=head,iterCopy=pseudoCopyHead;

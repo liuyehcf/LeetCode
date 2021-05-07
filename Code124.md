@@ -1,8 +1,8 @@
 # Binary Tree Maximum Path Sum
 
 ```Java
-	//beats 9.34%
-	int max=0;
+    //beats 9.34%
+    int max=0;
     
     public int maxPathSum(TreeNode root) {
         max=Integer.MIN_VALUE;
@@ -10,7 +10,7 @@
         return max;
     }
     
-    private int helper(TreeNode root){  //¸Ãº¯Êý¼ÆËã³ö°üº¬¸Ã²ÎÊý½ÚµãµÄ×î´óºÍÂ·¾¶£¬¸Ã²ÎÊý½ÚµãÊÇÆäÖÐÒ»¸ö¶Ëµã
+    private int helper(TreeNode root){  //ï¿½Ãºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã²ï¿½ï¿½ï¿½ï¿½Úµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½ï¿½ï¿½Ã²ï¿½ï¿½ï¿½ï¿½Úµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½Ëµï¿½
         if(root==null) return 0;
         
         int left=helper(root.left);
@@ -19,7 +19,7 @@
         if(left<0) left=0;
         if(right<0) right=0;
         
-        max=Math.max(max,root.val+left+right);//½«Á½¶ËÁ¬½ÓÆðÀ´
+        max=Math.max(max,root.val+left+right);//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         return root.val+Math.max(left,right);
     }
 ```

@@ -9,8 +9,8 @@
 
 
 ```Java
-	//beats 55.72%
-	public int nthUglyNumber(int n) {
+    //beats 55.72%
+    public int nthUglyNumber(int n) {
         int[] primes={2,3,5};
         int[] factors={2,3,5};
         int[] indexs=new int[3];

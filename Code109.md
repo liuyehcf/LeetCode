@@ -1,8 +1,8 @@
 # Convert Sorted List to Binary Search Tree
 
 ```Java
-	//11.68%
-	public TreeNode sortedListToBST(ListNode head) {
+    //11.68%
+    public TreeNode sortedListToBST(ListNode head) {
         ListNode pseudoHead=new ListNode(0);
         pseudoHead.next=head;
         return helper(pseudoHead,null);
@@ -11,11 +11,11 @@
     private TreeNode helper(ListNode pseudoHead,ListNode tail){
         if(pseudoHead.next==tail) return null;
         ListNode slow=pseudoHead.next,fast=pseudoHead.next;
-        while(fast!=tail&&fast.next!=tail){//<Warn1>£ºÕâÀï×î¿ªÊ¼Ð´³ÉÁËfast!=null&&fast.next!=null
+        while(fast!=tail&&fast.next!=tail){//<Warn1>ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½î¿ªÊ¼Ð´ï¿½ï¿½ï¿½ï¿½fast!=null&&fast.next!=null
             fast=fast.next.next;
             slow=slow.next;
         }
-        //while½áÊøºó£¬slowÖ¸Ïò×ÓÊ÷¸ù½Úµã
+        //whileï¿½ï¿½ï¿½ï¿½ï¿½ï¿½slowÖ¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½
         
         ListNode leftPartTail=slow;
         ListNode rightPartPseudoHead=slow;

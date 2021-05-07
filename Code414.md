@@ -1,9 +1,9 @@
 # Third Maximum Number
 
-* 常规思路
+* 锟斤拷锟斤拷思路
 ```Java
-	//beats 27.18%
-	public int thirdMax(int[] nums) {
+    //beats 27.18%
+    public int thirdMax(int[] nums) {
         Set<Integer> uniqueSet=new HashSet<Integer>();
         for(int num:nums){
             uniqueSet.add(num);
@@ -54,10 +54,10 @@
     }
 ```
 
-* 应该有更好的方法
+* 应锟斤拷锟叫革拷锟矫的凤拷锟斤拷
 
 ```Java
-	public int thirdMax(int[] nums) {
+    public int thirdMax(int[] nums) {
         int max, mid, small, count;
         max = mid = small = Integer.MIN_VALUE;
         count = 0;  //Count how many top elements have been found.

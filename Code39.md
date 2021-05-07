@@ -1,8 +1,8 @@
 # Combination Sum
 
 ```Java
-	//beats 84.16%
-	public List<List<Integer>> combinationSum(int[] candidates, int target) {
+    //beats 84.16%
+    public List<List<Integer>> combinationSum(int[] candidates, int target) {
         List<List<Integer>> res=new ArrayList<List<Integer>>();
         List<Integer> cur=new ArrayList<Integer>();
         Arrays.sort(candidates);
@@ -27,8 +27,8 @@
 ```
 
 ```Java
-	//64.21%
-	public List<List<Integer>> combinationSum(int[] candidates, int target) {
+    //64.21%
+    public List<List<Integer>> combinationSum(int[] candidates, int target) {
         List<List<Integer>> res=new ArrayList<List<Integer>>();
         List<Integer> cur=new ArrayList<Integer>();
         Arrays.sort(candidates);

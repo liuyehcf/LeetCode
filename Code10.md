@@ -2,8 +2,8 @@
 
 
 ```Java
-	//beats 83.69%
-	public boolean isMatch(String s, String p) {
+    //beats 83.69%
+    public boolean isMatch(String s, String p) {
         boolean[][] dp=new boolean[s.length()+1][p.length()+1];
         dp[0][0]=true;
         for(int i=1;i<p.length()&&p.charAt(i)=='*';i+=2){

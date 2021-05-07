@@ -1,8 +1,8 @@
 # Contains Duplicate II
 
 ```Java
-	//beats 9.17%
-	public boolean containsNearbyDuplicate(int[] nums, int k) {
+    //beats 9.17%
+    public boolean containsNearbyDuplicate(int[] nums, int k) {
         Set<Integer> set=new HashSet<Integer>();
         int j=0;
         for(int i=0;i<nums.length;i++){

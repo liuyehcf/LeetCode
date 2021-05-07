@@ -1,7 +1,7 @@
 # Longest Consecutive Sequence
 
 ```Java
-	public int longestConsecutive(int[] nums) {
+    public int longestConsecutive(int[] nums) {
         int res=0;
         Map<Integer,Integer> map=new HashMap<Integer,Integer>();
         for(int num:nums){
@@ -10,7 +10,7 @@
             int rightSize=map.containsKey(num+1)?map.get(num+1):0;
             int size=leftSize+rightSize+1;
             map.put(num-leftSize,size);
-            map.put(num,size);//<Warn>:Â©ÁËÕâ¾ä,ÓÉÓÚÍ¨¹ýmapÊÇ·ñ°üº¬numÀ´ÅÐ¶ÏÖØ¸´£¬Òò´Ë¼ÓÉÏ£¬·´ÕýÎÞº¦
+            map.put(num,size);//<Warn>:Â©ï¿½ï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½Í¨ï¿½ï¿½mapï¿½Ç·ï¿½ï¿½ï¿½ï¿½numï¿½ï¿½ï¿½Ð¶ï¿½ï¿½Ø¸ï¿½ï¿½ï¿½ï¿½ï¿½Ë¼ï¿½ï¿½Ï£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Þºï¿½
             map.put(num+rightSize,size);
             res=Math.max(res,size);
         }

@@ -2,8 +2,8 @@
 
 
 ```Java
-	//beats 51.07%
-	public ListNode removeElements(ListNode head, int val) {
+    //beats 51.07%
+    public ListNode removeElements(ListNode head, int val) {
         ListNode pseudoHead=new ListNode(0);
         pseudoHead.next=head;
         ListNode iter=head;

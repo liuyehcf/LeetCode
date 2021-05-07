@@ -1,9 +1,9 @@
 # Binary Tree Inorder Traversal
 
-* �ݹ鷨
+* �ݹ鷨
 ```Java
-	//beats 40.33%
-	public List<Integer> inorderTraversal(TreeNode root) {
+    //beats 40.33%
+    public List<Integer> inorderTraversal(TreeNode root) {
         List<Integer> res=new ArrayList<Integer>();
         helper(root,res);
         return res;
@@ -19,10 +19,10 @@
 ```
 
 
-* ջ��
+* ջ��
 ```Java
-	//beats 40.33%
-	public List<Integer> inorderTraversal(TreeNode root) {
+    //beats 40.33%
+    public List<Integer> inorderTraversal(TreeNode root) {
         List<Integer> res=new ArrayList<Integer>();
         LinkedList<TreeNode> stack=new LinkedList<TreeNode>();
         TreeNode iter=root;

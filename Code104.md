@@ -1,8 +1,8 @@
 # Maximum Depth of Binary Tree
 
 ```Java
-	//beats 10.33%
-	int max;
+    //beats 10.33%
+    int max;
     public int maxDepth(TreeNode root) {
         max=0;
         if(root==null) return 0;

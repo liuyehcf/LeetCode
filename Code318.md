@@ -1,9 +1,9 @@
-# Maximum Product of Word Lengths(Á½¸ö²»°üº¬ÏàÍ¬×ÖÄ¸µÄ×Ö·û´®µÄ³¤¶È»ý)
+# Maximum Product of Word Lengths(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¬ï¿½ï¿½Ä¸ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½Ä³ï¿½ï¿½È»ï¿½)
 
-* Ò»°ãË¼Â·:È¡³öÁ½¸ö×Ö·û´®£¬½øÐÐ26¸ö×ÖÄ¸µÄ±È¶Ô
+* Ò»ï¿½ï¿½Ë¼Â·:È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½26ï¿½ï¿½ï¿½ï¿½Ä¸ï¿½Ä±È¶ï¿½
 ```Java
-	//beats 16%
-	public int maxProduct(String[] words) {
+    //beats 16%
+    public int maxProduct(String[] words) {
         if(words==null||words.length<2) return 0;
         
         int[][] cnt=new int[words.length][26];
@@ -34,11 +34,11 @@
     }
 ```
 
-* ¸ß¼¶Ë¼Â·:ÓÃÎ»Í¼À´½øÐÐ±È¶Ô£¬Èç¹ûÁ½¸ö×Ö·û´®²»°üº¬ÏàÍ¬µÄ×ÖÄ¸£¬ÄÇËüÃÇµÄÂß¼­ÓëÎª0
+* ï¿½ß¼ï¿½Ë¼Â·:ï¿½ï¿½Î»Í¼ï¿½ï¿½ï¿½ï¿½ï¿½Ð±È¶Ô£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¬ï¿½ï¿½ï¿½ï¿½Ä¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Çµï¿½ï¿½ß¼ï¿½ï¿½ï¿½Îª0
 
 ```Java
-	//beats 68.84%
-	public int maxProduct(String[] words) {
+    //beats 68.84%
+    public int maxProduct(String[] words) {
         if(words==null||words.length<2) return 0;
         
         int[] cnt=new int[words.length];

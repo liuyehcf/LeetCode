@@ -1,7 +1,7 @@
 # Path Sum
 
 ```Java
-	public boolean hasPathSum(TreeNode root, int sum) {
+    public boolean hasPathSum(TreeNode root, int sum) {
         if(root==null) return false;
         return helper(root,sum,0);
     }
@@ -28,8 +28,8 @@
 
 
 ```Java
-	//beats 13.80%
-	boolean flag;
+    //beats 13.80%
+    boolean flag;
     public boolean hasPathSum(TreeNode root, int sum) {
         flag=false;
         if(root==null) return false;

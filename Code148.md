@@ -1,9 +1,9 @@
 # Sort List
 
-* ¹é²¢ÅÅÐò£¬±È½ÏÂý
+* ï¿½é²¢ï¿½ï¿½ï¿½ò£¬±È½ï¿½ï¿½ï¿½
 ```Java
-	//beats 2.19%
-	public ListNode sortList(ListNode head) {
+    //beats 2.19%
+    public ListNode sortList(ListNode head) {
         ListNode pseudoHead=new ListNode(0);
         pseudoHead.next=head;
         sort(pseudoHead,null);
@@ -14,7 +14,7 @@
         
         if(pseudoHead.next==tail||pseudoHead.next.next==tail) return;
         ListNode slow=pseudoHead.next,fast=pseudoHead.next;
-        while(fast.next!=tail&&fast.next.next!=tail){//<Warn1&2>:µÚÒ»ÓÖ°ÑtailÐ´³ÉÁËnull£¬µÚ¶þÌõ¼þ²»¶Ô£¬×î¿ªÊ¼Ð´µÄÊÇfast!=tail&&fast.next!=tail£¬ÕâÑù»áµ¼ÖÂ³¤¶ÈÎª2µÄÁ´±íÎÞÏÞÑ­»·
+        while(fast.next!=tail&&fast.next.next!=tail){//<Warn1&2>:ï¿½ï¿½Ò»ï¿½Ö°ï¿½tailÐ´ï¿½ï¿½ï¿½ï¿½nullï¿½ï¿½ï¿½Ú¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô£ï¿½ï¿½î¿ªÊ¼Ð´ï¿½ï¿½ï¿½ï¿½fast!=tail&&fast.next!=tailï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½áµ¼ï¿½Â³ï¿½ï¿½ï¿½Îª2ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ­ï¿½ï¿½
             fast=fast.next.next;
             slow=slow.next;
         }
@@ -56,9 +56,9 @@
 ```
 
 
-* ÏÂÃæ×ö·¨³¬Ê±£¬ÌØÊâÇé¿öÊ±£¬¿ìËÙÅÅÐò·´¶ø»á±È½ÏÂý???
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ò·´¶ï¿½ï¿½ï¿½È½ï¿½ï¿½ï¿½???
 ```Java
-	public ListNode sortList(ListNode head) {
+    public ListNode sortList(ListNode head) {
         ListNode pseudoHead=new ListNode(0);
         pseudoHead.next=head;
         sort(pseudoHead,null);
@@ -108,8 +108,8 @@
         first.next=tempiNext;
         return first;
     }
-	
-	private ListNode partition(ListNode pseudoHead,ListNode tail){
+    
+    private ListNode partition(ListNode pseudoHead,ListNode tail){
         ListNode x=pseudoHead.next;
         ListNode i=pseudoHead;
         ListNode j=pseudoHead.next.next;

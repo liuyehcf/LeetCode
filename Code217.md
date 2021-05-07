@@ -1,8 +1,8 @@
 # Contains Duplicate
 
 ```Java
-	//beats 85.68%
-	public boolean containsDuplicate(int[] nums) {
+    //beats 85.68%
+    public boolean containsDuplicate(int[] nums) {
         Arrays.sort(nums);
         for(int i=1;i<nums.length;i++){
             if(nums[i]==nums[i-1]) return true;
@@ -13,8 +13,8 @@
 
 
 ```Java
-	//beats 44.43%
-	public boolean containsDuplicate(int[] nums) {
+    //beats 44.43%
+    public boolean containsDuplicate(int[] nums) {
         Set<Integer> set=new HashSet<Integer>();
         for(int num:nums){
             if(!set.add(num)){

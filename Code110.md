@@ -1,8 +1,8 @@
 # Balanced Binary Tree
 
 ```Java
-	//beats 72.87%
-	boolean flag;
+    //beats 72.87%
+    boolean flag;
     public boolean isBalanced(TreeNode root) {
         flag=true;
         helper(root);
