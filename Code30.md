@@ -1,56 +1,61 @@
 # Substring with Concatenation of All Words
 
-* Time limit
 ```java
 class Solution {
     public List<Integer> findSubstring(String s, String[] words) {
-        Set<Integer> res=new HashSet<Integer>();
-        if(words.length==0) return new ArrayList<Integer>();
+        List<Integer> res=new ArrayList<>();
         
-        int len=words[0].length();
-        
-        Map<String,Integer> map=new HashMap<String,Integer>();
-        for(String word:words){
-            if(map.containsKey(word)){
-                map.put(word,map.get(word)+1);
-            }
-            else{
-                map.put(word,1);
-            }
+        if(s==null||s.length()==0||words==null||words.length==0) {
+            return res;
         }
+        
+        int totalLength=0;
+        for(String word: words) {
+            totalLength+=word.length();
+        }
+        
+        if(s.length()< totalLength) {
+            return res;
+        }
+        
+        boolean[] used=new boolean[words.length];
+        
+        for(int i=0;i<s.length()-totalLength+1;i++) {
+            findSubstring(res, s, i, words, used, 0, totalLength);
+        }
+        
+        return res;
+    }
+    
+    private boolean findSubstring(List<Integer> res, String s, int start, String[] words, boolean[] used, int indexOfWord, int totalLength) {
+        if(indexOfWord==words.length) {
+            res.add(start - totalLength);
+            return true;
+        }
+        
+        Set<String> hasTried=new HashSet<>();
+        
+        for(int i=0;i<words.length;i++) {
+            if(used[i]) {
+                continue;
+            }
             
-        
-        for(int i=0;i<s.length();i++){
-            if(res.contains(i))continue;
-            int left=i;
-            int right=left+len;
-            int count=0;
-            Map<String,Integer> cnt=new HashMap<String,Integer>();
-            while(right<=s.length()){
-                String temp=s.substring(right-len,right);
-                if(!map.containsKey(temp)) break;
-                
-                if(cnt.containsKey(temp)){
-                    cnt.put(temp,cnt.get(temp)+1);
-                }   
-                else{
-                    cnt.put(temp,1);
+            String word=words[i];
+            if(!hasTried.add(word)) {
+                continue;
+            }
+            
+            if(Objects.equals(s.substring(start, start+word.length()), word)){
+                used[i]=true;
+                if(findSubstring(res, s, start+word.length(), words, used, indexOfWord+1, totalLength)) {
+                    used[i]=false;
+                    return true;
                 }
-                count++;
-                
-                while(cnt.get(temp)>map.get(temp)){
-                    String temp2=s.substring(left,left+len);
-                    cnt.put(temp2,cnt.get(temp2)-1);
-                    left+=len;
-                    count--;
-                }   
-                if(count==words.length) {
-                    res.add(left);
-                }
-                right+=len;
+                used[i]=false;
             }
         }
-        return new ArrayList<Integer>(res);
+        
+        return false;
     }
 }
 ```
