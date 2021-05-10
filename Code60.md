@@ -1,41 +1,32 @@
 # Permutation Sequence
 
 ```java
-//beats 36.19%
 class Solution {
     public String getPermutation(int n, int k) {
-        StringBuilder sb=new StringBuilder();
-        
-        boolean[] isUsed=new boolean[n];
-        
-        for(int i=n;i>=2;i--){
-            int val1=factorial(i-1);
-            int weight=(k-1)/val1;
-            k-=val1*weight;
-            sb.append(""+findKth(isUsed,weight+1));
+        int total[] = new int[n];
+
+        total[0] = 1;
+
+        for (int i = 2; i <= n; i++) {
+            total[i - 1] = total[i - 1 - 1] * i;
         }
-        sb.append(""+findKth(isUsed,1));
+
+        List<Integer> candidates = new ArrayList<>();
+        for (int i = 1; i <= n; i++) {
+            candidates.add(i);
+        }
+
+        StringBuilder sb = new StringBuilder();
+
+        for (int i = n; i >= 2; i--) {
+            int index = (k - 1) / total[i - 1 - 1];
+            sb.append(candidates.remove(index));
+            k -= index * total[i - 1 - 1];
+        }
+
+        sb.append(candidates.get(0));
+
         return sb.toString();
-    }
-    
-    private int findKth(boolean[] isUsed,int k){
-        int cnt=0;
-        for(int i=0;i<isUsed.length;i++){
-            if(isUsed[i]) continue;
-            if(++cnt==k){
-                isUsed[i]=true;
-                return i+1;
-            }
-        }
-        throw new RuntimeException();
-    }
-    
-    private int factorial(int n){
-        int res=1;
-        for(int i=1;i<=n;i++){
-            res=res*i;
-        }
-        return res;
     }
 }
 ```

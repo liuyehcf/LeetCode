@@ -1,6 +1,9 @@
 # Edit Distance
 
-* 删和增可以看成同一种，于是就变成了两种，change或者insert
+## dp
+
+删和增可以看成同一种，于是就变成了两种，change或者insert
+
 ```java
 //beats 78.01%
 class Solution {
@@ -34,8 +37,10 @@ class Solution {
 }
 ```
 
+## 文件diff的实现
 
-* 文件diff的实现，并指出具体的修改方式
+文件diff的实现，并指出具体的修改方式
+
 ```java
 public class FileDiff {
     public static void diff(String path1,String path2) throws IOException{
