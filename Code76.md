@@ -1,6 +1,5 @@
 # Minimum Window Substring
 
-
 ```java
 //beats 80.37%
 class Solution {
