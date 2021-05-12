@@ -2,26 +2,33 @@
 
 ```java
 class Solution {
-//beats 9.34%
-    int max=0;
-    
+
+    private int totalPathSum = Integer.MIN_VALUE;
+
     public int maxPathSum(TreeNode root) {
-        max=Integer.MIN_VALUE;
-        helper(root);
-        return max;
+        pathSum(root);
+        return totalPathSum;
     }
-    
-    private int helper(TreeNode root){  //�ú�������������ò����ڵ������·�����ò����ڵ�������һ���˵�
-        if(root==null) return 0;
-        
-        int left=helper(root.left);
-        int right=helper(root.right);
-        
-        if(left<0) left=0;
-        if(right<0) right=0;
-        
-        max=Math.max(max,root.val+left+right);//��������������
-        return root.val+Math.max(left,right);
-   }
+
+    public int pathSum(TreeNode root) {
+        if (root == null) {
+            return 0;
+        }
+
+        int leftPathSum = pathSum(root.left);
+        int rightPathSum = pathSum(root.right);
+
+        totalPathSum = Math.max(totalPathSum, leftPathSum + rightPathSum + root.val);
+        totalPathSum = Math.max(totalPathSum, leftPathSum + root.val);
+        totalPathSum = Math.max(totalPathSum, rightPathSum + root.val);
+        totalPathSum = Math.max(totalPathSum, root.val);
+
+        int maxPathSum = Integer.MIN_VALUE;
+        maxPathSum = Math.max(maxPathSum, leftPathSum + root.val);
+        maxPathSum = Math.max(maxPathSum, rightPathSum + root.val);
+        maxPathSum = Math.max(maxPathSum, root.val);
+
+        return maxPathSum;
+    }
 }
 ```
