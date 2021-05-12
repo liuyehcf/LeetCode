@@ -1,57 +1,65 @@
 # Word Search II
 
-* ��ʱ
 ```java
-class Solution {
-public List<String> findWords(char[][] board, String[] words) {
-        Set<String> set=new HashSet<String>();
-        int m=board.length;
-        int n=board[0].length;
-        for(String word:words){
-            boolean flag=false;
-            for(int row=0;row<m;row++){
-                if(flag) break;
-                for(int col=0;col<n;col++){
-                    if(flag) break;
-                    boolean[][] visited=new boolean[m][n];
-                    if(findWord(board,visited,word,0,row,col)) {
-                        set.add(word);
-                        flag=true;
-                    }
+public class Solution {
+    private int row, col;
+
+    public List<String> findWords(char[][] board, String[] words) {
+        List<String> res = new LinkedList<>();
+        if (board == null || board.length == 0 || board[0].length == 0) {
+            return res;
+        }
+        row = board.length;
+        col = board[0].length;
+        for (String word : words) {
+            if (search(board, word)) {
+                res.add(word);
+            }
+        }
+        return res;
+    }
+
+    private boolean search(char[][] board, String word) {
+        for (int i = 0; i < row; i++) {
+            for (int j = 0; j < col; j++) {
+                if (search(board, new boolean[row][col], i, j, word, 0)) {
+                    return true;
                 }
             }
         }
-        return new ArrayList<String>(set);
-    }
-    
-    private boolean findWord(char[][] board,boolean[][] visited,String word,int pos,int row,int col){
-        if(board[row][col]!=word.charAt(pos)) return false;
-        //System.out.println(row+","+col+","+pos);
-        if(pos==word.length()-1) return true;
-        
-        visited[row][col]=true;
-        
-        int m=board.length;
-        int n=board[0].length;
-        
-        if(row>0&&!visited[row-1][col]&&findWord(board,visited,word,pos+1,row-1,col)){
-            return true;
-        }
-        
-        if(row<m-1&&!visited[row+1][col]&&findWord(board,visited,word,pos+1,row+1,col)){
-            return true;
-        }
-        
-        if(col>0&&!visited[row][col-1]&&findWord(board,visited,word,pos+1,row,col-1)){
-            return true;
-        }
-        
-        if(col<n-1&&!visited[row][col+1]&&findWord(board,visited,word,pos+1,row,col+1)){
-            return true;
-        }
-        
-        visited[row][col]=false;
         return false;
-   }
+    }
+
+    private boolean search(char[][] board, boolean[][] used, int i, int j, String word, int index) {
+        if (board[i][j] != word.charAt(index)) {
+            return false;
+        }
+        if (index == word.length() - 1) {
+            return true;
+        }
+        used[i][j] = true;
+        if (i + 1 < row && !used[i + 1][j]) {
+            if (search(board, used, i + 1, j, word, index + 1)) {
+                return true;
+            }
+        }
+        if (i - 1 >= 0 && !used[i - 1][j]) {
+            if (search(board, used, i - 1, j, word, index + 1)) {
+                return true;
+            }
+        }
+        if (j + 1 < col && !used[i][j + 1]) {
+            if (search(board, used, i, j + 1, word, index + 1)) {
+                return true;
+            }
+        }
+        if (j - 1 >= 0 && !used[i][j - 1]) {
+            if (search(board, used, i, j - 1, word, index + 1)) {
+                return true;
+            }
+        }
+        used[i][j] = false;
+        return false;
+    }
 }
 ```
