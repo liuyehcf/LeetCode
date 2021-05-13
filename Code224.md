@@ -1,68 +1,62 @@
 # Basic Calculator
 
 ```java
-//beats 33.17%
 class Solution {
     public int calculate(String s) {
-        LinkedList<Integer> stackPre=new LinkedList<Integer>();
-        LinkedList<Integer> stackRes=new LinkedList<Integer>();
-        LinkedList<Character> stackSign=new LinkedList<Character>();
-        
-        char sign='+';
-        int pre=0;
-        int res=0;
-        
-        for(int i=0;i<s.length();i++){
-            char c=s.charAt(i);
-            if(c==' ')continue;
-            else if(Character.isDigit(c)){
-                int curValue=0;
-                while(i<s.length()&&Character.isDigit(s.charAt(i))){
-                    curValue=curValue*10+(s.charAt(i++)-'0');
-                }
-                if(sign=='+'){
-                    res+=pre;
-                    pre=curValue;
-                }
-                else if(sign=='-'){
-                    res+=pre;
-                    pre=-curValue;
+        LinkedList<Integer> sumStack = new LinkedList<>();
+        LinkedList<Character> operatorStack = new LinkedList<>();
+
+        char operator = '+';
+
+        int sum = 0;
+
+        int i = 0;
+        while (i < s.length()) {
+            if (s.charAt(i) == ' ') {
+                // do nothing
+            } else if (s.charAt(i) >= '0' && s.charAt(i) <= '9') {
+                StringBuilder sb = new StringBuilder();
+                while (i < s.length() && s.charAt(i) >= '0' && s.charAt(i) <= '9') {
+                    sb.append(s.charAt(i++));
                 }
                 i--;
+
+                int val = Integer.valueOf(sb.toString());
+
+                sum = calculate(sum, val, operator);
+            } else if (s.charAt(i) == '-') {
+                operator = '-';
+            } else if (s.charAt(i) == '+') {
+                operator = '+';
+            } else if (s.charAt(i) == '(') {
+                sumStack.push(sum);
+                operatorStack.push(operator);
+
+                sum = 0;
+                operator = '+';
+            } else if (s.charAt(i) == ')') {
+                int preSum = sumStack.pop();
+                char preOperator = operatorStack.pop();
+
+                preSum = calculate(preSum, sum, preOperator);
+
+                sum = preSum;
             }
-            else if(c=='('){
-                stackPre.push(pre);
-                stackRes.push(res);
-                stackSign.push(sign);
-                
-                sign='+';
-                pre=0;
-                res=0;
-            }
-            else if(c==')'){
-                res=res+pre;
-                
-                int peekPre=stackPre.pop();
-                int peekRes=stackRes.pop();
-                char peekSign=stackSign.pop();
-                
-                if(peekSign=='+'){
-                    peekRes+=peekPre;
-                    pre=res;
-                    res=peekRes;
-                }
-                else if(peekSign=='-'){
-                    peekRes+=peekPre;
-                    pre=-res;
-                    res=peekRes;
-                }
-            }
-            else{
-                sign=c;
-            }
+
+            i++;
         }
-        
-        return res+pre;
+
+        return sum;
+    }
+
+    private int calculate(int sum, int val, char operator) {
+        if (operator == '+') {
+            sum += val;
+        } else {
+            sum -= val;
+        }
+
+        return sum;
     }
 }
 ```
