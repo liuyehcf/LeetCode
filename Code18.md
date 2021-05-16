@@ -1,7 +1,7 @@
 # 4Sum
 
 ```java
-public class Solution {
+class Solution {
     public List<List<Integer>> fourSum(int[] nums, int target) {
         List<List<Integer>> lst = new LinkedList<List<Integer>>();
         Arrays.sort(nums);
