@@ -1,6 +1,6 @@
 # Find Median from Data Stream
 
-* 两个优先队列,但是如何保证两个优先队列不重合，且长度相等
+* 两个优先队列，但是如何保证两个优先队列不重合，且长度相等
 ```java
 //beats 76.58%
 public class MedianFinder {
