@@ -2,22 +2,34 @@
 
 ```java
 class Solution {
-//beats 17.66%
-    int min;
+
+    private int min;
+
     public int minDepth(TreeNode root) {
-        min=Integer.MAX_VALUE;
-        if(root==null) return 0;
-        helper(root,1);
+        if (root == null) {
+            return 0;
+        }
+
+        min = Integer.MAX_VALUE;
+
+        minDepth(root, 0);
+
         return min;
     }
-    
-    private void helper(TreeNode root,int high){
-        if(root.left==null&&root.right==null){
-            min=Math.min(min,high);
+
+    private void minDepth(TreeNode root, int depth) {
+        if (root.left == null && root.right == null) {
+            min = Math.min(min, depth + 1);
             return;
         }
-        if(root.left!=null) helper(root.left,high+1);
-        if(root.right!=null) helper(root.right,high+1);
-   }
+
+        if (root.left != null) {
+            minDepth(root.left, depth + 1);
+        }
+
+        if (root.right != null) {
+            minDepth(root.right, depth + 1);
+        }
+    }
 }
 ```

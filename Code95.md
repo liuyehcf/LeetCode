@@ -1,95 +1,53 @@
 # Unique Binary Search Trees II
 
-* 这种递归会包含很多的重复，即没有备忘录
+动态规划
 
 ```java
 class Solution {
-//beats 20%
-    public List<TreeNode> generateTrees(int n) {
-        if(n==0) return new ArrayList<TreeNode>();
-        int[] nums=new int[n];
-        for(int i=0;i<n;i++){
-            nums[i]=i+1;
-        }
-        return helper(nums,0,nums.length-1);
-    }
-    
-    private List<TreeNode> helper(int[] nums,int start,int end){
-        List<TreeNode> res=new ArrayList<TreeNode>();
-        if(start>end){
-            res.add(null);
-            return res;
-        }
-        
-        for(int i=start;i<=end;i++){
-            List<TreeNode> leftTreeList=helper(nums,start,i-1);
-            List<TreeNode> rightTreeList=helper(nums,i+1,end);
-            
-            for(TreeNode leftRoot:leftTreeList){
-                for(TreeNode rightRoot:rightTreeList){
-                    TreeNode root=new TreeNode(nums[i]);
-                    root.left=leftRoot;
-                    root.right=rightRoot;
-                    res.add(root);
-                }
-            }
-        }
-        return res;
-   }
-}
-```
 
-* 动态规划
+    private static final List<TreeNode> NULL_LIST = Collections.singletonList(null);
 
-```java
-class Solution {
-//beats 85.08%
     public List<TreeNode> generateTrees(int n) {
-        if(n==0) return new ArrayList<TreeNode>();
-        
-        int[] nums=new int[n];
-        for(int i=0;i<n;i++){
-            nums[i]=i+1;
-        }
-        
-        List<TreeNode>[][] dp=new List[n][n];
-        
-        
-        for(int len=1;len<=n;len++){
-            for(int start=0;start<n-len+1;start++){
-                int end=start+len-1;
-                List<TreeNode> cur=new ArrayList<TreeNode>();
-                for(int i=start;i<=end;i++){
-                    
-                    List<TreeNode> leftTree=get(dp,start,i-1);
-                    List<TreeNode> rightTree=get(dp,i+1,end);
-                    
-                    for(TreeNode left:leftTree){
-                        for(TreeNode right:rightTree){
-                            TreeNode root=new TreeNode(nums[i]);
-                            root.left=left;
-                            root.right=right;
-                            cur.add(root);
+        List<TreeNode>[][] dp = new List[n][n];
+
+        for (int len = 1; len <= n; len++) {
+            for (int start = 0; start <= n - len; start++) {
+                int end = start + len - 1;
+
+
+                List<TreeNode> roots = new ArrayList<>();
+
+                for (int rootIndex = start; rootIndex <= end; rootIndex++) {
+
+
+                    List<TreeNode> leftList = getOf(dp, start, rootIndex - 1);
+                    List<TreeNode> rightList = getOf(dp, rootIndex + 1, end);
+
+
+                    for (TreeNode left : leftList) {
+                        for (TreeNode right : rightList) {
+                            TreeNode root = new TreeNode(rootIndex + 1);
+                            root.left = left;
+                            root.right = right;
+
+                            roots.add(root);
                         }
                     }
                 }
-                
-                dp[start][end]=cur;
+
+                dp[start][end] = roots;
             }
         }
-        
-        return dp[0][n-1];
+
+        return dp[0][n - 1];
     }
-    
-    List<TreeNode> nullList=new ArrayList<TreeNode>();
-    {
-        nullList.add(null);
-    }
-    
-    private List<TreeNode> get(List<TreeNode>[][] dp,int i,int j){
-        int n=dp.length;
-        if(i>j) return nullList;
+
+    private List<TreeNode> getOf(List<TreeNode>[][] dp, int i, int j) {
+        if (i > j) {
+            return NULL_LIST;
+        }
+
         return dp[i][j];
-   }
+    }
 }
 ```
