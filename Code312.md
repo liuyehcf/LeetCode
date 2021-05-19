@@ -1,4 +1,4 @@
-# Burst Balloons(����ը�����ֵ)
+# Burst Balloons
 
 ```java
 class Solution {
