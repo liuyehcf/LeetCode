@@ -1,32 +1,27 @@
 # Group Anagrams
 
 ```java
-//beats 52.44%
 class Solution {
     public List<List<String>> groupAnagrams(String[] strs) {
-        Map<String,List<String>> map=new HashMap<String,List<String>>();
+        Map<String, List<String>> anagrams=new HashMap<>();
         
-        for(String str:strs){
-            String strOrdered=getOrderedString(str);
-            if(map.containsKey(strOrdered)){
-                map.get(strOrdered).add(str);
+        for(String str:strs) {
+            String sortedStr=sortOf(str);
+            
+            if(!anagrams.containsKey(sortedStr)) {
+                anagrams.put(sortedStr, new ArrayList<>());
             }
-            else{
-                map.put(strOrdered,new ArrayList<String>(Arrays.asList(str)));
-            }
+            
+            anagrams.get(sortedStr).add(str);
         }
         
-        List<List<String>> res=new ArrayList<List<String>>();
-        for(Map.Entry<String,List<String>> m:map.entrySet()){
-            res.add(m.getValue());
-        }
-        return res;
+        return new ArrayList<>(anagrams.values());
     }
     
-    private String getOrderedString(String s){
-        char[] sary=s.toCharArray();
-        Arrays.sort(sary);
-        return String.valueOf(sary);
+    private String sortOf(String s) {
+        char[] charArrays=s.toCharArray();
+        Arrays.sort(charArrays);
+        return String.valueOf(charArrays);
     }
 }
 ```
