@@ -2,58 +2,33 @@
 
 ```java
 class Solution {
-//beats 84.16%
     public List<List<Integer>> combinationSum(int[] candidates, int target) {
-        List<List<Integer>> res=new ArrayList<List<Integer>>();
-        List<Integer> cur=new ArrayList<Integer>();
         Arrays.sort(candidates);
-        helper(candidates,0,target,res,cur);
-        return res;
-    }
-    
-    private void helper(int[] candidates,int begin,int target,List<List<Integer>> res,List<Integer> cur){
-        if(target==0){
-            res.add(new ArrayList<Integer>(cur));
-            return;
-        }
-        for(int i=begin;i<candidates.length;i++){
-            if(candidates[i]<=target){
-                cur.add(candidates[i]);
-                helper(candidates,i,target-candidates[i],res,cur);//<Warn>:由于元素可以重复利用，之前错写为i+1
-                cur.remove(cur.size()-1);
-            }
-            else break;
-        }
-   }
-}
-```
 
-```java
-class Solution {
-//64.21%
-    public List<List<Integer>> combinationSum(int[] candidates, int target) {
-        List<List<Integer>> res=new ArrayList<List<Integer>>();
-        List<Integer> cur=new ArrayList<Integer>();
-        Arrays.sort(candidates);
-        helper(candidates,0,target,res,cur);
+        List<List<Integer>> res = new ArrayList<>();
+        ArrayList<Integer> solution = new ArrayList<>();
+        
+        combinationSum(res, solution, candidates, 0, 0, target);
+
         return res;
     }
-    
-    private void helper(int[] candidates,int begin,int target,List<List<Integer>> res,List<Integer> cur){
-        if(target==0){
-            res.add(new ArrayList<Integer>(cur));
+
+    private void combinationSum(List<List<Integer>> res, List<Integer> solution,
+                                int[] candidates, int index, int sum, int target) {
+        if (sum == target) {
+            res.add(new ArrayList<>(solution));
             return;
         }
-        if(begin==candidates.length) return; //<Warn>:漏了这句
-        
-        helper(candidates,begin+1,target,res,cur);
-        
-        if(candidates[begin]<=target){
-            cur.add(candidates[begin]);
-            helper(candidates,begin,target-candidates[begin],res,cur);
-            cur.remove(cur.size()-1);
-        } 
-        
-   }
+
+        for (int i = index; i < candidates.length; i++) {
+            if (sum + candidates[i] > target) {
+                break;
+            }
+
+            solution.add(candidates[i]);
+            combinationSum(res, solution, candidates, i, sum + candidates[i], target);
+            solution.remove(solution.size() - 1);
+        }
+    }
 }
 ```

@@ -1,22 +1,24 @@
 # Longest Substring Without Repeating Characters
-* 移动窗口法
 
 ```java
 class Solution {
-//beats 89.60%
     public int lengthOfLongestSubstring(String s) {
-        int left=0,right=0;
-        int[] cnt=new int[128];
-        int res=0;
-        while(right<s.length()){
-            cnt[s.charAt(right)]++;
-            while(cnt[s.charAt(right)]>1){
+        int[] cnt = new int[128];
+        int max = 0;
+        int left = 0;
+
+        for (int i = 0; i < s.length(); i++) {
+            int c = s.charAt(i);
+            cnt[c]++;
+
+            while (cnt[c] > 1) {
                 cnt[s.charAt(left++)]--;
             }
-            res=Math.max(res,right-left+1);
-            right++;
+
+            max = Math.max(max, i - left + 1);
         }
-        return res;
-   }
+
+        return max;
+    }
 }
 ```

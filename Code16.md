@@ -1,34 +1,51 @@
 # 3Sum Closest
 
-
 ```java
 class Solution {
-//beats 77.70%
     public int threeSumClosest(int[] nums, int target) {
         Arrays.sort(nums);
-        int diff=Integer.MAX_VALUE;
-        int res=0;
-        for(int i=0;i<nums.length;i++){
-            if(i>0&&nums[i]==nums[i-1]) continue;
-            int left=i+1,right=nums.length-1;
-            while(left<right){
-                int subtract=nums[i]+nums[left]+nums[right]-target;
-                if(Math.abs(subtract)<diff) {
-                    res=nums[i]+nums[left]+nums[right];
-                    diff=Math.abs(subtract);
+
+        int distance = Integer.MAX_VALUE;
+        int num = -1;
+
+        for (int i = 0; i < nums.length; i++) {
+            if (i > 0 && nums[i] == nums[i - 1]) {
+                continue;
+            }
+            int j = i + 1;
+            int k = nums.length - 1;
+
+            while (j < k) {
+                if (j > i + 1 && nums[j] == nums[j - 1]) {
+                    j++;
+                    continue;
                 }
-                if(subtract<0){
-                    left++;
+
+                if (k < nums.length - 1 && nums[k] == nums[k + 1]) {
+                    k--;
+                    continue;
                 }
-                else if(subtract>0){
-                    right--;
+
+
+                int curSum = nums[i] + nums[j] + nums[k];
+                int curDistance = Math.abs(curSum - target);
+
+                if (curDistance < distance) {
+                    distance = curDistance;
+                    num = curSum;
                 }
-                else{
-                    return res;
+
+                if (curDistance == 0) {
+                    return target;
+                } else if (curSum < target) {
+                    j++;
+                } else {
+                    k--;
                 }
             }
         }
-        return res;
-   }
+
+        return num;
+    }
 }
 ```

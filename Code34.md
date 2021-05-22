@@ -1,45 +1,50 @@
 # Search for a Range
 
 ```java
-class Solution {
+public class Solution {
     public int[] searchRange(int[] nums, int target) {
-        if (nums.length == 0) {
-            return new int[]{-1, -1};
-        }
+        return new int[]{leftBoundary(nums, target), rightBoundary(nums, target)};
+    }
+
+    private int leftBoundary(int[] nums, int target) {
+        if (nums == null || nums.length == 0) return -1;
+
         int left = 0, right = nums.length - 1;
 
-        if (nums[left] > target || nums[right] < target) {
-            return new int[]{-1, -1};
-        }
+        if (nums[left] > target || nums[right] < target) return -1;
 
-        while (left <= right) {
+        while (left < right) {
             int mid = left + (right - left >> 1);
+
             if (nums[mid] >= target) {
-                right = mid - 1;
+                right = mid;
             } else {
                 left = mid + 1;
             }
         }
 
-        // 特殊情况
-        if (nums[left] != target) return new int[]{-1, -1};
-        int leftBoundary = left;
+        return nums[left] == target ? left : -1;
+    }
 
-        left = 0;
-        right = nums.length - 1;
+    private int rightBoundary(int[] nums, int target) {
+        if (nums == null || nums.length == 0) return -1;
 
-        while (left <= right) {
+        int left = 0, right = nums.length - 1;
+
+        if (nums[left] > target || nums[right] < target) return -1;
+
+        while (left < right) {
             int mid = left + (right - left >> 1);
+
             if (nums[mid] <= target) {
                 left = mid + 1;
             } else {
-                right = mid - 1;
+                right = mid;
             }
         }
 
-        int rightBoundary = right;
-
-        return new int[]{leftBoundary, rightBoundary};
+        return nums[left] == target ? left :
+                left - 1 >= 0 && nums[left - 1] == target ? left - 1 : -1;
     }
 }
 ```
