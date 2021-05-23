@@ -2,32 +2,31 @@
 
 ```java
 class Solution {
-//beats 59.82%
-    public List<Interval> merge(List<Interval> intervals) {
-        Collections.sort(intervals,new Comparator<Interval>(){
-            @Override
-            public int compare(Interval obj1,Interval obj2){
-                return obj1.start-obj2.start;
-            }
+    public int[][] merge(int[][] intervals) {
+        Arrays.sort(intervals, (o1, o2) -> {
+            return o1[0] - o2[0];
         });
-        List<Interval> res=new ArrayList<Interval>();
-        
-        if(intervals.size()==0) return res;
-        Interval iter=intervals.get(0);
-        
-        for(int i=1;i<intervals.size();i++){
-            if(iter.end<intervals.get(i).start){
-                res.add(iter);
-                iter=intervals.get(i);
-            }
-            else{
-                iter.end=Math.max(iter.end,intervals.get(i).end);
+
+
+        List<int[]> mergedIntervals = new ArrayList<>();
+
+        int[] pre = intervals[0];
+        for (int i = 1; i < intervals.length; i++) {
+            int[] cur = intervals[i];
+
+            if (pre[1] >= cur[1]) {
+                // do nothing
+            } else if (pre[1] < cur[0]) {
+                mergedIntervals.add(pre);
+                pre = cur;
+            } else {
+                pre[1] = cur[1];
             }
         }
-        
-        res.add(iter);
-        
-        return res;
-   }
+
+        mergedIntervals.add(pre);
+
+        return mergedIntervals.toArray(new int[0][]);
+    }
 }
 ```
