@@ -1,49 +1,55 @@
 # Search a 2D Matrix
 
-* 二分法
+## 二分法
+
 ```java
-//beats 8.35%
 class Solution {
     public boolean searchMatrix(int[][] matrix, int target) {
-        if(matrix==null||matrix.length==0||matrix[0].length==0) return false;
-        int m=matrix.length;
-        int n=matrix[0].length;
-        
-        int top=0,bottom=m-1;
-        
-        if(matrix[bottom][n-1]<target) return false;
-        
-        while(top<=bottom){
-            int mid=top+(bottom-top>>1);
-            if(matrix[mid][n-1]==target) return true;
-            else if(matrix[mid][n-1]<target){
-                top=mid+1;
-            }
-            else{
-                bottom=mid-1;
+        int m = matrix.length;
+        int n = matrix[0].length;
+
+        int top = 0, bottom = m - 1;
+
+        while (top < bottom) {
+            int mid = top + (bottom - top >> 1);
+
+            if (matrix[mid][0] == target) {
+                return true;
+            } else if (matrix[mid][0] < target) {
+                top = mid + 1;
+            } else {
+                bottom = mid;
             }
         }
-        
-        if(matrix[top][0]>target) return false;
-        
-        int left=0,right=n-1;
-        while(left<=right){
-            int mid=left+(right-left>>1);
-            if(matrix[top][mid]==target) return true;
-            else if(matrix[top][mid]<target){
-                left=mid+1;
-            }
-            else{
-                right=mid-1;
+
+        if (matrix[top][0] > target) {
+            top--;
+        }
+
+        if (top < 0) {
+            return false;
+        }
+
+        int left = 0, right = n - 1;
+        while (left < right) {
+            int mid = left + (right - left >> 1);
+
+            if (matrix[top][mid] == target) {
+                return true;
+            } else if (matrix[top][mid] < target) {
+                left = mid + 1;
+            } else {
+                right = mid;
             }
         }
-        
-        return false;
+
+        return matrix[top][left] == target;
     }
 }
 ```
 
-* brilliant solution
+## brilliant solution
+
 ```java
 //#########^^^^^^^^^
 //#########^^^^^^^^^
@@ -58,18 +64,17 @@ class Solution {
 //因此要找的数只可能存在于*中
 class Solution {
     public boolean searchMatrix(int[][] matrix, int target) {
-        if(matrix==null||matrix.length==0||matrix[0].length==0) return false;
-        int m=matrix.length;
-        int n=matrix[0].length;
-        
-        int row=0,col=n-1;
-        while(row<m&&col>=0){
-            if(matrix[row][col]==target) return true;
-            else if(matrix[row][col]>target){
-                col--;//例如4*4的数组matrix,matrix[2][2]<target,那么matrix[3][2]>matrix[2][2]>target,因此col>=2都不可能有与target相同的，因此递减即可
+        int m = matrix.length;
+        int n = matrix[0].length;
+
+        int row = 0, col = n - 1;
+        while (row < m && col >= 0) {
+            if (matrix[row][col] == target) return true;
+            else if (matrix[row][col] > target) {
+                col--;
+            } else {
+                row++;
             }
-            else 
-                row++;//同理，例如4*4的数组matrix,matrix[2][2]>target
         }
         return false;
     }
