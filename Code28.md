@@ -11,7 +11,9 @@ class Solution {
         next[0] = -1;
 
         int i = 0;
+        // 本身不计算
         int j = -1;
+
         while (i < needle.length()) {
             if (j == -1 || needle.charAt(i) == needle.charAt(j)) {
                 // 此时前缀为[0...j]，长度为j+1，对应的区间为[0, i+1)
@@ -26,6 +28,7 @@ class Solution {
         }
 
         i = 0;
+        // 两个相同也要计算
         j = 0;
 
         while (i < haystack.length() && j < needle.length()) {
