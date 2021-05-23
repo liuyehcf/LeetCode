@@ -3,12 +3,12 @@
 ```java
 class Solution {
     public String getPermutation(int n, int k) {
-        int total[] = new int[n];
+        int[] total = new int[n + 1];
 
-        total[0] = 1;
+        total[1] = 1;
 
         for (int i = 2; i <= n; i++) {
-            total[i - 1] = total[i - 1 - 1] * i;
+            total[i] = total[i - 1] * i;
         }
 
         List<Integer> candidates = new ArrayList<>();
@@ -19,9 +19,9 @@ class Solution {
         StringBuilder sb = new StringBuilder();
 
         for (int i = n; i >= 2; i--) {
-            int index = (k - 1) / total[i - 1 - 1];
+            int index = (k - 1) / total[i - 1];
             sb.append(candidates.remove(index));
-            k -= index * total[i - 1 - 1];
+            k -= index * total[i - 1];
         }
 
         sb.append(candidates.get(0));
