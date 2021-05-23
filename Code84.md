@@ -9,57 +9,32 @@
 * 综上，注意点：当栈顶元素需要弹出时，其边界范围为：(栈次顶位置+1)到(当前迭代-1)
 ```java
 class Solution {
-//beats 85.07%
     public int largestRectangleArea(int[] heights) {
-        LinkedList<Integer> stack=new LinkedList<Integer>();
-        int res=0;
-        int iter=0;
-        while(iter<heights.length){
-            while(!stack.isEmpty()&&heights[stack.peek()]>=heights[iter]){
-                int topPos=stack.pop();
-                
-                int leftBoundary=stack.isEmpty()?0:(stack.peek()+1);
-                //<Warn>res=Math.max(res,(topPos-leftBoundary+1)*heights[topPos]);
-                res=Math.max(res,(iter-1-leftBoundary+1)*heights[topPos]);
-            }
-            stack.push(iter++);
-        }
-        
-        while(!stack.isEmpty()){
-            int topPos=stack.pop();
-                
-            int leftBoundary=stack.isEmpty()?0:(stack.peek()+1);
-            //<Warn>res=Math.max(res,(topPos-leftBoundary+1)*heights[topPos]);
-            res=Math.max(res,(heights.length-1-leftBoundary+1)*heights[topPos]);
-        }
-        return res;
-   }
-}
-```
+        LinkedList<Integer> stack = new LinkedList<>();
 
+        int maxArea = Integer.MIN_VALUE;
 
-```java
-class Solution {
-    public int largestRectangleArea(int[] heights) {
-        LinkedList<Integer> stack=new LinkedList<Integer>();
-        int i=0;
-        int res=0;
-        while(i<heights.length){
-            while(!stack.isEmpty()&&heights[stack.peek()]>=heights[i]){
-                int posRight=i-1;
-                int curHigh=heights[stack.pop()];
-                int posLeft=stack.isEmpty()?-1:stack.peek();
-                res=Math.max(res,(posRight-(posLeft+1)+1)*curHigh);
+        for (int i = 0; i < heights.length; i++) {
+            int height = heights[i];
+
+            while (!stack.isEmpty() && height <= heights[stack.peek()]) {
+                int top = stack.pop();
+                maxArea = Math.max(maxArea, calculateArea(stack.isEmpty() ? 0 : stack.peek() + 1, i - 1, heights[top]));
             }
-            stack.push(i++);
+
+            stack.push(i);
         }
-        while(!stack.isEmpty()){
-            int posRight=stack.pop();
-            int curHigh=heights[posRight];
-            int posLeft=stack.isEmpty()?-1:stack.peek();
-            res=Math.max(res,(heights.length-1-(posLeft+1)+1)*curHigh);
+
+        while (!stack.isEmpty()) {
+            int top = stack.pop();
+            maxArea = Math.max(maxArea, calculateArea(stack.isEmpty() ? 0 : stack.peek() + 1, heights.length - 1, heights[top]));
         }
-        return res;
+
+        return maxArea;
+    }
+
+    private int calculateArea(int left, int right, int height) {
+        return (right - left + 1) * height;
     }
 }
 ```
