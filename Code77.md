@@ -2,25 +2,29 @@
 
 
 ```java
-//beats 56.71%
 class Solution {
     public List<List<Integer>> combine(int n, int k) {
-        List<List<Integer>> res=new ArrayList<List<Integer>>();
-        List<Integer> cur=new ArrayList<Integer>();
-        helper(n,k,1,0,res,cur);
+        List<List<Integer>> res = new ArrayList<>();
+        List<Integer> solution = new ArrayList<>();
+
+        combine(res, solution, n, k, 1);
+
         return res;
     }
-    
-    private void helper(int n,int k,int pos,int index,List<List<Integer>> res,List<Integer> cur){
-        if(index==k){
-            res.add(new ArrayList<Integer>(cur));
+
+    private void combine(List<List<Integer>> res, List<Integer> solution,
+                         int n, int k, int start) {
+        if (solution.size() == k) {
+            res.add(new ArrayList<>(solution));
             return;
         }
-        
-        for(int start=pos;start<=n;start++){
-            cur.add(start);
-            helper(n,k,start+1,index+1,res,cur);
-            cur.remove(cur.size()-1);
+
+        for (int i = start; i <= n - (k - solution.size()) + 1; i++) {
+            solution.add(i);
+
+            combine(res, solution, n, k, i + 1);
+
+            solution.remove(solution.size() - 1);
         }
     }
 }
