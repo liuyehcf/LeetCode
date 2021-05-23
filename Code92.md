@@ -2,32 +2,55 @@
 
 ```java
 class Solution {
-//beats 14.82%
-    public ListNode reverseBetween(ListNode head, int m, int n) {
-        ListNode pseudoHead=new ListNode(0);
-        pseudoHead.next=head;
-        int cnt=0;
-        ListNode iter=pseudoHead,left=null,right=null;//<Warn1>��iter����س�ʼ������head����Ҫ˼ά��ʽ������
-        while(iter!=null){
-            if(cnt==m-1) left=iter;
-            if(cnt==n+1) right=iter;
-            cnt++;
-            iter=iter.next;
+    public ListNode reverseBetween(ListNode head, int left, int right) {
+        if (left == right) {
+            return head;
         }
-        reverse(left,right);
+
+        ListNode beforeLeft = null;
+        ListNode afterRight = null;
+
+        ListNode pseudoHead = new ListNode();
+        pseudoHead.next = head;
+
+        ListNode pre = pseudoHead;
+        ListNode iter = head;
+        int cnt = 0;
+
+        while (iter != null) {
+            cnt++;
+
+            if (cnt == left) {
+                beforeLeft = pre;
+            }
+
+            if (cnt == right) {
+                afterRight = iter.next;
+            }
+
+            pre = iter;
+            iter = iter.next;
+        }
+
+        reverse(beforeLeft, afterRight);
+
         return pseudoHead.next;
     }
-    
-    private void reverse(ListNode pseudoHead,ListNode tail){
-        ListNode iter=pseudoHead.next;
-        pseudoHead.next=tail;
-        while(iter!=tail){//<Warn2>������д����iter!=null
-            ListNode tempPseudoHeadNext=pseudoHead.next;
-            ListNode tempIterNext=iter.next;
-            pseudoHead.next=iter;
-            iter.next=tempPseudoHeadNext;
-            iter=tempIterNext;
+
+    private void reverse(ListNode pseudoHead, ListNode tail) {
+        ListNode iter = pseudoHead.next;
+        pseudoHead.next = tail;
+
+        while (iter != tail) {
+            ListNode next = iter.next;
+
+            ListNode head = pseudoHead.next;
+
+            pseudoHead.next = iter;
+            iter.next = head;
+
+            iter = next;
         }
-   }
+    }
 }
 ```
