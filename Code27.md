@@ -2,13 +2,19 @@
 
 ```java
 class Solution {
-public int removeElement(int[] nums, int val) {
-        int i=-1,j=0;
-        while(j<nums.length){
-            if(nums[j]!=val) nums[++i]=nums[j];
-            j++;
+    public int removeElement(int[] nums, int val) {
+        int left = -1;
+        int right = 0;
+
+        while (right < nums.length) {
+            if (nums[right] != val) {
+                nums[++left] = nums[right];
+            }
+
+            right++;
         }
-        return i+1;
-   }
+
+        return left + 1;
+    }
 }
 ```
