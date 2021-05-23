@@ -1,48 +1,81 @@
 # Word Search
 
 ```java
-//beats 85.01%
 class Solution {
     public boolean exist(char[][] board, String word) {
-        if(board==null||board.length==0||board[0].length==0) return false;
-        int m=board.length;
-        int n=board[0].length;
-        boolean[][] isUsed=new boolean[m][n];
-        for(int row=0;row<m;row++){
-            for(int col=0;col<n;col++){
-                if(helper(board,row,col,isUsed,word,0)) return true;
+        int m = board.length;
+        if (m <= 0) {
+            return false;
+        }
+        int n = board[0].length;
+        if (n <= 0) {
+            return false;
+        }
+
+        boolean[][] visited = new boolean[m][n];
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                if (exist(board, visited, i, j, 0, word)) {
+                    return true;
+                }
             }
         }
+
         return false;
     }
-    
-    private boolean helper(char[][] board,int row,int col,boolean[][] isUsed, String word,int pos){
-        if(board[row][col]!=word.charAt(pos)) return false;
-        if(pos==word.length()-1) return true;
-        
-        int m=board.length;
-        int n=board[0].length;
-        
-        isUsed[row][col]=true;
-        if(row>0&&!isUsed[row-1][col]){
-            if(helper(board,row-1,col,isUsed,word,pos+1)) return true;
+
+    private boolean exist(char[][] board, boolean[][] visited, int row, int col, int index, String word) {
+        int m = board.length;
+        int n = board[0].length;
+
+        if (visited[row][col]) {
+            return false;
         }
-        
-        if(row<m-1&&!isUsed[row+1][col]){
-            if(helper(board,row+1,col,isUsed,word,pos+1)) return true;
+
+        if (board[row][col] != word.charAt(index)) {
+            return false;
         }
-        
-        if(col>0&&!isUsed[row][col-1]){
-            if(helper(board,row,col-1,isUsed,word,pos+1)) return true;
+
+        if (index == word.length() - 1) {
+            return true;
         }
-        
-        if(col<n-1&&!isUsed[row][col+1]){
-            if(helper(board,row,col+1,isUsed,word,pos+1)) return true;
+
+        try {
+            visited[row][col] = true;
+
+            // up
+            if (row - 1 >= 0 && !visited[row - 1][col]) {
+                if (exist(board, visited, row - 1, col, index + 1, word)) {
+                    return true;
+                }
+            }
+
+            // down
+            if (row + 1 < m && !visited[row + 1][col]) {
+                if (exist(board, visited, row + 1, col, index + 1, word)) {
+                    return true;
+                }
+            }
+
+            // left
+            if (col - 1 >= 0 && !visited[row][col - 1]) {
+                if (exist(board, visited, row, col - 1, index + 1, word)) {
+                    return true;
+                }
+            }
+
+            // right
+            if (col + 1 < n && !visited[row][col + 1]) {
+                if (exist(board, visited, row, col + 1, index + 1, word)) {
+                    return true;
+                }
+            }
+
+            return false;
+        } finally {
+            visited[row][col] = false;
         }
-        
-        isUsed[row][col]=false;
-        
-        return false;
+
     }
 }
 ```
