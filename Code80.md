@@ -1,28 +1,24 @@
 # Remove Duplicates from Sorted Array II
 
 ```java
-//beats 31.85%
 class Solution {
     public int removeDuplicates(int[] nums) {
-        if(nums==null||nums.length==0) return 0;
-        
-        int boundary=1;
-        int cnt=1;
-        int pre=nums[0];
-        
-        for(int i=1;i<nums.length;i++){
-            if(nums[i]==pre){
-                if(++cnt<=2){
-                    nums[boundary++]=nums[i];
+        int left = -1;
+        int right = 0;
+
+        while (right < nums.length) {
+            nums[++left] = nums[right++];
+            
+            if (right < nums.length && nums[right] == nums[right - 1]) {
+                nums[++left] = nums[right++];
+
+                while (right < nums.length && nums[right] == nums[right - 1]) {
+                    right++;
                 }
             }
-            else{
-                pre=nums[i];
-                cnt=1;
-                nums[boundary++]=nums[i];
-            }
         }
-        
-        return boundary;
+
+        return left + 1;
     }
 }
+```
