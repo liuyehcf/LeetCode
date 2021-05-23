@@ -2,18 +2,24 @@
 
 ```java
 class Solution {
-//beats 45.89%
     public int reverse(int x) {
-        boolean isPositive=x>0;
-        long absx=Math.abs((long)x);
-        long res=0;
-        while(absx!=0){
-            res=res*10+absx%10;
-            absx/=10;
+        long absX = Math.abs(x);
+
+        long reverse = 0;
+
+        while (absX != 0) {
+            reverse = reverse * 10 + absX % 10;
+            absX /= 10;
         }
-        res=res*(isPositive?1:-1);
-        if(res>Integer.MAX_VALUE||res<Integer.MIN_VALUE) return 0;
-        return (int)res;
-   }
+
+        if (x < 0) {
+            reverse *= -1;
+        }
+
+        if (reverse < Integer.MIN_VALUE || reverse > Integer.MAX_VALUE) {
+            return 0;
+        }
+        return (int) reverse;
+    }
 }
 ```
