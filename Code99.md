@@ -2,34 +2,45 @@
 
 ```java
 class Solution {
-//beats 34.36%
-    private TreeNode first,second,pre;
+
+    private TreeNode first;
+    private TreeNode second;
+
     public void recoverTree(TreeNode root) {
-        first=null;
-        second=null;
-        pre=null;
-        helper(root);
-        
-        int temp=first.val;
-        first.val=second.val;
-        second.val=temp;
-    }
-    
-    private void helper(TreeNode root){
-        if(root!=null){
-            helper(root.left);
-            if(pre!=null&&root.val<pre.val){
-                if(first==null){
-                    first=pre;
-                    second=root;
+        LinkedList<TreeNode> stack = new LinkedList<>();
+
+        TreeNode cur = root;
+        TreeNode pre = null;
+
+        while (cur != null || !stack.isEmpty()) {
+            while (cur != null) {
+                stack.push(cur);
+                cur = cur.left;
+            }
+
+            if (!stack.isEmpty()) {
+                TreeNode top = stack.pop();
+
+                if (pre != null && pre.val > top.val) {
+                    if (first == null) {
+                        first = pre;
+                        second = top;
+                    } else {
+                        second = top;
+                    }
                 }
-                else{
-                    second=root;
+
+                pre = top;
+
+                if (top.right != null) {
+                    cur = top.right;
                 }
             }
-            pre=root;
-            helper(root.right);
         }
-   }
+
+        int tmp = first.val;
+        first.val = second.val;
+        second.val = tmp;
+    }
 }
 ```
