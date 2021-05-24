@@ -2,17 +2,28 @@
 
 ```java
 class Solution {
-//beats 23.60%
     public boolean isSymmetric(TreeNode root) {
-        if(root==null) return true;
-        return helper(root.left,root.right);
+        if (root == null) {
+            return true;
+        }
+
+        return isSymmetric(root.left, root.right);
     }
-    
-    private boolean helper(TreeNode left,TreeNode right){
-        if(left==null&&right==null) return true;
-        if(left==null||right==null) return false;
-        if(left.val!=right.val) return false;
-        return helper(left.left,right.right)&&helper(left.right,right.left);
-   }
+
+    private boolean isSymmetric(TreeNode p, TreeNode q) {
+        if (p == null && q == null) {
+            return true;
+        }
+
+        if (p == null || q == null) {
+            return false;
+        }
+
+        if (p.val != q.val) {
+            return false;
+        }
+
+        return isSymmetric(p.left, q.right) && isSymmetric(p.right, q.left);
+    }
 }
 ```
