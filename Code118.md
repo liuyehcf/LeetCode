@@ -2,24 +2,31 @@
 
 ```java
 class Solution {
-//beats 27.34%
     public List<List<Integer>> generate(int numRows) {
-        List<List<Integer>> res=new ArrayList<List<Integer>>();
-        if(numRows<=0) return res;
-        
-        res.add(Arrays.asList(1));
-        
-        for(int row=1;row<numRows;row++){
-            List<Integer> cur=new ArrayList<Integer>();
-            cur.add(1);
-            for(int i=1;i<row;i++){
-                cur.add(res.get(row-1).get(i-1)+res.get(row-1).get(i));
+        List<List<Integer>> res = new ArrayList<>();
+
+        for (int i = 1; i <= numRows; i++) {
+            if (i == 1) {
+                res.add(Arrays.asList(1));
+                continue;
             }
+
+            List<Integer> pre = res.get(res.size() - 1);
+
+            List<Integer> cur = new ArrayList<>();
+
             cur.add(1);
+
+            for (int j = 0; j < pre.size() - 1; j++) {
+                cur.add(pre.get(j) + pre.get(j + 1));
+            }
+
+            cur.add(1);
+
             res.add(cur);
         }
-        
+
         return res;
-   }
+    }
 }
 ```
