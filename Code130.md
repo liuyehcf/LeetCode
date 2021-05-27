@@ -3,7 +3,9 @@
 ```java
 public class Solution {
     public void solve(char[][] board) {
-        if (board == null || board.length < 3 || board[0].length < 3) return;
+        if (board == null || board.length < 3 || board[0].length < 3) {
+            return;
+        }
         int row = board.length;
         int col = board[0].length;
         for (int i = 0; i < row; i++) {
