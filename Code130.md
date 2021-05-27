@@ -6,43 +6,49 @@ public class Solution {
         if (board == null || board.length < 3 || board[0].length < 3) {
             return;
         }
-        int row = board.length;
-        int col = board[0].length;
-        for (int i = 0; i < row; i++) {
-            check(board, i, 0, row, col);
-            check(board, i, col - 1, row, col);
+        int rows = board.length;
+        int cols = board[0].length;
+        for (int row = 0; row < rows; row++) {
+            markUnSurrounded(board, row, 0);
+            markUnSurrounded(board, row, cols - 1);
         }
-        for (int j = 0; j < col; j++) {
-            check(board, 0, j, row, col);
-            check(board, row - 1, j, row, col);
+        for (int col = 0; col < cols; col++) {
+            markUnSurrounded(board, 0, col);
+            markUnSurrounded(board, rows - 1, col);
         }
-        for (int i = 0; i < row; i++) {
-            for (int j = 0; j < col; j++) {
-                if (board[i][j] == 'O') board[i][j] = 'X';
+
+        // eat surrounded 'O'
+        for (int row = 0; row < rows; row++) {
+            for (int col = 0; col < cols; col++) {
+                if (board[row][col] == 'O') board[row][col] = 'X';
             }
         }
 
-        for (int i = 0; i < row; i++) {
-            for (int j = 0; j < col; j++) {
-                if (board[i][j] == '1') board[i][j] = 'O';
+        // remark un surrounded
+        for (int row = 0; row < rows; row++) {
+            for (int col = 0; col < cols; col++) {
+                if (board[row][col] == '1') board[row][col] = 'O';
             }
         }
     }
 
-    void check(char[][] board, int i, int j, int row, int col) {
+    void markUnSurrounded(char[][] board, int i, int j) {
+        int rows = board.length;
+        int cols = board[0].length;
+
         if (board[i][j] == 'O') {
             board[i][j] = '1';
             if (i > 1) {
-                check(board, i - 1, j, row, col);
+                markUnSurrounded(board, i - 1, j);
             }
             if (j > 1) {
-                check(board, i, j - 1, row, col);
+                markUnSurrounded(board, i, j - 1);
             }
-            if (i + 1 < row) {
-                check(board, i + 1, j, row, col);
+            if (i + 1 < rows) {
+                markUnSurrounded(board, i + 1, j);
             }
-            if (j + 1 < col) {
-                check(board, i, j + 1, row, col);
+            if (j + 1 < cols) {
+                markUnSurrounded(board, i, j + 1);
             }
         }
     }
