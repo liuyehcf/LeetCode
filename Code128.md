@@ -4,17 +4,25 @@
 class Solution {
     public int longestConsecutive(int[] nums) {
         int res = 0;
-        // map[i]表示起始为i或者终止为i的最大长度
-        Map<Integer, Integer> map = new HashMap<>();
+        Set<Integer> set = new HashSet<>();
         for (int num : nums) {
-            if (map.containsKey(num)) continue;
-            int leftSize = map.getOrDefault(num - 1, 0);
-            int rightSize = map.getOrDefault(num + 1, 0);
-            int size = leftSize + rightSize + 1;
-            map.put(num - leftSize, size);
-            map.put(num, size);
-            map.put(num + rightSize, size);
-            res = Math.max(res, size);
+            set.add(num);
+        }
+        
+        for (int num : nums) {
+            int right = num;
+
+            while (set.contains(++right)) {
+                set.remove(right);
+            }
+
+            int left = num;
+
+            while (set.contains(--left)) {
+                set.remove(left);
+            }
+
+            res = Math.max(res, right - 1 - (left + 1) + 1);
         }
         return res;
     }
