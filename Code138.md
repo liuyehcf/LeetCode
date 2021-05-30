@@ -2,32 +2,44 @@
 
 ```java
 class Solution {
-//beats 48.44%
-    public RandomListNode copyRandomList(RandomListNode head) {
-        RandomListNode pseudoHead=new RandomListNode(0);
-        RandomListNode pseudoCopyHead=new RandomListNode(0);
-        RandomListNode iter=head,iterCopy=pseudoCopyHead;
-        
-        Map<RandomListNode,RandomListNode> map=new HashMap<RandomListNode,RandomListNode>();
-        while(iter!=null){
-            RandomListNode newNode=new RandomListNode(iter.label);
-            map.put(iter,newNode);
-            iterCopy.next=newNode;
-            iter=iter.next;
-            iterCopy=iterCopy.next;
+    public Node copyRandomList(Node head) {
+        if (head == null) {
+            return null;
         }
-        
-        iter=head;
-        iterCopy=pseudoCopyHead.next;
-        while(iter!=null){
-            RandomListNode originRandom=iter.random;
-            RandomListNode copyRandom=map.get(originRandom);
-            iterCopy.random=copyRandom;
-            iter=iter.next;
-            iterCopy=iterCopy.next;
+
+        Map<Node, Node> oldNewMap = new HashMap<>();
+        Node newHead = new Node(head.val);
+
+        copyRandomList(head, newHead, oldNewMap);
+
+        Node iter = head;
+        while (iter != null) {
+            Node newIter = oldNewMap.get(iter);
+            Node random = iter.random;
+            Node newRandom = oldNewMap.get(random);
+
+            newIter.random = newRandom;
+
+            iter = iter.next;
         }
-        
-        return pseudoCopyHead.next;
-   }
+
+        return newHead;
+    }
+
+    private void copyRandomList(Node oldNode, Node newNode, Map<Node, Node> oldNewMap) {
+        if (oldNode == null) {
+            return;
+        }
+
+        oldNewMap.put(oldNode, newNode);
+
+        Node next = oldNode.next;
+
+        if (next != null) {
+            Node newNext = new Node(next.val);
+            newNode.next = newNext;
+            copyRandomList(next, newNext, oldNewMap);
+        }
+    }
 }
 ```

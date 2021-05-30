@@ -4,23 +4,22 @@
 class Solution {
     public List<String> wordBreak(String s, List<String> wordDict) {
         List<String> res = new ArrayList<>();
+        List<String> solution = new ArrayList<>();
 
-        List<String> cur = new ArrayList<>();
-
-        wordBreak(res, cur, s, 0, wordDict);
+        wordBreak(res, solution, s, 0, wordDict);
 
         return res;
     }
 
-    private void wordBreak(List<String> res, List<String> cur,
+    private void wordBreak(List<String> res, List<String> solution,
                            String s, int index, List<String> wordDict) {
         if (index == s.length()) {
             StringBuilder sb = new StringBuilder();
-            for (int i = 0; i < cur.size(); i++) {
+            for (int i = 0; i < solution.size(); i++) {
                 if (i != 0) {
                     sb.append(' ');
                 }
-                sb.append(cur.get(i));
+                sb.append(solution.get(i));
             }
 
             res.add(sb.toString());
@@ -31,11 +30,11 @@ class Solution {
         for (String word : wordDict) {
             if (isMatched(s, index, word)) {
 
-                cur.add(word);
+                solution.add(word);
 
-                wordBreak(res, cur, s, index + word.length(), wordDict);
+                wordBreak(res, solution, s, index + word.length(), wordDict);
 
-                cur.remove(cur.size() - 1);
+                solution.remove(solution.size() - 1);
             }
         }
     }
