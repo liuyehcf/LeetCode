@@ -24,10 +24,19 @@ class Solution {
             fast = fast.next.next;
         }
 
-        sortList(pseudoHead, slow.next);
-        sortList(slow, tail);
+        ListNode lastNodeOfFirstPart = slow;
+        ListNode firstNodeOfSecondPart = slow.next;
 
-        pseudoHead.next = merge(pseudoHead, slow.next, slow, tail);
+        // 不能用原列表中的节点作为伪头和尾部，因为可能因为排序而发生改变
+        ListNode tail1 = new ListNode();
+        lastNodeOfFirstPart.next = tail1;
+        sortList(pseudoHead, tail1);
+
+        ListNode pseudoHead2 = new ListNode();
+        pseudoHead2.next = firstNodeOfSecondPart;
+        sortList(pseudoHead2, tail);
+
+        pseudoHead.next = merge(pseudoHead, tail1, pseudoHead2, tail);
     }
 
     private ListNode merge(ListNode pseudoHead1, ListNode tail1, ListNode pseudoHead2, ListNode tail2) {
