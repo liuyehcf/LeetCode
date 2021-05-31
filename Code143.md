@@ -3,30 +3,73 @@
 
 ```java
 class Solution {
-//beats 10.44%
     public void reorderList(ListNode head) {
-        List<ListNode> list=new ArrayList<ListNode>();
-        ListNode iter=head;
-        while(iter!=null){
-            list.add(iter);
-            iter=iter.next;
+        ListNode slow = head;
+        ListNode fast = head;
+
+        ListNode pre = null;
+
+        while (fast != null && fast.next != null) {
+            pre = slow;
+            slow = slow.next;
+            fast = fast.next.next;
         }
-        
-        ListNode pseudoHead=new ListNode(0);
-        iter=pseudoHead;
-        int left=0,right=list.size()-1;
-        boolean flag=true;
-        while(left<right){
-            if(flag) iter.next=list.get(left++);
-            else iter.next=list.get(right--);
-            iter=iter.next;
-            flag=!flag;
+
+        ListNode middle = pre;
+
+        if (middle == null) {
+            return;
         }
-        if(left==right){
-            iter.next=list.get(left);
-            iter=iter.next;
+
+        reverse(middle, null);
+
+        ListNode iter = new ListNode();
+        ListNode iter1 = head;
+        ListNode iter2 = middle.next;
+
+        boolean isLeft = true;
+
+        while (iter1 != middle.next && iter2 != null) {
+            if (isLeft) {
+                iter.next = iter1;
+                iter1 = iter1.next;
+            } else {
+                iter.next = iter2;
+                iter2 = iter2.next;
+            }
+
+            iter = iter.next;
+            isLeft = !isLeft;
         }
-        iter.next=null;
-   }
+
+        while (iter1 != middle.next) {
+            iter.next = iter1;
+            iter1 = iter1.next;
+            iter = iter.next;
+        }
+
+        while (iter2 != null) {
+            iter.next = iter2;
+            iter2 = iter2.next;
+            iter = iter.next;
+        }
+
+        iter.next = null;
+    }
+
+    private void reverse(ListNode pseudoHead, ListNode tail) {
+        ListNode iter = pseudoHead.next;
+        pseudoHead.next = tail;
+
+        while (iter != tail) {
+            ListNode next = iter.next;
+            ListNode head = pseudoHead.next;
+
+            pseudoHead.next = iter;
+            iter.next = head;
+
+            iter = next;
+        }
+    }
 }
 ```
