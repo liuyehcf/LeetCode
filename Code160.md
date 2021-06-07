@@ -1,39 +1,42 @@
 # Intersection of Two Linked Lists
 
 ```java
-class Solution {
-//beats 39.40%
+public class Solution {
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
-        ListNode iter1=headA,iter2=headB;
-        int len1=0,len2=0;
-        while(iter1!=null){
-            len1++;
-            iter1=iter1.next;
+        int lenA = 0;
+        ListNode iterA = headA;
+
+        while (iterA != null) {
+            lenA++;
+            iterA = iterA.next;
         }
-        while(iter2!=null){
-            len2++;
-            iter2=iter2.next;
+
+        int lenB = 0;
+        ListNode iterB = headB;
+        while (iterB != null) {
+            lenB++;
+            iterB = iterB.next;
         }
-        iter1=headA;
-        iter2=headB;
-        if(len1<len2){
-            while(len2>len1){
-                iter2=iter2.next;
-                len2--;
+
+        iterA = headA;
+        iterB = headB;
+
+        while (lenA != lenB) {
+            if (lenA > lenB) {
+                iterA = iterA.next;
+                lenA--;
+            } else {
+                iterB = iterB.next;
+                lenB--;
             }
         }
-        else if(len2<len1){
-            while(len1>len2){
-                iter1=iter1.next;
-                len1--;
-            }
+
+        while (iterA != null && iterA != iterB) {
+            iterA = iterA.next;
+            iterB = iterB.next;
         }
-        while(iter1!=null&&iter2!=null){
-            if(iter1==iter2) return iter1;
-            iter1=iter1.next;
-            iter2=iter2.next;
-        }
-        return null;
-   }
+
+        return iterA;
+    }
 }
 ```
