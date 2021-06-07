@@ -2,31 +2,26 @@
 
 ```java
 class Solution {
-//beats 13.69%
     public int maxProduct(int[] nums) {
-        if(nums==null||nums.length==0) return 0;
-        int[] dpMin=new int[nums.length];
-        int[] dpMax=new int[nums.length];
-        
-        Arrays.fill(dpMin,Integer.MAX_VALUE);
-        Arrays.fill(dpMax,Integer.MIN_VALUE);
-        
-        dpMin[0]=nums[0];
-        dpMax[0]=nums[0];
-        int res=nums[0];
+        int[] minDp = new int[nums.length + 1];
+        int[] maxDp = new int[nums.length + 1];
 
-        for(int i=1;i<nums.length;i++){
-            if(nums[i]>=0){
-                dpMax[i]=Math.max(nums[i],nums[i]*dpMax[i-1]);
-                dpMin[i]=Math.min(nums[i],nums[i]*dpMin[i-1]);
-            }
-            else{
-                dpMax[i]=Math.max(nums[i],nums[i]*dpMin[i-1]);
-                dpMin[i]=Math.min(nums[i],nums[i]*dpMax[i-1]);
-            }
-            res=Math.max(res,dpMax[i]);
+        minDp[0] = 1;
+        maxDp[0] = 1;
+
+        int maxProduct = Integer.MIN_VALUE;
+
+        for (int i = 1; i <= nums.length; i++) {
+            minDp[i] = Math.min(minDp[i - 1] * nums[i - 1], maxDp[i - 1] * nums[i - 1]);
+            minDp[i] = Math.min(nums[i - 1], minDp[i]);
+
+            maxDp[i] = Math.max(minDp[i - 1] * nums[i - 1], maxDp[i - 1] * nums[i - 1]);
+            maxDp[i] = Math.max(nums[i - 1], maxDp[i]);
+
+            maxProduct = Math.max(maxProduct, maxDp[i]);
         }
-        return res;
-   }
+
+        return maxProduct;
+    }
 }
 ```
