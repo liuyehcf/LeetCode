@@ -3,17 +3,25 @@
 ```java
 class Solution {
     public int findMin(int[] nums) {
-        int left = 0;
-        int right = nums.length - 1;
+        int left = 0, right = nums.length - 1;
 
-        while (left <= right) {
+        while (left < right) {
             int mid = left + (right - left >> 1);
 
+            // left part is sorted
             if (nums[mid] > nums[right]) {
                 left = mid + 1;
-            } else if (nums[mid] < nums[right]) {
+            }
+            // right part is sorted
+            else if (nums[mid] < nums[left]) {
                 right = mid;
-            } else {
+            }
+            // all sorted
+            else if (nums[mid] > nums[left] && nums[mid] < nums[right]) {
+                return nums[left];
+            }
+            // cannot judge, so narrow boundary
+            else {
                 right--;
             }
         }
