@@ -26,28 +26,3 @@ class Solution {
     }
 }
 ```
-
-
-* ջ��
-```java
-class Solution {
-//beats 40.33%
-    public List<Integer> inorderTraversal(TreeNode root) {
-        List<Integer> res=new ArrayList<Integer>();
-        LinkedList<TreeNode> stack=new LinkedList<TreeNode>();
-        TreeNode iter=root;
-        while(iter!=null||!stack.isEmpty()){
-            while(iter!=null){
-                stack.push(iter);
-                iter=iter.left;
-            }
-            if(!stack.isEmpty()){
-                TreeNode peek=stack.pop();
-                res.add(peek.val);
-                iter=peek.right;
-            }
-        }
-        return res;
-   }
-}
-```
