@@ -1,22 +1,29 @@
 # Binary Tree Inorder Traversal
 
-* �ݹ鷨
 ```java
 class Solution {
-//beats 40.33%
     public List<Integer> inorderTraversal(TreeNode root) {
-        List<Integer> res=new ArrayList<Integer>();
-        helper(root,res);
+        LinkedList<TreeNode> stack = new LinkedList<>();
+
+        TreeNode cur = root;
+
+        List<Integer> res = new ArrayList<>();
+
+        while (cur != null || !stack.isEmpty()) {
+            while (cur != null) {
+                stack.push(cur);
+                cur = cur.left;
+            }
+
+            if (!stack.isEmpty()) {
+                TreeNode top = stack.pop();
+                res.add(top.val);
+                cur = top.right;
+            }
+        }
+
         return res;
     }
-    
-    private void helper(TreeNode root,List<Integer> res){
-        if(root!=null){
-            helper(root.left,res);
-            res.add(root.val);
-            helper(root.right,res);
-        }
-   }
 }
 ```
 
