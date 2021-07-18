@@ -2,29 +2,38 @@
 
 ```java
 class Solution {
-//beats 84.86%
     public TreeNode buildTree(int[] preorder, int[] inorder) {
-        Map<Integer,Integer> map=new HashMap<Integer,Integer>();
-        for(int i=0;i<inorder.length;i++){
-            map.put(inorder[i],i);
+        Map<Integer, Integer> indexesOfInorder = new HashMap<>();
+
+        for (int i = 0; i < inorder.length; i++) {
+            int val = inorder[i];
+            indexesOfInorder.put(val, i);
         }
-        return helper(preorder,0,preorder.length-1,inorder,0,inorder.length-1,map);
-        
+
+        return buildTree(preorder, inorder, indexesOfInorder, 0, preorder.length, 0, inorder.length);
     }
-    
-    private TreeNode helper(int[] preorder,int pstart,int pend,int[] inorder,int istart,int iend,Map<Integer,Integer> map){
-        if(pstart>pend) return null;
-        
-        TreeNode root=new TreeNode(preorder[pstart]);
-        
-        int rootIndexOfInorder=map.get(root.val);
-        int leftTreeSize=rootIndexOfInorder-1-istart+1;
-        int rightTreeSize=iend-(rootIndexOfInorder+1)+1;
-        
-        root.left=helper(preorder,pstart+1,pstart+1+leftTreeSize-1,inorder,istart,rootIndexOfInorder-1,map);
-        root.right=helper(preorder,pstart+1+leftTreeSize-1+1,pend,inorder,rootIndexOfInorder+1,iend,map);
+
+    private TreeNode buildTree(int[] preorder, int[] inorder, Map<Integer, Integer> indexesOfInorder,
+                               int preorderLeft, int preorderRight,
+                               int inorderLeft, int inorderRight) {
+        if (preorderLeft > preorderRight - 1 || inorderLeft > inorderRight - 1
+                || preorderLeft >= preorder.length
+                || preorderRight < 0
+                || inorderLeft >= inorder.length
+                || inorderRight < 0) {
+            return null;
+        }
+
+        TreeNode root = new TreeNode(preorder[preorderLeft]);
+        int inorderIndexOfRoot = indexesOfInorder.get(root.val);
+
+        int leftTreeSize = inorderIndexOfRoot - 1 - inorderLeft + 1;
+        int rightTreeSize = inorderRight - 1 - (inorderIndexOfRoot + 1) + 1;
+
+        root.left = buildTree(preorder, inorder, indexesOfInorder, preorderLeft + 1, preorderLeft + leftTreeSize + 1, inorderLeft, inorderIndexOfRoot);
+        root.right = buildTree(preorder, inorder, indexesOfInorder, preorderLeft + leftTreeSize + 1, preorderRight, inorderIndexOfRoot + 1, inorderRight);
+
         return root;
-        
-   }
+    }
 }
 ```
